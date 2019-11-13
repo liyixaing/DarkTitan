@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_white_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/all"
+        android:textColor="#FF000000"
+        android:textSize="@dimen/sp_15" />
+
+    <TextView
+        android:id="@+id/tv_charging"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/top_up_c"
+        android:textColor="#FF000000"
+        android:textSize="@dimen/sp_15" />
+
+    <TextView
+        android:id="@+id/tv_top_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/turn_out"
+        android:textColor="#FF000000"
+        android:textSize="@dimen/sp_15" />
+    <TextView
+        android:id="@+id/tv_top_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/turn_put"
+        android:textColor="#FF000000"
+        android:textSize="@dimen/sp_15" />
+
+    <TextView
+        android:id="@+id/tv_exchange_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/flash_exchange"
+        android:textColor="#FF000000"
+        android:textSize="@dimen/sp_15" />
+
+    <TextView
+        android:id="@+id/tv_sell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/unfrozen"
+        android:textColor="#FF000000"
+        android:textSize="@dimen/sp_15" />
+
+
+    <TextView
+        android:id="@+id/tv_of_mineral"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/of_mineral"
+        android:textColor="#FF000000"
+        android:textSize="@dimen/sp_15" />
+
+    <TextView
+        android:id="@+id/tv_ore_pool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/ore_pool"
+        android:textColor="#FF000000"
+        android:textSize="@dimen/sp_15" />
+
+    <TextView
+        android:id="@+id/tv_purchase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/buy"
+        android:textColor="#FF000000"
+        android:textSize="@dimen/sp_15"
+        android:visibility="gone" />
+
+
+</LinearLayout>

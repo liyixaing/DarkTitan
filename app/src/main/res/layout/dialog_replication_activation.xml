@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_258"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/ic_free"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <!--开始抢-->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:src="@mipmap/ic_titan_icon" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:src="@mipmap/icon_titan_one" />
+
+    <TextView
+        android:id="@+id/tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:text="@string/add_code"
+        android:textColor="@color/blue" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:background="@mipmap/ic_yuan_bg"
+        android:gravity="center">
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

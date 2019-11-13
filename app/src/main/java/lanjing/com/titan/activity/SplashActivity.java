@@ -1,0 +1,294 @@
+package lanjing.com.titan.activity;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.provider.Settings;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.lxh.baselibray.dialog.AlertDialog;
+import com.lxh.baselibray.mvp.MvpActivity;
+import com.lxh.baselibray.util.LocalManageUtil;
+import com.lxh.baselibray.util.ObjectUtils;
+import com.lxh.baselibray.util.SPUtils;
+import com.lxh.baselibray.util.SizeUtils;
+import com.lxh.baselibray.util.ToastUtils;
+
+import java.util.Locale;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import lanjing.com.titan.R;
+import lanjing.com.titan.constant.Constant;
+import lanjing.com.titan.contact.LoginContact;
+import lanjing.com.titan.response.LoginResponse;
+import lanjing.com.titan.response.PersonResponse;
+import lanjing.com.titan.response.VersionResponse;
+import lanjing.com.titan.util.APKVersionCodeUtils;
+import lanjing.com.titan.view.CustomVideoView;
+import retrofit2.Response;
+
+/**
+ * 引导页  可以切换语言  点击开始进入到登录页面  app加载的第一个界面
+ */
+public class SplashActivity extends MvpActivity<LoginContact.LoginPresent> implements LoginContact.ILoginView {
+
+    @BindView(R.id.tv_language)
+    TextView tvLanguage;
+    @BindView(R.id.tv_start)
+    TextView tvStart;
+    @BindView(R.id.welcome_bg)
+    RelativeLayout welcomeBg;
+
+    boolean isFirstIn = false;
+    String adminNo;
+    @BindView(R.id.videoview)
+    CustomVideoView videoview;
+    @BindView(R.id.btn_skip)
+    TextView btnSkip;
+    @BindView(R.id.guide_lay)
+    RelativeLayout guideLay;
+
+    int versionCode;
+
+    @SuppressLint("StringFormatInvalid")
+    @Override
+    public void initData(Bundle savedInstanceState) {
+        versionCode = APKVersionCodeUtils.getVersionCode(context);
+        Log.e("版本号：", String.valueOf(versionCode));
+        mPresent.updateApp(context, 1, versionCode);
+        adminNo = Settings.System.getString(context.getContentResolver(), Settings.System.ANDROID_ID);
+
+        SPUtils.putString(Constant.DEVICE_ID, adminNo, context);
+
+        Locale locale = getResources().getConfiguration().locale;//判断当前的语言
+        if (locale.equals(Locale.SIMPLIFIED_CHINESE)) {
+            Constant.LANGAGE = 0;
+//            welcomeBg.setBackground(getResources().getDrawable(R.drawable.ic_bg_stater));//添加中文背景
+        } else if (locale.equals(Locale.ENGLISH)) {
+            Constant.LANGAGE = 1;
+//            welcomeBg.setBackground(getResources().getDrawable(R.drawable.ic_bg_stater));//添加英文背景
+        }
+
+        setValue();
+        LocalManageUtil.getSelectLanguage(this);
+    }
+
+
+    @SuppressLint("StringFormatInvalid")
+    private void setValue() {
+//        ToastUtils.showShortToast(context,LocalManageUtil.getSelectLanguage(this));
+    }
+
+    @Override
+    public int getLayoutId() {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉手机顶部状态栏
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {//适配华为虚拟下面导航栏
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        }
+
+        return R.layout.activity_splash;
+    }
+
+    @OnClick({R.id.btn_skip, R.id.tv_language, R.id.tv_start})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.btn_skip://跳过引导
+                videoview.stopPlayback();
+                guideLay.setVisibility(View.GONE);
+                welcomeBg.setVisibility(View.VISIBLE);
+                break;
+            case R.id.tv_language://切换英文
+                showTypeDialog();  //弹出框
+                break;
+            case R.id.tv_start:
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        String account = SPUtils.getString(Constant.ACCOUNT, null, context);
+                        String loginPwd = SPUtils.getString(Constant.LOGIN_PWD, null, context);
+                        if (!ObjectUtils.isEmpty(account) && !ObjectUtils.isEmpty(loginPwd)) {
+                            mPresent.login(context, account, loginPwd, adminNo);
+                        } else {
+                            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                            finish();
+                        }
+                    }
+                }, 100);
+
+                break;
+        }
+    }
+
+    private void selectLanguage(int select) {
+        LocalManageUtil.saveSelectLanguage(this, select);
+        reStart(this);
+    }
+
+    public static void reStart(Context context) {
+        Intent intent = new Intent(context, SplashActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
+
+
+    AlertDialog typeDialog = null;
+
+    public void showTypeDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context)
+                .addDefaultAnimation()
+                .setCancelable(true)
+                .setText(R.id.tv_one, getResources().getString(R.string.simplified_chinese))
+                .setText(R.id.tv_two, "English")
+                .setContentView(R.layout.dialog_language)
+                .setWidthAndHeight(SizeUtils.dp2px(context, 223), SizeUtils.dp2px(context, 81))
+                .setOnClickListener(R.id.tv_one, v -> {
+                    selectLanguage(1);
+                    Constant.LANGAGE = 0;
+                    typeDialog.dismiss();
+                }).setOnClickListener(R.id.tv_two, v -> {
+                    selectLanguage(2);
+                    Constant.LANGAGE = 1;
+                    typeDialog.dismiss();
+                });
+        typeDialog = builder.create();
+        typeDialog.show();
+    }
+
+
+    @Override
+    protected void onRestart() {
+        mPresent.updateApp(context, 1, versionCode);
+        super.onRestart();
+    }
+
+    @Override
+    protected LoginContact.LoginPresent createPresent() {
+        return new LoginContact.LoginPresent();
+    }
+
+    @Override
+    public void getLoginResult(Response<LoginResponse> response) {
+        if (response.body().getCode() == Constant.SUCCESS_CODE) {
+            SPUtils.putString(Constant.TOKEN, response.body().getData().getToken(), context);
+            inviteCode = response.body().getData().getInvitacode();
+            mPresent.person(context);
+
+        } else if (response.body().getCode() == -10) {
+            ToastUtils.showShortToast(context, getResources().getString(R.string.not_login));
+        } else {
+            ToastUtils.showShortToast(context, response.body().getMsg());
+            Intent intent = new Intent(context, LoginActivity.class);
+            startActivity(intent);
+        }
+
+    }
+
+    String inviteCode;
+
+    @Override
+    public void getPersonResult(Response<PersonResponse> response) {
+        //判断有没有绑定手机号码
+        if (response.body().getCode() == Constant.SUCCESS_CODE) {
+            if (ObjectUtils.isEmpty(response.body().getData().getPhone())) {
+                Intent intent = new Intent(context, LoginActivity.class);
+                intent.putExtra("code", inviteCode);
+                startActivity(intent);
+                return;
+            }
+//            if(response.body().getData().getPhonenum().equals("")){
+//                Intent intent = new Intent(context, RegisterBindingPhoneActivity.class);
+//                intent.putExtra("code",inviteCode);
+//                startActivity(intent);
+//                return;
+//            }
+
+            //判断有没有推荐人
+            if (inviteCode.equals("")) {
+                Intent intent = new Intent(context, LoginActivity.class);
+                startActivity(intent);
+                return;
+            }
+            Intent intent = new Intent(context, MainActivity.class);
+            startActivity(intent);
+            finish();
+
+        } else if (response.body().getCode() == -10) {
+            ToastUtils.showShortToast(context, getResources().getString(R.string.not_login));
+        } else {
+            ToastUtils.showShortToast(context, response.body().getMsg());
+        }
+    }
+
+    AlertDialog UpdateDialog = null;
+
+    private void showUpdateDialog(String VersionName, String VersionInfo, String downloadUrl) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                .addDefaultAnimation()//默认弹窗动画
+                .setContentView(R.layout.dialog_update_app)//载入布局文件
+                .setWidthAndHeight(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)//设置弹窗宽高
+                .setText(R.id.tv_title, getResources().getString(R.string.update_yes) + VersionName + getResources().getString(R.string.update_version))
+                .setText(R.id.tv_update_info, VersionInfo)
+                .setOnClickListener(R.id.btn_ok, v -> {//设置点击事件  打开网页
+                    Intent intent = new Intent(Intent.ACTION_VIEW,
+                            (Uri.parse(downloadUrl))
+                    ).addCategory(Intent.CATEGORY_BROWSABLE)
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    UpdateDialog.dismiss();
+                });
+        UpdateDialog = builder.create();
+        UpdateDialog.show();
+
+    }
+
+    @Override
+    public void getupdateAppResult(Response<VersionResponse> response) {
+        if (response.body().getCode() == Constant.SUCCESS_CODE) {
+
+            int systemCode = Integer.parseInt(response.body().getData().getVersioncode());
+            Log.e("版本号1：", systemCode+"");
+            Log.e("版本号1：", versionCode+"");
+            if (systemCode > versionCode) {
+                showUpdateDialog(response.body().getData().getVersionname(), response.body().getData().getRemarks(), response.body().getData().getUrl());
+            }
+
+            //参数正确不做处理
+        } else if (response.body().getCode() == 201) {
+            int systemCode = Integer.parseInt(response.body().getData().getVersioncode());
+            if (systemCode > versionCode) {
+                showUpdateDialog(response.body().getData().getVersionname(), response.body().getData().getRemarks(), response.body().getData().getUrl());
+            }
+        } else if (response.body().getCode() == 202) {
+            int systemCode = Integer.parseInt(response.body().getData().getVersioncode());
+            Log.e("对比版本", String.valueOf(systemCode));
+            if (systemCode > versionCode) {
+                showUpdateDialog(response.body().getData().getVersionname(), response.body().getData().getRemarks(), response.body().getData().getUrl());
+            }
+        } else if (response.body().getCode() == -10) {
+            ToastUtils.showShortToast(context, getResources().getString(R.string.not_login));
+        } else {
+            ToastUtils.showShortToast(context, response.body().getMsg());
+        }
+    }
+
+    @Override
+    public void getDataFailed() {
+        ToastUtils.showShortToast(context, getResources().getString(R.string.network_error));
+        Intent intent = new Intent(context, LoginActivity.class);
+        startActivity(intent);
+    }
+
+}
