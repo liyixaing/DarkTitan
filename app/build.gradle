@@ -61,9 +61,9 @@ dependencies {
     implementation 'com.github.yilylong:UserGuideView:1.0.5'
     implementation 'com.jaydenxiao:guider:1.0.0'
     //图片加载器
-    compile 'com.squareup.picasso:picasso:2.5.2'
+    api 'com.squareup.picasso:picasso:2.5.2'
     //okhttp封装
-    compile 'com.zhy:okhttputils:2.6.2'
+    api 'com.zhy:okhttputils:2.6.2'
     //okhttp
-    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    api 'com.squareup.okhttp3:okhttp:3.8.1'
 }
