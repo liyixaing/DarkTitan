@@ -2,22 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darkhome"
+    android:orientation="vertical"
     tools:context="lanjing.com.titan.fragment.MarketFragment">
+
     <TextView
-        android:gravity="center"
-        android:textSize="@dimen/sp_18"
-        android:textColor="@color/white"
-        android:text="@string/rb_market"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50" />
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center"
+        android:text="@string/rb_market"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_18" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <com.scwang.smartrefresh.layout.SmartRefreshLayout
             android:id="@+id/refresh"
             android:layout_width="match_parent"
@@ -29,10 +31,10 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_marginTop="@dimen/dp_10"
                     android:id="@+id/rv_normal_show"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_10"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -45,14 +47,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/normal_data"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/sp_12" />
                 </LinearLayout>
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rv"
-                    android:layoutAnimation="@anim/layout_animation_from_bottom"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layoutAnimation="@anim/layout_animation_from_bottom"
                     android:visibility="gone" />
             </RelativeLayout>
         </com.scwang.smartrefresh.layout.SmartRefreshLayout>

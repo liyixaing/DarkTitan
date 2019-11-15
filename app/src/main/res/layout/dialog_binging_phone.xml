@@ -4,21 +4,23 @@
     android:layout_height="wrap_content"
     android:background="@drawable/shape_white_bg"
     android:orientation="vertical">
+
     <LinearLayout
-        android:gravity="center"
         android:id="@+id/tv_input_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical">
+
         <TextView
-            android:gravity="center_horizontal"
-            android:layout_marginTop="@dimen/dp_10"
             android:id="@+id/tv_select_pic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center_horizontal"
             android:padding="@dimen/dp_10"
             android:text="@string/bing_tip"
-            android:textColor="@color/common_black"
+            android:textColor="#E1E1E1"
             android:textSize="@dimen/sp_17" />
     </LinearLayout>
 
@@ -39,12 +41,13 @@
 
             android:id="@+id/tx_cancel"
             android:layout_width="0dp"
-            android:foreground="@drawable/bg_white"
-            android:background="@drawable/btn_cancel_bg"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/btn_sure_bg"
+            android:foreground="@drawable/bg_white"
             android:gravity="center"
-            android:text="@string/cancel" />
+            android:text="@string/cancel"
+            android:textColor="@color/white" />
 
         <View
             android:layout_width="@dimen/dp_1"
@@ -52,12 +55,12 @@
             android:background="#EEEEEE" />
 
         <TextView
-            android:foreground="@drawable/bg_white"
             android:id="@+id/tx_sure"
-            android:background="@drawable/btn_sure_bg"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/btn_sure_bg"
+            android:foreground="@drawable/bg_white"
             android:gravity="center"
             android:text="@string/confirm_dialog"
             android:textColor="@color/white" />

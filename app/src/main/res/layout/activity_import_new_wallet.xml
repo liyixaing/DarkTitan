@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/darkhome"
     tools:context="lanjing.com.titan.activity.ImportNewWalletActivity">
 
     <com.lxh.baselibray.view.TitleView
         android:layout_width="match_parent"
         android:layout_height="@dimen/titil_view_height"
-        android:background="@color/default_white_bg"
-        app:ivLeftPic="@mipmap/icon_page_return"
-        app:titleTextColor="@color/common_black"
+        android:background="@color/darkhome"
+        app:ivLeftPic="@mipmap/icon_page_return_white"
+        app:titleTextColor="@color/white"
         app:tvTitleText="@string/import_the_wallet" />
 
     <LinearLayout
@@ -26,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_20"
             android:text="@string/please_input_word"
-            android:textColor="@color/blue"
+            android:textColor="#4E5E90"
             android:textSize="@dimen/sp_16" />
 
         <LinearLayout
@@ -38,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:textColor="@color/common_black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/sp_16" />
 
             <EditText
@@ -52,8 +53,7 @@
                 android:gravity="center_vertical"
                 android:maxLength="11"
                 android:paddingLeft="@dimen/dp_10"
-                android:textColor="@color/common_black"
-                android:textCursorDrawable="@drawable/cursor_style"
+                android:textColor="@color/white"
                 android:textSize="@dimen/sp_16" />
         </LinearLayout>
 
@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2"
-                android:textColor="@color/common_black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/sp_16" />
 
             <EditText
@@ -79,8 +79,7 @@
                 android:gravity="center_vertical"
                 android:maxLength="11"
                 android:paddingLeft="@dimen/dp_10"
-                android:textColor="@color/common_black"
-                android:textCursorDrawable="@drawable/cursor_style"
+                android:textColor="@color/white"
                 android:textSize="@dimen/sp_16" />
         </LinearLayout>
 
@@ -93,7 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3"
-                android:textColor="@color/common_black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/sp_16" />
 
             <EditText
@@ -106,8 +105,7 @@
                 android:gravity="center_vertical"
                 android:maxLength="11"
                 android:paddingLeft="@dimen/dp_10"
-                android:textColor="@color/common_black"
-                android:textCursorDrawable="@drawable/cursor_style"
+                android:textColor="@color/white"
                 android:textSize="@dimen/sp_16" />
         </LinearLayout>
 
@@ -116,7 +114,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_20"
             android:text="@string/please_input_private_key"
-            android:textColor="@color/blue"
+            android:textColor="#4E5E90"
             android:textSize="@dimen/sp_16" />
 
         <EditText
@@ -127,15 +125,14 @@
             android:background="@drawable/shape_gray_bg"
             android:gravity="center_vertical"
             android:padding="@dimen/dp_10"
-            android:textColor="@color/common_black"
-            android:textCursorDrawable="@drawable/cursor_style"
+            android:textColor="@color/white"
             android:textSize="@dimen/sp_16" />
 
         <TextView
             android:id="@+id/next_step_btn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_39"
-            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_60"
             android:background="@drawable/btn_radius_blue"
             android:foreground="@drawable/bg_white"
             android:gravity="center"

@@ -2,29 +2,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkhome"
+    android:orientation="vertical"
     tools:context="lanjing.com.titan.activity.ResetInformationActivity">
 
     <com.lxh.baselibray.view.TitleView
         android:layout_width="match_parent"
         android:layout_height="@dimen/titil_view_height"
-        android:background="@color/default_white_bg"
-        app:ivLeftPic="@mipmap/icon_page_return"
-        app:titleTextColor="@color/common_black"
+        android:background="@color/darkhome"
+        app:ivLeftPic="@mipmap/icon_page_return_white"
+        app:titleTextColor="@color/white"
         app:tvTitleText="@string/reset_information" />
 
     <LinearLayout
-        android:layout_margin="@dimen/dp_20"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:orientation="vertical">
         <!--登陆密码-->
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
-            android:layout_marginTop="@dimen/dp_5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5">
+
             <EditText
                 android:id="@+id/ed_login_pwd"
                 android:layout_width="match_parent"
@@ -32,10 +34,10 @@
                 android:layout_marginTop="@dimen/dp_10"
                 android:background="@null"
                 android:hint="@string/login_pwd"
+                android:inputType="textPassword"
                 android:maxLength="18"
                 android:singleLine="true"
-                android:inputType="textPassword"
-                android:textColor="@color/common_black"
+                android:textColor="@color/white"
                 android:textColorHint="@color/gray_text_tip"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_15" />
@@ -45,13 +47,14 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_1"
             android:layout_centerHorizontal="true"
-            android:background="@color/line_gray" />
+            android:background="#EEEEEE" />
 
         <!--确认登陆密码-->
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
-            android:layout_marginTop="@dimen/dp_5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5">
+
             <EditText
                 android:id="@+id/ed_confirm_login_pwd"
                 android:layout_width="match_parent"
@@ -62,7 +65,7 @@
                 android:inputType="textPassword"
                 android:maxLength="18"
                 android:singleLine="true"
-                android:textColor="@color/common_black"
+                android:textColor="@color/white"
                 android:textColorHint="@color/gray_text_tip"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_15" />
@@ -72,13 +75,14 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_1"
             android:layout_centerHorizontal="true"
-            android:background="@color/line_gray" />
+            android:background="#EEEEEE" />
 
         <!--交易密码-->
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
-            android:layout_marginTop="@dimen/dp_5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5">
+
             <EditText
                 android:id="@+id/ed_deal_pwd"
                 android:layout_width="match_parent"
@@ -88,11 +92,11 @@
                 android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 android:gravity="center|left"
                 android:hint="@string/deal_pwd"
-                android:maxLength="6"
                 android:inputType="textPassword"
+                android:maxLength="6"
                 android:singleLine="true"
                 android:textColor="@color/common_black"
-                android:textColorHint="@color/gray_text_tip"
+                android:textColorHint="@color/white"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_15" />
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
@@ -101,13 +105,14 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_1"
             android:layout_centerHorizontal="true"
-            android:background="@color/line_gray" />
+            android:background="#EEEEEE" />
 
         <!--确认交易密码-->
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
-            android:layout_marginTop="@dimen/dp_5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5">
+
             <EditText
                 android:id="@+id/ed_confirm_deal_pwd"
                 android:layout_width="match_parent"
@@ -116,10 +121,10 @@
                 android:background="@null"
                 android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 android:hint="@string/confirm_deal_pwd"
-                android:maxLength="6"
                 android:inputType="textPassword"
+                android:maxLength="6"
                 android:singleLine="true"
-                android:textColor="@color/common_black"
+                android:textColor="@color/white"
                 android:textColorHint="@color/gray_text_tip"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_15" />
@@ -129,8 +134,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_1"
             android:layout_centerHorizontal="true"
-            android:background="@color/line_gray" />
-
+            android:background="#EEEEEE" />
 
 
         <TextView

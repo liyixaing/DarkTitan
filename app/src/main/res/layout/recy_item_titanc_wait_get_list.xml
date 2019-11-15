@@ -27,7 +27,7 @@
                 android:layout_gravity="left|center"
                 android:gravity="center_vertical"
                 android:text="@string/airdrop_release"
-                android:textColor="#182146"
+                android:textColor="#E1E1E1"
                 android:textSize="13sp" />
 
 
@@ -84,7 +84,7 @@
                         android:maxLength="24"
                         android:maxLines="1"
                         android:text="@string/titanc_get_qty"
-                        android:textColor="@color/gray"
+                        android:textColor="#C4C4C6"
                         android:textSize="9sp" />
 
 
@@ -95,6 +95,7 @@
                         android:layout_gravity="left|center"
                         android:layout_marginTop="@dimen/dp_5"
                         android:maxLength="24"
+                        android:textColor="#C4C4C6"
                         android:maxLines="1"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -115,7 +116,7 @@
                         android:maxLength="24"
                         android:maxLines="1"
                         android:text="@string/time"
-                        android:textColor="@color/gray"
+                        android:textColor="#C4C4C6"
                         android:textSize="9sp" />
 
                     <TextView
@@ -123,6 +124,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
+                        android:textColor="#C4C4C6"
                         android:layout_marginTop="@dimen/dp_5"
                         android:maxLength="24"
                         android:maxLines="1"

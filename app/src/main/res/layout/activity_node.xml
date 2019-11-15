@@ -2,39 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/darkhome"
     tools:context="lanjing.com.titan.activity.NodeActivity">
+
     <com.lxh.baselibray.view.TitleView
         android:id="@+id/title_lay"
         android:layout_width="match_parent"
         android:layout_height="@dimen/titil_view_height"
-        android:background="@color/default_white_bg"
-        app:ivLeftPic="@mipmap/icon_page_return"
-        app:titleTextColor="@color/common_black"
+        android:background="@color/darkhome"
+        app:ivLeftPic="@mipmap/icon_page_return_white"
+        app:titleTextColor="@color/white"
         app:tvTitleText="@string/node" />
 
     <LinearLayout
-        android:padding="@dimen/dp_20"
-        android:layout_margin="@dimen/dp_20"
-        android:orientation="vertical"
-        android:background="@drawable/shape_blue_bg"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:background="@drawable/shape_blue_bg"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_20">
+
         <TextView
-            android:textSize="@dimen/sp_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/node_tip"
             android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/sp_12" />
 
         <TextView
             android:id="@+id/tv_usd_node_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
             android:textColor="@color/white"
-            android:textSize="@dimen/sp_30"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/sp_30" />
     </LinearLayout>
 </LinearLayout>

@@ -10,13 +10,12 @@
         android:layout_marginLeft="@dimen/dp_20"
         android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
-        android:background="#F5F5F5"
+        android:background="#22305B"
         android:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f5f5f5"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -37,7 +36,7 @@
                         android:gravity="center_vertical"
                         android:paddingRight="@dimen/dp_5"
                         android:text="@string/dizhi_allin"
-                        android:textColor="@color/common_black"
+                        android:textColor="#E1E1E1"
                         android:textSize="@dimen/sp_13" />
 
                     <TextView
@@ -45,7 +44,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/dp_30"
                         android:gravity="center_vertical"
-                        android:textColor="@color/common_black"
+                        android:textColor="#E1E1E1"
                         android:textSize="@dimen/sp_13" />
                 </LinearLayout>
 
@@ -76,7 +75,7 @@
                     android:layout_marginLeft="20dp"
                     android:gravity="center_vertical"
                     android:text="@string/Label_allin"
-                    android:textColor="@color/common_black"
+                    android:textColor="#E1E1E1"
                     android:textSize="@dimen/sp_13" />
 
                 <TextView
@@ -85,7 +84,7 @@
                     android:layout_height="@dimen/dp_30"
                     android:layout_marginLeft="5dp"
                     android:gravity="center_vertical"
-                    android:textColor="@color/common_black"
+                    android:textColor="#E1E1E1"
                     android:textSize="@dimen/sp_13" />
             </LinearLayout>
 
@@ -101,7 +100,7 @@
                     android:layout_marginLeft="20dp"
                     android:gravity="center_vertical"
                     android:text="@string/beizhu_allin"
-                    android:textColor="@color/common_black"
+                    android:textColor="#E1E1E1"
                     android:textSize="@dimen/sp_13" />
 
                 <TextView
@@ -110,7 +109,7 @@
                     android:layout_height="@dimen/dp_30"
                     android:layout_marginLeft="5dp"
                     android:gravity="center_vertical"
-                    android:textColor="@color/common_black"
+                    android:textColor="#E1E1E1"
                     android:textSize="@dimen/sp_13" />
             </LinearLayout>
 

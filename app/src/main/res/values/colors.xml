@@ -13,7 +13,7 @@
     <color name="goods_info_gray">#ACACAC</color>
     <color name="gray_text_tip">#BEBEBE</color>
     <color name="default_bg">#3b5677</color>
-    <color name="bg_gray">#F5F5F5</color>
+    <color name="bg_gray">#EEEEEE</color><!--#F5F5F5-->
     <color name="line_gray2">#EEEEEE</color>
     <color name="yellow">#FF8416</color>
     <color name="yellow_buy">#FF8C00</color>

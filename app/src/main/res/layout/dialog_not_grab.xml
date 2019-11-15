@@ -10,20 +10,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:src="@mipmap/ic_titan_icon" />
+        android:src="@mipmap/ic_titan_icon"
+        android:visibility="invisible" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:src="@mipmap/icon_titan_one" />
+        android:src="@mipmap/icon_titan_one"
+        android:visibility="invisible" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:visibility="gone"
         android:text="@string/free_daily_allowance"
         android:textColor="@color/white"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/tv_number"
@@ -31,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="65dp"
         android:text="活动开始时间 12:00"
-        android:textColor="@color/blue" />
+        android:textColor="#E1E1E1" />
 
     <LinearLayout
         android:id="@+id/ll_qiang"

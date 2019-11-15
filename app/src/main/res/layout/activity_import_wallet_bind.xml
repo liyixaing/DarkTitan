@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkhome"
     android:orientation="vertical"
     tools:context="lanjing.com.titan.activity.ImportWalletBindActivity">
 
@@ -16,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="@string/bind_references"
-            android:textColor="@color/common_black"
+            android:textColor="@color/white"
             android:textSize="@dimen/sp_18" />
 
         <TextView
@@ -37,7 +38,7 @@
         android:layout_marginLeft="@dimen/dp_20"
         android:layout_marginTop="@dimen/dp_20"
         android:text="@string/references_id"
-        android:textColor="@color/blue"
+        android:textColor="#4E5E90"
         android:textSize="@dimen/sp_16" />
 
     <EditText
@@ -52,7 +53,7 @@
         android:inputType="number"
         android:maxLength="7"
         android:paddingLeft="@dimen/dp_10"
-        android:textColor="@color/common_black"
+        android:textColor="@color/white"
         android:textCursorDrawable="@drawable/cursor_style"
         android:textSize="@dimen/sp_16" />
 

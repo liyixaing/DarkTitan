@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkhome"
+    android:orientation="vertical"
     tools:context="lanjing.com.titan.activity.FeedbackListActivity">
 
     <com.lxh.baselibray.view.TitleView
@@ -12,9 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/titil_view_height"
         android:layout_marginBottom="@dimen/dp_10"
-        android:background="@color/default_white_bg"
-        app:ivLeftPic="@mipmap/icon_page_return"
-        app:titleTextColor="@color/common_black"
+        android:background="@color/darkhome"
+        app:ivLeftPic="@mipmap/icon_page_return_white"
+        app:titleTextColor="@color/white"
         app:tvTitleText="@string/feedback_list" />
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
@@ -44,6 +45,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/normal_data"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/sp_12" />
             </LinearLayout>
 

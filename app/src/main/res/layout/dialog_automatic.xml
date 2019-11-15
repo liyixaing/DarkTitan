@@ -10,11 +10,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:visibility="invisible"
         android:src="@mipmap/ic_titan_icon" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:visibility="invisible"
         android:src="@mipmap/icon_titan_one" />
 
     <TextView
@@ -23,14 +25,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="65dp"
         android:text="@string/geterCode"
-        android:textColor="@color/blue" />
+        android:textColor="#E1E1E1" />
 
     <TextView
         android:id="@+id/tv_jhcode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:textColor="#182146"
+        android:textColor="#8D9BC5"
         android:textSize="20sp" />
 
     <TextView
@@ -38,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="系统已自动激活您的账号"
-        android:textColor="@color/blue" />
+        android:textColor="#8D9BC5" />
 
 
 </LinearLayout>

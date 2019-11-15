@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkhome"
     tools:context="lanjing.com.titan.activity.TItancWaitGetActivity">
 
 
@@ -11,9 +12,9 @@
         android:id="@+id/title_lay"
         android:layout_width="match_parent"
         android:layout_height="@dimen/titil_view_height"
-        android:background="@color/default_white_bg"
-        app:ivLeftPic="@mipmap/icon_page_return"
-        app:titleTextColor="@color/common_black"
+        android:background="@color/darkhome"
+        app:ivLeftPic="@mipmap/icon_page_return_white"
+        app:titleTextColor="@color/white"
         app:tvTitleText="@string/titan_unclaimed" />
 
     <LinearLayout
@@ -59,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_15"
                 android:text="@string/billing_records"
-                android:textColor="#182146"
+                android:textColor="#E1E1E1"
                 android:textSize="@dimen/sp_15" />
 
             <LinearLayout
@@ -74,13 +75,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/all"
-                    android:textColor="@color/blue" />
+                    android:textColor="#E1E1E1" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
-                    android:src="@mipmap/icon_bottom" />
+                    android:src="@mipmap/icon_bottom"
+                    android:tint="#E1E1E1" />
             </LinearLayout>
         </LinearLayout>
 
@@ -111,6 +113,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/normal_data"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/sp_12" />
                 </LinearLayout>
 

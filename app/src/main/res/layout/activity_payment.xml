@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/darkhome"
     android:orientation="vertical">
 
     <ScrollView
@@ -19,14 +19,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@color/white">
+                android:background="@color/darkhome">
 
                 <ImageView
                     android:id="@+id/iv_backretun"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="17dp"
-                    android:src="@drawable/icon_back" />
+                    android:src="@mipmap/icon_page_return_white" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -34,7 +34,7 @@
                     android:layout_marginRight="50dp"
                     android:gravity="center"
                     android:text="@string/pay"
-                    android:textColor="@color/common_black"
+                    android:textColor="@color/white"
                     android:textSize="20sp" />
 
             </LinearLayout>
@@ -46,7 +46,7 @@
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="@dimen/dp_15"
-                android:background="#f5f5f5"
+                android:background="#22305B"
                 android:gravity="center" />
 
             <LinearLayout
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginRight="@dimen/dp_15"
-                android:background="#f5f5f5"
+                android:background="#22305B"
                 android:gravity="center">
 
                 <TextView
@@ -64,7 +64,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/dp_20"
                     android:text="@string/Payment_Address"
-                    android:textColor="@color/common_black"
+                    android:textColor="#4E5E90"
                     android:textSize="@dimen/sp_13" />
 
             </LinearLayout>
@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginRight="@dimen/dp_15"
-                android:background="#f5f5f5"
+                android:background="#22305B"
                 android:gravity="center">
 
                 <TextView
@@ -85,7 +85,8 @@
                     android:gravity="center_vertical"
                     android:hint="@string/input_the_payment_address"
                     android:paddingLeft="@dimen/dp_20"
-                    android:textColor="#A0A0A0"
+                    android:textColorHint="@color/white"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/sp_13" />
 
             </LinearLayout>
@@ -95,7 +96,7 @@
                 android:layout_height="10dp"
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginRight="@dimen/dp_15"
-                android:background="#f5f5f5"
+                android:background="#22305B"
                 android:gravity="center" />
             <!---->
 
@@ -106,7 +107,7 @@
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="@dimen/dp_15"
-                android:background="#f5f5f5"
+                android:background="#22305B"
                 android:gravity="center" />
 
             <LinearLayout
@@ -114,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginRight="@dimen/dp_15"
-                android:background="#f5f5f5"
+                android:background="#22305B"
                 android:gravity="center">
 
                 <TextView
@@ -124,7 +125,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/dp_20"
                     android:text="@string/address_label"
-                    android:textColor="@color/common_black"
+                    android:textColor="#4E5E90"
                     android:textSize="@dimen/sp_13" />
 
             </LinearLayout>
@@ -134,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginRight="@dimen/dp_15"
-                android:background="#f5f5f5"
+                android:background="#22305B"
                 android:gravity="center">
 
                 <TextView
@@ -144,8 +145,9 @@
                     android:drawablePadding="@dimen/dp_10"
                     android:gravity="center_vertical"
                     android:hint="@string/please_Label"
+                    android:textColorHint="@color/white"
                     android:paddingLeft="@dimen/dp_20"
-                    android:textColor="#A0A0A0"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/sp_13" />
 
             </LinearLayout>
@@ -155,7 +157,7 @@
                 android:layout_height="10dp"
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginRight="@dimen/dp_15"
-                android:background="#f5f5f5"
+                android:background="#22305B"
                 android:gravity="center" />
             <!---->
 
@@ -165,19 +167,19 @@
                 android:layout_height="10dp"
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginTop="10dp"
-                android:visibility="gone"
                 android:layout_marginRight="@dimen/dp_15"
                 android:background="#f5f5f5"
-                android:gravity="center" />
+                android:gravity="center"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_15"
-                android:visibility="gone"
                 android:layout_marginRight="@dimen/dp_15"
                 android:background="#f5f5f5"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -195,10 +197,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_15"
-                android:visibility="gone"
                 android:layout_marginRight="@dimen/dp_15"
                 android:background="#f5f5f5"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/tv_remarks"
@@ -218,9 +220,9 @@
                 android:layout_height="10dp"
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginRight="@dimen/dp_15"
-                android:visibility="gone"
                 android:background="#f5f5f5"
-                android:gravity="center" />
+                android:gravity="center"
+                android:visibility="gone" />
             <!---->
 
             <LinearLayout
@@ -229,7 +231,7 @@
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginTop="@dimen/dp_10"
                 android:layout_marginRight="@dimen/dp_15"
-                android:background="#f5f5f5">
+                android:background="#22305B">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -238,7 +240,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/dp_20"
                     android:text="@string/pay"
-                    android:textColor="@color/common_black"
+                    android:textColor="#4E5E90"
                     android:textSize="@dimen/sp_13" />
 
                 <LinearLayout
@@ -253,18 +255,15 @@
                         android:layout_marginLeft="@dimen/dp_20"
                         android:orientation="horizontal">
 
-
-                        <!--android:background="@drawable/btn_radius_gray_rb"
-                            android:button="@null"
-                             android:textColor="@drawable/selector_text_rb"-->
                         <RadioButton
                             android:id="@+id/rb_one"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/dp_5"
                             android:layout_marginRight="@dimen/dp_5"
-                            android:buttonTint="@color/blue"
+                            android:buttonTint="#8D9BC5"
                             android:checked="true"
+                            android:textColor="#8D9BC5"
                             android:gravity="center"
                             android:padding="@dimen/dp_4"
                             android:text="CNY"
@@ -276,10 +275,11 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/dp_5"
                             android:layout_marginRight="@dimen/dp_5"
-                            android:buttonTint="@color/blue"
+                            android:buttonTint="#8D9BC5"
                             android:gravity="center"
                             android:padding="@dimen/dp_4"
                             android:text="USD"
+                            android:textColor="#8D9BC5"
                             android:textSize="@dimen/sp_14" />
                     </RadioGroup>
 
@@ -303,7 +303,7 @@
                 android:layout_height="@dimen/dp_40"
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginRight="@dimen/dp_15"
-                android:background="#f5f5f5"
+                android:background="#22305B"
                 android:focusable="true"
                 android:focusableInTouchMode="true">
 
@@ -318,6 +318,8 @@
                     android:digits="0123456789"
                     android:hint="@string/payment_amoun"
                     android:inputType="phone"
+                    android:textColorHint="@color/white"
+                    android:textColor="@color/white"
                     android:padding="10dp"
                     android:textSize="@dimen/sp_13" />
 
@@ -328,12 +330,12 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="15dp"
                     android:layout_weight="1"
-                    android:visibility="gone"
                     android:gravity="right"
                     android:text="≈0TITAN"
                     android:textColor="@color/common_black"
                     android:textSize="@dimen/font_17sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone" />
             </LinearLayout>
 
             <LinearLayout
@@ -341,7 +343,7 @@
                 android:layout_height="2dp"
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginRight="@dimen/dp_15"
-                android:background="#f5f5f5">
+                android:background="#22305B">
 
                 <View
                     android:layout_width="match_parent"
@@ -356,7 +358,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginRight="@dimen/dp_15"
-                android:background="#f5f5f5">
+                android:background="#22305B">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -365,20 +367,20 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/dp_20"
                     android:text="@string/pls_four"
-                    android:textColor="#A0A0A0"
+                    android:textColor="#8D9BC5"
                     android:textSize="@dimen/sp_13" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3"
-                    android:textColor="#349AFB" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" TITAN"
-                    android:textColor="#A0A0A0"
+                    android:textColor="#8D9BC5"
                     android:textSize="@dimen/sp_13" />
 
             </LinearLayout>
@@ -388,7 +390,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginRight="@dimen/dp_15"
-                android:background="#f5f5f5">
+                android:background="#22305B">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -397,7 +399,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/dp_20"
                     android:text="@string/available_balance"
-                    android:textColor="#A0A0A0"
+                    android:textColor="#8D9BC5"
                     android:textSize="@dimen/sp_13" />
 
                 <TextView
@@ -412,9 +414,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:visibility="gone"
                     android:gravity="right"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <TextView
                         android:id="@+id/tc_extract_all"
@@ -438,7 +440,7 @@
                 android:layout_height="5dp"
                 android:layout_marginLeft="@dimen/dp_15"
                 android:layout_marginRight="@dimen/dp_15"
-                android:background="#f5f5f5"
+                android:background="#22305B"
                 android:gravity="center" />
 
             <TextView
@@ -446,6 +448,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="25dp"
+                android:textColor="@color/white"
                 android:layout_marginRight="30dp"
                 android:text="@string/werm_tip"
                 android:textSize="@dimen/font_12sp" />

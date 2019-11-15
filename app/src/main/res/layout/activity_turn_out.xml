@@ -3,15 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkhome"
     android:orientation="vertical">
 
     <com.lxh.baselibray.view.TitleView
         android:id="@+id/title_lay"
         android:layout_width="match_parent"
         android:layout_height="@dimen/titil_view_height"
-        android:background="@color/default_white_bg"
-        app:ivLeftPic="@mipmap/icon_page_return"
-        app:titleTextColor="@color/common_black"
+        android:background="@color/darkhome"
+        app:ivLeftPic="@mipmap/icon_page_return_white"
+        app:titleTextColor="@color/white"
         app:tvTitleText="@string/Turn_outtitianc" />
 
     <LinearLayout
@@ -20,20 +21,22 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:background="#F5F5F5"
+        android:background="#22305B"
         android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/titanc_num" />
+            android:text="@string/titanc_num"
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/tv_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1000" />
+            android:text="1000"
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <LinearLayout
@@ -42,7 +45,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
-        android:background="#f5f5f5"
+        android:background="#22305B"
         android:orientation="vertical">
 
         <TextView
@@ -51,7 +54,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="@dimen/dp_15"
             android:text="@string/Recipient_ID"
-            android:textColor="@color/common_black"
+            android:textColor="#4E5E90"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -70,7 +73,9 @@
                 android:background="@null"
                 android:digits="0123456789"
                 android:hint="@string/Please_input"
-                android:inputType="phone" />
+                android:inputType="phone"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
 
             <TextView
                 android:id="@+id/tv_all"
@@ -101,7 +106,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
-        android:background="#f5f5f5"
+        android:background="#22305B"
         android:orientation="vertical">
 
         <TextView
@@ -110,7 +115,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="@dimen/dp_15"
             android:text="@string/Transfer_amount"
-            android:textColor="@color/common_black"
+            android:textColor="#4E5E90"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -127,10 +132,12 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_weight="1"
-                android:hint="@string/Transfer_amount100"
                 android:background="@null"
                 android:digits="0123456789"
-                android:inputType="phone" />
+                android:hint="@string/Transfer_amount100"
+                android:inputType="phone"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
 
             <TextView
                 android:id="@+id/tv_allsun"

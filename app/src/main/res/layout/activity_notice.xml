@@ -5,15 +5,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkhome"
     tools:context="lanjing.com.titan.activity.NoticeActivity">
 
     <com.lxh.baselibray.view.TitleView
         android:id="@+id/tv_titleView"
         android:layout_width="match_parent"
         android:layout_height="@dimen/titil_view_height"
-        android:background="@color/default_white_bg"
-        app:ivLeftPic="@mipmap/icon_page_return"
-        app:titleTextColor="@color/common_black" />
+        android:background="@color/darkhome"
+        app:ivLeftPic="@mipmap/icon_page_return_white"
+        app:titleTextColor="@color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,6 +46,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:text="@string/normal_data"
                         android:textSize="@dimen/sp_12" />
                 </LinearLayout>

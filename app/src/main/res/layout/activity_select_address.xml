@@ -3,27 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkhome"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/white">
+        android:background="@color/darkhome">
 
         <ImageView
             android:id="@+id/iv_backretun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/icon_back"
-            android:padding="17dp"/>
+            android:padding="17dp"
+            android:src="@mipmap/icon_page_return_white" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:layout_marginRight="50dp"
-            android:textColor="@color/common_black"
-            android:textSize="20sp"
-            android:text="@string/the_address"/>
+            android:gravity="center"
+            android:text="@string/the_address"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -54,6 +56,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/normal_data"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/sp_12" />
             </LinearLayout>
 

@@ -14,7 +14,7 @@
         android:layout_marginTop="@dimen/dp_10"
         android:layout_gravity="center_horizontal"
         android:padding="@dimen/dp_5"
-
+        android:textColor="#C4C4C6"
         android:background="@drawable/shape_gray_bg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -34,7 +34,7 @@
             android:layout_toLeftOf="@+id/icon_open"
             android:layout_marginTop="@dimen/dp_5"
 
-            android:textColor="#ff7b7b7b"
+            android:textColor="#E1E1E1"
             android:textSize="15sp" />
 
         <TextView
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_5"
             android:text="泰坦计划运营团队"
-            android:textColor="#ff7b7b7b"
+            android:textColor="#E1E1E1"
             android:textSize="15sp"
             />
     </LinearLayout>

@@ -10,6 +10,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         android:layout_marginTop="30dp"
         android:src="@mipmap/ic_titan_icon" />
 
@@ -17,6 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:visibility="invisible"
         android:src="@mipmap/icon_titan_one" />
 
     <TextView
@@ -25,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="65dp"
         android:text="@string/add_code"
-        android:textColor="@color/blue" />
+        android:textColor="@color/white" />
 
     <LinearLayout
         android:layout_width="wrap_content"

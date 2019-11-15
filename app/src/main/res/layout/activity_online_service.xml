@@ -4,50 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkhome"
     tools:context="lanjing.com.titan.activity.OnlineServiceActivity">
+
     <com.lxh.baselibray.view.TitleView
         android:id="@+id/title_lay"
         android:layout_width="match_parent"
         android:layout_height="@dimen/titil_view_height"
-        android:background="@color/default_white_bg"
-        app:ivLeftPic="@mipmap/icon_page_return"
-        app:titleTextColor="@color/common_black"
+        android:background="@color/darkhome"
+        app:ivLeftPic="@mipmap/icon_page_return_white"
+        app:titleTextColor="@color/white"
         app:tvTitleText="@string/online_customer_service" />
+
     <ScrollView
-        android:background="@color/bg_gray"
-        android:layout_below="@+id/title_lay"
-        android:layout_above="@+id/bottom_input"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_input"
+        android:layout_below="@+id/title_lay"
+        android:background="@color/darkhome">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
         </LinearLayout>
     </ScrollView>
+
     <LinearLayout
-        android:gravity="center_vertical"
-        android:layout_alignParentBottom="true"
         android:id="@+id/bottom_input"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#4E5E90"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
         <EditText
-            android:cursorVisible="false"
-            android:textCursorDrawable="@drawable/cursor_style"
-            android:layout_marginLeft="@dimen/dp_20"
             android:id="@+id/ed_input_question"
             android:layout_width="0dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginLeft="@dimen/dp_20"
             android:layout_weight="1"
             android:background="@drawable/shape_gray_bg"
-            android:layout_height="@dimen/dp_30" />
+            android:cursorVisible="false"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@drawable/cursor_style" />
+
         <TextView
             android:id="@+id/send"
-            android:layout_margin="@dimen/dp_20"
-            android:textSize="@dimen/sp_17"
-            android:textColor="@color/blue"
-            android:text="@string/send"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:text="@string/send"
+            android:textColor="#8D9BC5"
+            android:textSize="@dimen/sp_17" />
     </LinearLayout>
 </RelativeLayout>

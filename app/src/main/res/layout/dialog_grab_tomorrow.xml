@@ -11,27 +11,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:visibility="invisible"
         android:src="@mipmap/ic_titan_icon" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:visibility="invisible"
         android:src="@mipmap/icon_titan_one" />
 
     <TextView
         android:id="@+id/tv_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="50dp"
         android:text="asdasda"
-        android:textColor="@color/blue" />
+        android:textColor="#E1E1E1" />
 
     <LinearLayout
         android:id="@+id/ll_qiang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:background="@mipmap/ic_lan_go"
         android:gravity="center">
 

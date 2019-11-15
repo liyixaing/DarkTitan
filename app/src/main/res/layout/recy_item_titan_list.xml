@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left|center"
             android:gravity="center_vertical"
-            android:textColor="#182146"
+            android:textColor="#E1E1E1"
             android:textSize="13sp" />
 
 
@@ -44,8 +44,9 @@
                     android:maxLength="24"
                     android:maxLines="1"
                     android:text="@string/qty"
-                    android:textColor="@color/gray"
+                    android:textColor="#C4C4C6"
                     android:textSize="9sp" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -55,8 +56,9 @@
                     android:maxLength="24"
                     android:maxLines="1"
                     android:text="@string/status"
-                    android:textColor="@color/gray"
+                    android:textColor="#C4C4C6"
                     android:textSize="9sp" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -66,7 +68,7 @@
                     android:maxLength="24"
                     android:maxLines="1"
                     android:text="@string/time"
-                    android:textColor="@color/gray"
+                    android:textColor="#C4C4C6"
                     android:textSize="9sp" />
             </LinearLayout>
 
@@ -83,8 +85,9 @@
                     android:layout_weight="1"
                     android:maxLength="24"
                     android:maxLines="1"
-
+                    android:textColor="#C4C4C6"
                     android:textSize="12sp" />
+
                 <TextView
                     android:id="@+id/tv_titan_state"
                     android:layout_width="0dp"
@@ -93,13 +96,16 @@
                     android:layout_weight="1"
                     android:maxLength="24"
                     android:maxLines="1"
+                    android:textColor="#C4C4C6"
                     android:textSize="12sp" />
+
                 <TextView
                     android:id="@+id/tv_titan_time"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
+                    android:textColor="#C4C4C6"
                     android:textSize="12sp" />
             </LinearLayout>
 

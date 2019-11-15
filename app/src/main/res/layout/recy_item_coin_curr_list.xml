@@ -38,7 +38,7 @@
                     android:layout_marginLeft="@dimen/dp_5"
                     android:gravity="center_vertical"
                     android:text="@string/buy"
-                    android:textColor="@color/common_black"
+                    android:textColor="#E1E1E1"
                     android:textSize="13sp" />
             </LinearLayout>
 
@@ -48,7 +48,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:textSize="@dimen/dp_9"></TextView>
+                android:textColor="#E1E1E1"
+                android:textSize="@dimen/dp_9" />
         </LinearLayout>
 
         <LinearLayout
@@ -71,7 +72,7 @@
                     android:maxLength="24"
                     android:maxLines="1"
                     android:text="@string/qty_cost"
-                    android:textColor="@color/gray"
+                    android:textColor="#C4C4C6"
                     android:textSize="9sp" />
 
                 <TextView
@@ -82,7 +83,7 @@
                     android:layout_marginTop="@dimen/dp_5"
                     android:maxLength="24"
                     android:maxLines="1"
-                    android:textColor="@color/common_black"
+                    android:textColor="#C4C4C6"
                     android:textSize="10sp" />
             </LinearLayout>
 
@@ -106,7 +107,7 @@
                         android:maxLength="24"
                         android:maxLines="1"
                         android:text="@string/qty_acquire"
-                        android:textColor="@color/gray"
+                        android:textColor="#C4C4C6"
                         android:textSize="9sp" />
                 </LinearLayout>
 
@@ -119,7 +120,7 @@
                     android:gravity="center"
                     android:maxLength="24"
                     android:maxLines="1"
-                    android:textColor="@color/common_black"
+                    android:textColor="#C4C4C6"
                     android:textSize="10sp" />
             </LinearLayout>
 
@@ -139,7 +140,7 @@
                     android:maxLength="24"
                     android:maxLines="1"
                     android:text="@string/service_fee"
-                    android:textColor="@color/gray"
+                    android:textColor="#C4C4C6"
                     android:textSize="9sp" />
 
                 <TextView
@@ -150,8 +151,7 @@
                     android:layout_marginTop="@dimen/dp_5"
                     android:maxLength="24"
                     android:maxLines="1"
-
-                    android:textColor="@color/common_black"
+                    android:textColor="#C4C4C6"
                     android:textSize="10sp" />
             </LinearLayout>
 

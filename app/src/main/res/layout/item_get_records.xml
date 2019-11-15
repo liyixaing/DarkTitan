@@ -33,7 +33,7 @@
                         android:maxLength="24"
                         android:maxLines="1"
                         android:text="TITAN"
-                        android:textColor="@color/common_black"
+                        android:textColor="#E1E1E1"
                         android:textSize="13sp" />
 
                 </LinearLayout>
@@ -47,7 +47,7 @@
                     android:maxLength="24"
                     android:maxLines="1"
                     android:text="asdasd"
-                    android:textColor="@color/common_black"
+                    android:textColor="#E1E1E1"
                     android:textSize="11sp" />
             </LinearLayout>
 

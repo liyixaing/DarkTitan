@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkhome"
     android:orientation="vertical"
     tools:context="lanjing.com.titan.activity.WalletManagerActivity">
 
     <com.lxh.baselibray.view.TitleView
         android:layout_width="match_parent"
         android:layout_height="@dimen/titil_view_height"
-        android:background="@color/default_white_bg"
-        app:ivLeftPic="@mipmap/icon_page_return"
-        app:titleTextColor="@color/common_black"
+        android:background="@color/darkhome"
+        app:ivLeftPic="@mipmap/icon_page_return_white"
+        app:titleTextColor="@color/white"
         app:tvTitleText="@string/wallet_management" />
 
     <LinearLayout
@@ -24,6 +25,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#22305B"
             android:orientation="vertical"
             android:padding="@dimen/dp_10">
 
@@ -31,20 +33,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/wallet_address"
-                android:textColor="@color/blue" />
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/tv_wallet_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_20"
-            />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
+            android:background="#22305B"
             android:orientation="vertical"
             android:padding="@dimen/dp_10">
 
@@ -52,14 +55,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/address_label"
-                android:textColor="@color/blue" />
+                android:textColor="#4E5E90" />
 
             <TextView
                 android:id="@+id/tv_address_tip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_20"
-                />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <TextView

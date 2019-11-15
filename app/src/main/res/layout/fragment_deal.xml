@@ -152,9 +152,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="#4E5E90"
                             android:padding="@dimen/dp_5"
-                            android:text="@string/present_price" />
+                            android:text="@string/present_price"
+                            android:textColor="#4E5E90" />
 
                         <TextView
                             android:id="@+id/tv_price"
@@ -178,9 +178,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="#4E5E90"
                             android:padding="@dimen/dp_5"
-                            android:text="@string/qty" />
+                            android:text="@string/qty"
+                            android:textColor="#4E5E90" />
 
                         <EditText
                             android:id="@+id/ed_number"
@@ -247,17 +247,17 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="#E1E1E1"
-                            android:text="@string/available" />
+                            android:text="@string/available"
+                            android:textColor="#E1E1E1" />
 
                         <TextView
                             android:id="@+id/tv_num"
                             android:layout_width="0dp"
-                            android:textColor="#E1E1E1"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="right"
-                            android:text="0.00" />
+                            android:text="0.00"
+                            android:textColor="#E1E1E1" />
 
 
                         <TextView
@@ -265,8 +265,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/dp_5"
-                            android:textColor="#E1E1E1"
-                            android:text="TITAN" />
+                            android:text="TITAN"
+                            android:textColor="#E1E1E1" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -278,17 +278,17 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="#E1E1E1"
-                            android:text="@string/exchange_volume" />
+                            android:text="@string/exchange_volume"
+                            android:textColor="#E1E1E1" />
 
                         <TextView
                             android:id="@+id/tv_deal_num"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:textColor="#E1E1E1"
                             android:gravity="right"
-                            android:text="0" />
+                            android:text="0"
+                            android:textColor="#E1E1E1" />
 
 
                         <TextView
@@ -296,8 +296,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/dp_5"
-                            android:textColor="#E1E1E1"
-                            android:text="USD" />
+                            android:text="USD"
+                            android:textColor="#E1E1E1" />
                     </LinearLayout>
 
 
@@ -310,9 +310,9 @@
                         <TextView
                             android:id="@+id/tv_credittext"
                             android:layout_width="wrap_content"
-                            android:textColor="@color/white"
                             android:layout_height="wrap_content"
-                            android:text="" />
+                            android:text=""
+                            android:textColor="@color/white" />
 
 
                     </LinearLayout>

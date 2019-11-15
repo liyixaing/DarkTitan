@@ -19,7 +19,7 @@
             android:foreground="@drawable/bg_white"
             android:gravity="center"
             android:text="@string/simplified_chinese"
-            android:textColor="#ff0a0a0a"
+            android:textColor="@color/white"
             android:textSize="@dimen/sp_15" />
     </LinearLayout>
 
@@ -40,7 +40,7 @@
             android:foreground="@drawable/bg_white"
             android:gravity="center"
             android:text="@string/english"
-            android:textColor="#ff0a0a0a"
+            android:textColor="@color/white"
             android:textSize="@dimen/sp_15" />
     </LinearLayout>
 

@@ -134,7 +134,7 @@
                     android:maxLength="24"
                     android:maxLines="1"
 
-                    android:textColor="#182146"
+                    android:textColor="@color/white"
                     android:textSize="15sp" />
 
                 <TextView
@@ -146,7 +146,7 @@
                     android:maxLength="24"
                     android:maxLines="1"
 
-                    android:textColor="#182146"
+                    android:textColor="@color/white"
                     android:textSize="15sp" />
 
                 <TextView
@@ -155,7 +155,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:textColor="#182146"
+                    android:textColor="@color/white"
                     android:textSize="15sp" />
             </LinearLayout>
         </LinearLayout>

@@ -35,7 +35,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left|center"
-                        android:textColor="@color/common_black"
+                        android:textColor="@color/white"
                         android:textSize="13sp" />
                 </LinearLayout>
 
@@ -47,7 +47,7 @@
                     android:layout_marginTop="@dimen/dp_5"
                     android:maxLength="24"
                     android:maxLines="1"
-                    android:textColor="@color/common_black"
+                    android:textColor="@color/white"
                     android:textSize="11sp" />
             </LinearLayout>
 

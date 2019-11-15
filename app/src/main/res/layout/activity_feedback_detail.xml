@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkhome"
     android:orientation="vertical"
     tools:context="lanjing.com.titan.activity.FeedbackDetailActivity">
 
@@ -13,9 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/titil_view_height"
         android:layout_marginBottom="@dimen/dp_10"
-        android:background="@color/default_white_bg"
-        app:ivLeftPic="@mipmap/icon_page_return"
-        app:titleTextColor="@color/common_black"
+        android:background="@color/darkhome"
+        app:ivLeftPic="@mipmap/icon_page_return_white"
+        app:titleTextColor="@color/white"
         app:tvTitleText="@string/feedback_details" />
 
     <ScrollView
@@ -40,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_10"
                     android:text="@string/advice_title"
-                    android:textColor="@color/blue" />
+                    android:textColor="#4E5E90" />
 
                 <TextView
                     android:id="@+id/tv_titles"
@@ -48,7 +49,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_10"
                     android:padding="@dimen/dp_10"
-                    android:textColor="@color/common_black"
+                    android:background="#22305B"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/sp_15" />
 
                 <TextView
@@ -56,15 +58,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_10"
                     android:text="@string/advice_content"
-                    android:textColor="@color/blue" />
+                    android:textColor="#4E5E90" />
 
                 <TextView
                     android:id="@+id/tv_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:background="#22305B"
                     android:padding="@dimen/dp_10"
-                    android:textColor="@color/common_black"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/sp_15" />
 
                 <TextView
@@ -72,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_10"
                     android:text="@string/answer"
-                    android:textColor="@color/blue" />
+                    android:textColor="#4E5E90" />
 
                 <TextView
                     android:id="@+id/tv_answer"
@@ -81,7 +84,7 @@
                     android:layout_marginTop="@dimen/dp_10"
                     android:background="@drawable/shape_gray_bg"
                     android:padding="@dimen/dp_10"
-                    android:textColor="@color/common_black"
+                    android:textColor="@color/white"
                     android:textCursorDrawable="@drawable/cursor_style"
                     android:textSize="@dimen/sp_15" />
             </LinearLayout>

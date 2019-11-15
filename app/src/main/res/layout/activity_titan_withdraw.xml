@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkhome"
     android:orientation="vertical"
     tools:context="lanjing.com.titan.activity.TItanWithdrawActivity">
 
@@ -11,9 +12,9 @@
         android:id="@+id/title_lay"
         android:layout_width="match_parent"
         android:layout_height="@dimen/titil_view_height"
-        android:background="@color/default_white_bg"
-        app:ivLeftPic="@mipmap/icon_page_return"
-        app:titleTextColor="@color/common_black"
+        android:background="@color/darkhome"
+        app:ivLeftPic="@mipmap/icon_page_return_white"
+        app:titleTextColor="@color/white"
         app:tvTitleText="@string/titan_withdraw" />
 
     <LinearLayout
@@ -33,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/pls_one"
-                android:textColor="@color/blue" />
+                android:textColor="#4E5E90" />
 
             <EditText
                 android:id="@+id/ed_tibi_address"
@@ -46,7 +47,7 @@
                 android:inputType="textVisiblePassword"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/dp_10"
-                android:textColor="@color/common_black"
+                android:textColor="@color/white"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_16" />
 
@@ -64,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/pls_two"
-                android:textColor="@color/blue" />
+                android:textColor="#4E5E90" />
 
             <EditText
                 android:id="@+id/ed_address_id"
@@ -76,7 +77,7 @@
                 android:gravity="center_vertical"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/dp_10"
-                android:textColor="@color/common_black"
+                android:textColor="@color/white"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_16" />
         </LinearLayout>
@@ -93,7 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/pls_three"
-                android:textColor="@color/blue" />
+                android:textColor="#4E5E90" />
 
             <EditText
                 android:id="@+id/ed_num"
@@ -107,7 +108,8 @@
                 android:inputType="numberDecimal"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/dp_10"
-                android:textColor="@color/common_black"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_16" />
         </LinearLayout>
@@ -121,7 +123,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/pls_four"
-                android:textColor="@color/blue" />
+                android:textColor="#4E5E90" />
 
             <TextView
                 android:id="@+id/tv_service_fee"
@@ -129,7 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_5"
                 android:text="3 TITAN"
-                android:textColor="@color/blue" />
+                android:textColor="#4E5E90" />
         </LinearLayout>
 
         <TextView
@@ -138,12 +140,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="可用余额:"
-            android:textColor="@color/blue" />
+            android:textColor="@color/white" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_20"
+            android:textColor="@color/white"
             android:lineSpacingExtra="@dimen/dp_10"
             android:text="@string/werm_tip"
             android:textSize="@dimen/sp_11" />

@@ -14,7 +14,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/all"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
     <TextView
@@ -25,7 +25,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/top_up_c"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
     <TextView
@@ -36,7 +36,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/turn_out"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
     <TextView
         android:id="@+id/tv_top_set"
@@ -46,7 +46,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/turn_put"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
     <TextView
@@ -57,7 +57,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/flash_exchange"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
     <TextView
@@ -67,7 +67,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/unfrozen"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
 
@@ -79,7 +79,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/of_mineral"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
     <TextView
@@ -90,7 +90,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/ore_pool"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
     <TextView
@@ -100,7 +100,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/buy"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15"
         android:visibility="gone" />
 

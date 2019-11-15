@@ -14,7 +14,7 @@
         android:layout_marginTop="@dimen/dp_20"
         android:gravity="center"
         android:text="@string/updent_activion"
-        android:textColor="@color/blue"
+        android:textColor="#E1E1E1"
         android:textSize="@dimen/sp_16" />
 
     <LinearLayout
@@ -56,7 +56,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_1"
+        android:layout_height="0.1dp"
         android:layout_marginTop="@dimen/dp_20"
         android:background="#EEEEEE" />
 
@@ -72,8 +72,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/btn_cancel_bg"
+            android:background="@drawable/btn_sure_bg"
             android:foreground="@drawable/bg_white"
+            android:textColor="@color/white"
             android:gravity="center"
             android:text="@string/cancel" />
 

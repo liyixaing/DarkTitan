@@ -44,7 +44,7 @@
                         android:maxLength="24"
                         android:maxLines="1"
                         android:text="TITAN"
-                        android:textColor="@color/common_black"
+                        android:textColor="#E1E1E1"
                         android:textSize="13sp" />
 
                     <TextView
@@ -54,7 +54,7 @@
                         android:layout_gravity="left|center"
                         android:layout_marginLeft="@dimen/dp_5"
                         android:text="@string/withdraw_service_fee"
-                        android:textColor="@color/common_black"
+                        android:textColor="#E1E1E1"
                         android:textSize="13sp" />
                 </LinearLayout>
 
@@ -66,7 +66,7 @@
                     android:layout_marginTop="@dimen/dp_5"
                     android:maxLength="24"
                     android:maxLines="1"
-                    android:textColor="@color/common_black"
+                    android:textColor="#7D7F94"
                     android:textSize="11sp" />
             </LinearLayout>
 
@@ -85,7 +85,7 @@
                         android:id="@+id/tv_add"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/common_black"
+                        android:textColor="#E1E1E1"
                         android:textSize="@dimen/sp_13" />
 
                     <TextView
@@ -93,7 +93,7 @@
                         android:layout_width="wrap_content"
 
                         android:layout_height="wrap_content"
-                        android:textColor="@color/common_black"
+                        android:textColor="#E1E1E1"
                         android:textSize="@dimen/sp_13" />
 
                     <TextView
@@ -101,7 +101,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=" TITAN"
-                        android:textColor="@color/common_black"
+                        android:textColor="#E1E1E1"
                         android:textSize="@dimen/sp_13" />
                 </LinearLayout>
             </LinearLayout>

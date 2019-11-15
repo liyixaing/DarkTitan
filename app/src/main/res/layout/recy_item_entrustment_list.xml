@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/buy"
-                android:textColor="#F2635B"
+                android:textColor="#E1E1E1"
                 android:textSize="16sp" />
 
             <LinearLayout
@@ -34,27 +34,27 @@
                 android:gravity="right">
 
                 <TextView
-                    android:visibility="gone"
                     android:id="@+id/tv_type_recall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_green_bg"
-                    android:paddingBottom="@dimen/dp_2"
                     android:paddingLeft="@dimen/dp_20"
-                    android:paddingRight="@dimen/dp_20"
                     android:paddingTop="@dimen/dp_2"
+                    android:paddingRight="@dimen/dp_20"
+                    android:paddingBottom="@dimen/dp_2"
                     android:text="@string/repeal"
                     android:textColor="@color/white"
-                    android:textSize="11sp" />
+                    android:textSize="11sp"
+                    android:visibility="gone" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_blue_bg"
-                    android:paddingBottom="@dimen/dp_2"
                     android:paddingLeft="@dimen/dp_20"
-                    android:paddingRight="@dimen/dp_20"
                     android:paddingTop="@dimen/dp_2"
+                    android:paddingRight="@dimen/dp_20"
+                    android:paddingBottom="@dimen/dp_2"
                     android:text="@string/underway"
                     android:textColor="@color/white"
                     android:textSize="11sp" />
@@ -80,8 +80,9 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -91,6 +92,7 @@
                         android:text=""
                         android:textColor="@color/gray"
                         android:textSize="9sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -108,8 +110,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left|center"
                     android:layout_weight="1"
-                    android:maxEms="16"
                     android:gravity="center"
+                    android:maxEms="16"
                     android:maxLength="24"
                     android:maxLines="1"
                     android:text="@string/Qty"
@@ -142,7 +144,7 @@
                     android:layout_gravity="left|center"
                     android:layout_weight="1"
 
-                    android:textColor="#182146"
+                    android:textColor="@color/white"
                     android:textSize="15sp" />
 
                 <TextView
@@ -151,10 +153,10 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left|center"
                     android:layout_weight="1"
+                    android:gravity="center"
                     android:maxLength="24"
                     android:maxLines="1"
-                    android:gravity="center"
-                    android:textColor="#182146"
+                    android:textColor="@color/white"
                     android:textSize="15sp" />
 
                 <TextView
@@ -164,7 +166,7 @@
                     android:layout_weight="1"
                     android:gravity="right"
 
-                    android:textColor="#182146"
+                    android:textColor="@color/white"
                     android:textSize="15sp" />
             </LinearLayout>
         </LinearLayout>

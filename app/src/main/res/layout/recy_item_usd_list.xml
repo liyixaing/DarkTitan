@@ -22,7 +22,7 @@
             android:layout_gravity="left|center"
             android:gravity="center_vertical"
             android:text="@string/buy"
-            android:textColor="#182146"
+            android:textColor="#E1E1E1"
             android:textSize="13sp" />
 
 
@@ -45,7 +45,7 @@
                     android:maxLength="24"
                     android:maxLines="1"
                     android:text="@string/qty"
-                    android:textColor="@color/gray"
+                    android:textColor="#C4C4C6"
                     android:textSize="9sp" />
 
                 <TextView
@@ -57,7 +57,7 @@
                     android:maxLength="24"
                     android:maxLines="1"
                     android:text="@string/status"
-                    android:textColor="@color/gray"
+                    android:textColor="#C4C4C6"
                     android:textSize="9sp" />
 
                 <TextView
@@ -70,7 +70,7 @@
                     android:maxLength="24"
                     android:maxLines="1"
                     android:text="@string/time"
-                    android:textColor="@color/gray"
+                    android:textColor="#C4C4C6"
                     android:textSize="9sp" />
             </LinearLayout>
 
@@ -86,6 +86,7 @@
                     android:layout_gravity="left|center"
                     android:layout_weight="1"
                     android:maxLength="24"
+                    android:textColor="#C4C4C6"
                     android:maxLines="1"
                     android:textSize="12sp" />
 
@@ -96,6 +97,7 @@
                     android:layout_gravity="left|center"
                     android:layout_weight="1"
                     android:maxLength="24"
+                    android:textColor="#C4C4C6"
                     android:maxLines="1"
                     android:textSize="12sp" />
 
@@ -104,6 +106,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#C4C4C6"
                     android:gravity="right"
                     android:textSize="12sp" />
             </LinearLayout>

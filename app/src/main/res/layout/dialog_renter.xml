@@ -15,7 +15,7 @@
         android:layout_marginRight="@dimen/dp_24"
         android:gravity="center"
         android:text="@string/tips"
-        android:textColor="@color/common_black"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_18" />
 
     <TextView
@@ -25,7 +25,7 @@
         android:layout_marginRight="@dimen/dp_24"
         android:gravity="center"
         android:text="@string/sure_delete"
-        android:textColor="@color/common_black"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_16" />
 
 
@@ -47,10 +47,11 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/btn_cancel_bg"
+            android:background="@drawable/btn_sure_bg"
             android:foreground="@drawable/bg_white"
             android:gravity="center"
-            android:text="@string/cancel" />
+            android:text="@string/cancel"
+            android:textColor="@color/white" />
 
         <View
             android:layout_width="@dimen/dp_1"

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkhome"
     android:orientation="vertical"
     tools:context="lanjing.com.titan.activity.TItanTopUpActivity">
 
@@ -11,9 +12,9 @@
         android:id="@+id/title_lay"
         android:layout_width="match_parent"
         android:layout_height="@dimen/titil_view_height"
-        android:background="@color/default_white_bg"
-        app:ivLeftPic="@mipmap/icon_page_return"
-        app:titleTextColor="@color/common_black"
+        android:background="@color/darkhome"
+        app:ivLeftPic="@mipmap/icon_page_return_white"
+        app:titleTextColor="@color/white"
         app:tvTitleText="@string/titan_top_up" />
 
     <LinearLayout
@@ -38,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/top_up_address"
-                    android:textColor="@color/blue" />
+                    android:textColor="#4E5E90" />
 
                 <TextView
                     android:id="@+id/tv_copy_top_up_address"
@@ -47,14 +48,15 @@
                     android:layout_weight="1"
                     android:gravity="right"
                     android:text="@string/copy"
-                    android:textColor="@color/blue" />
+                    android:textColor="@color/white" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_top_up_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_20" />
+                android:layout_marginTop="@dimen/dp_20"
+                android:textColor="#E1E1E1" />
 
         </LinearLayout>
 
@@ -75,7 +77,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/address_label"
-                    android:textColor="@color/blue" />
+                    android:textColor="#4E5E90" />
 
                 <TextView
                     android:id="@+id/tv_copy_address_label"
@@ -84,15 +86,15 @@
                     android:layout_weight="1"
                     android:gravity="right"
                     android:text="@string/copy"
-                    android:textColor="@color/blue" />
+                    android:textColor="#E1E1E1" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_address_label"
                 android:layout_width="wrap_content"
-
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_20" />
+                android:layout_marginTop="@dimen/dp_20"
+                android:textColor="#E1E1E1" />
         </LinearLayout>
 
         <TextView
@@ -101,6 +103,7 @@
             android:layout_marginTop="@dimen/dp_20"
             android:lineSpacingExtra="@dimen/dp_10"
             android:text="@string/werm_tip"
+            android:textColor="#E1E1E1"
             android:textSize="@dimen/sp_11" />
     </LinearLayout>
 </LinearLayout>

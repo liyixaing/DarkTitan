@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradual_qy_code"
+    android:background="@color/darkhome"
     android:orientation="vertical">
 
     <com.lxh.baselibray.view.TitleView
@@ -58,14 +58,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="" />
+                    android:text=""
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/tv_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="" />
+                    android:text=""
+                    android:textColor="@color/white" />
             </LinearLayout>
 
             <LinearLayout
@@ -94,7 +96,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp_4"
                         android:text="@string/Save_to_Album"
-                        android:textColor="@color/common_black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/sp_9" />
                 </LinearLayout>
 
@@ -117,7 +119,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp_4"
                         android:text="@string/Copy_the_Address"
-                        android:textColor="@color/common_black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/sp_9" />
                 </LinearLayout>
 
@@ -140,7 +142,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp_4"
                         android:text="@string/Copy_the_Tag"
-                        android:textColor="@color/common_black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/sp_9" />
                 </LinearLayout>
 

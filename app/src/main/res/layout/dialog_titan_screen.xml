@@ -13,7 +13,7 @@
     android:gravity="center"
     android:padding="@dimen/dp_10"
     android:text="@string/all"
-    android:textColor="#FF000000"
+    android:textColor="@color/white"
     android:textSize="@dimen/sp_15" />
 
     <TextView
@@ -24,7 +24,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/buy"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
     <TextView
@@ -34,7 +34,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/sell"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
     <TextView
@@ -45,7 +45,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/top_up_c"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
 
@@ -57,7 +57,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/withdraw_c"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
     <TextView
@@ -68,7 +68,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/flash_exchange"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
     <TextView
         android:id="@+id/tv_exchange"
@@ -79,7 +79,7 @@
         android:padding="@dimen/dp_10"
         android:visibility="gone"
         android:text="@string/top_exchange"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
     <TextView
@@ -90,7 +90,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/service_fee"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
 
@@ -109,7 +109,7 @@
             android:gravity="center"
             android:padding="@dimen/dp_10"
             android:text="@string/trade_get"
-            android:textColor="#FF000000"
+            android:textColor="@color/white"
             android:textSize="@dimen/sp_15" />
     </LinearLayout>
 
@@ -124,7 +124,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/direct_push_trade_gains"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
 
@@ -136,7 +136,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/rank_trading_weight"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
     <TextView
@@ -148,7 +148,7 @@
         android:visibility="gone"
         android:padding="@dimen/dp_10"
         android:text="@string/peer_acquisition"
-        android:textColor="#FF000000"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
 </LinearLayout>

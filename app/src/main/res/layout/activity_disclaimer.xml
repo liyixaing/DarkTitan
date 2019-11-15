@@ -3,16 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/darkhome"
     tools:context="lanjing.com.titan.activity.DisclaimerActivity">
+
     <com.lxh.baselibray.view.TitleView
         android:id="@+id/title_lay"
         android:layout_width="match_parent"
         android:layout_height="@dimen/titil_view_height"
-        android:background="@color/default_white_bg"
-        app:ivLeftPic="@mipmap/icon_page_return"
-        app:titleTextColor="@color/common_black"
+        android:background="@color/darkhome"
+        app:ivLeftPic="@mipmap/icon_page_return_white"
+        app:titleTextColor="@color/white"
         app:tvTitleText="@string/disclaimer" />
 
     <ProgressBar
@@ -21,10 +23,11 @@
         android:layout_width="match_parent"
         android:layout_height="3dip"
         android:progressDrawable="@drawable/pg"
-        android:visibility="gone"/>
+        android:visibility="gone" />
+
     <WebView
         android:id="@+id/webView"
-        android:layout_below="@+id/tx_invitation_title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></WebView>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tx_invitation_title"></WebView>
 </LinearLayout>
