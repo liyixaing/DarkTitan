@@ -157,7 +157,7 @@ public class TItanWithdrawActivity extends MvpActivity<WalletWithdrawContact.Wal
             String walletId = edAddressId.getText().toString().trim();
             String num = edNum.getText().toString().trim();
             showLoadingDialog();
-            mPresent.walletWithdraw(context, "1", address, walletId, num);
+            mPresent.walletWithdraw(context, "6", address, walletId, num);
         } else if (response.body().getCode() == -10) {
             ToastUtils.showShortToast(context, getResources().getString(R.string.not_login));
 

@@ -38,7 +38,7 @@ public class EntrustAdapter extends BaseQuickAdapter<EntrustListResponse.Data.Or
                 helper.setTextColor(R.id.tv_type, Color.GREEN);
 
                 helper.setBackgroundRes(R.id.tv_type_recall, R.drawable.shape_green_bg);//右侧撤销背景 绿色
-                if (item.getSourceCoin() == 1) {
+                if (item.getSourceCoin() == 6) {
                     helper.setText(R.id.tv_entrust_price, MoneyUtil.priceFormatDoubleZero(item.getRest()) + ".00 TITAN");
                     helper.setText(R.id.tv_num_type, R.string.buy_usd_num_a);//R.string.buy_usd_num2
                 } else if (item.getSourceCoin() == 5) {

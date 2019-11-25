@@ -3,9 +3,12 @@ package lanjing.com.titan.activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
+import com.google.gson.annotations.SerializedName;
 import com.lxh.baselibray.BaseApplication;
 import com.lxh.baselibray.base.XActivity;
 import com.lxh.baselibray.util.ToastUtils;
@@ -36,17 +39,16 @@ public class MainActivity extends XActivity implements RadioGroup.OnCheckedChang
 
     @Override
     public void initData(Bundle savedInstanceState) {
-        fragmentList.add(new WalletFragment());
-        fragmentList.add(new MarketFragment());
-        fragmentList.add(new DealFragment());
-        fragmentList.add(new InformationFragment());
-        fragmentList.add(new MyFragment());
+        fragmentList.add(new WalletFragment());//钱包首页
+        fragmentList.add(new MarketFragment());//行情页
+        fragmentList.add(new DealFragment());//交易页
+        fragmentList.add(new InformationFragment());//资讯页
+        fragmentList.add(new MyFragment());//我的页
         adapter = new MainFragmentPagerAdapter(getSupportFragmentManager(), fragmentList);
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
-
             }
 
             @Override

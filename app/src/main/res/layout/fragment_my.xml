@@ -43,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_10"
                     android:text="T"
-                    android:textColor="@color/blue"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/sp_16"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -165,7 +165,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/dp_5"
-                            android:text="TITAN"
+                            android:text="TRH"
                             android:textColor="@color/white"
                             android:textSize="@dimen/sp_25" />
                     </LinearLayout>

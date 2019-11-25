@@ -76,7 +76,7 @@ public class PaymentCodeActivity extends MvpActivity<PaymentCode.FriendListPrese
         Drawable drawable = getResources().getDrawable(R.mipmap.icon_logo);
         BitmapDrawable bd = (BitmapDrawable) drawable;
         final Bitmap bmm = bd.getBitmap();
-        Bitmap asd = QRCodeUtil.createQRCode("TITAN" + "," + walletAddress + "," + labelAddress, 500);
+        Bitmap asd = QRCodeUtil.createQRCode("TRH" + "," + walletAddress + "," + labelAddress, 500);
         iv_er_code.setImageBitmap(asd);
     }
 

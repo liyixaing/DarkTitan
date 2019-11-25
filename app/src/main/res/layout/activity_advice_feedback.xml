@@ -48,7 +48,7 @@
                 android:layout_marginLeft="@dimen/dp_20"
                 android:layout_marginTop="@dimen/dp_10"
                 android:text="@string/advice_title"
-                android:textColor="@color/blue" />
+                android:textColor="#4E5E90" />
 
             <EditText
                 android:id="@+id/edit_problem_title"
@@ -62,7 +62,7 @@
                 android:gravity="center_vertical"
                 android:maxLength="20"
                 android:paddingLeft="@dimen/dp_10"
-                android:textColor="@color/common_black"
+                android:textColor="@color/white"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_15" />
 
@@ -72,7 +72,7 @@
                 android:layout_marginLeft="@dimen/dp_20"
                 android:layout_marginTop="@dimen/dp_10"
                 android:text="@string/advice_content"
-                android:textColor="@color/blue" />
+                android:textColor="#4E5E90" />
 
             <EditText
                 android:id="@+id/edit_problem"
@@ -86,7 +86,7 @@
                 android:maxLength="100"
                 android:paddingLeft="@dimen/dp_10"
                 android:paddingTop="@dimen/dp_10"
-                android:textColor="@color/common_black"
+                android:textColor="@color/white"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_15" />
 
@@ -97,7 +97,7 @@
                 android:layout_marginLeft="@dimen/dp_20"
                 android:layout_marginTop="@dimen/dp_10"
                 android:text="@string/advice_imageview"
-                android:textColor="@color/blue" />
+                android:textColor="#4E5E90" />
 
             <LinearLayout
                 android:layout_width="match_parent"

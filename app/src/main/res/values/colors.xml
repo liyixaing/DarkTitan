@@ -32,7 +32,7 @@
     <color name="mall_gray_bg">#F2F2F2</color>
     <color name="line_gray">#F0F0F0</color>
     <color name="ed_gray">#B1B1B1</color>
-    <color name="blue">#1B2951</color>
+    <color name="blue">#4E5E90</color>
     <color name="dark_blue">#0C55AF</color>
     <color name="onclick_blue">#0975E1</color>
     <color name="default_white_bg">#FDFDFD</color>
@@ -56,4 +56,5 @@
     <color name="status_text">#ffffffff</color>
     <color name="darkhome">#122143</color>
     <color name="darkbg">#1B2951</color>
+    <color name="edittextcolor">#00FFFFFF</color>
 </resources>

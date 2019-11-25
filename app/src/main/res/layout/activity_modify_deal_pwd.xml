@@ -30,6 +30,7 @@
         <!--手机号-->
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
+            app:fletTextAppearance="@color/edittextcolor"
             android:layout_height="wrap_content">
 
             <EditText
@@ -79,6 +80,7 @@
             <com.wrapp.floatlabelededittext.FloatLabeledEditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                app:fletTextAppearance="@color/edittextcolor"
                 android:layout_weight="1">
 
                 <EditText
@@ -120,6 +122,7 @@
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:fletTextAppearance="@color/edittextcolor"
             android:layout_marginTop="@dimen/dp_10">
 
             <EditText

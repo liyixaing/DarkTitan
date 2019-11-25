@@ -32,11 +32,11 @@ public class CoinDealAdapter extends BaseQuickAdapter<CoinDealResponse.DataBean,
         int type = Integer.parseInt(item.getType());
         LinearLayout ll_num = helper.getView(R.id.ll_num);
         String coin = item.getCoin1();
-        String types = "TITAN";
+        String types = "";
         if (coin.equals("5")) {
             types = "BAR";
         } else {
-            types = "TITAN";
+            types = "TRH";
         }
 
         switch (type) {
@@ -49,7 +49,7 @@ public class CoinDealAdapter extends BaseQuickAdapter<CoinDealResponse.DataBean,
             case 2://卖出
                 helper.setText(R.id.deal_type, R.string.sell);
                 helper.setText(R.id.tv_cost_num, MoneyUtil.formatFour(item.getCoinnum1()) + "USD");//卖出USD
-                helper.setText(R.id.tv_get_num, item.getCoinmun2() + "TITAN");//得到TITAN
+                helper.setText(R.id.tv_get_num, item.getCoinmun2() + "TRH");//得到TITAN
                 helper.setText(R.id.tv_fee, MoneyUtil.formatFour(item.getFee()) + "USD");//扣除USD的手续费
                 ll_num.setVisibility(View.GONE);
                 break;

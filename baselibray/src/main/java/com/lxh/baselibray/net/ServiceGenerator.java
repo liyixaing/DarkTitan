@@ -9,11 +9,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
     /**
-     * 正式上线
+     * 正式上线  泰瑞亚  记得修改版本号和服务器地址
      */
-//    public static final String BASE_URL = "http://app.titans.world:80";//正式服  端口  80
-    public static final String BASE_URL = "http://120.79.169.58:8888";//阿里测试服  端口  8888
-//    public static final String BASE_URL = "http://192.168.0.121:9999";//本地测试服 端口 9999
+    public static final String BASE_URL = "http://app.trh.bar:80";//正式服
+//    public static final String BASE_URL = "http://120.79.169.58:8881";//阿里测试服
+//    public static final String BASE_URL = "http://192.168.0.121:9999";//本地测试服
 
     public static <T> T createService(Class<T> serviceClass) {
         OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
@@ -31,3 +31,5 @@ public class ServiceGenerator {
     }
 
 }
+
+//我有一壶酒，足以慰风尘，千杯不解饮，万杯苦沉沦，埋苦厚国土，肝胆两昆仑，疏狂君弄笑，赤子中国人

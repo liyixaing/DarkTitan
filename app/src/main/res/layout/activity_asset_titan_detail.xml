@@ -50,8 +50,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#4E5E90"
-                    android:text="@string/type" />
+                    android:text="@string/type"
+                    android:textColor="#4E5E90" />
 
                 <TextView
                     android:id="@+id/tv_titan_type"
@@ -77,8 +77,8 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#4E5E90"
-                    android:text="@string/status" />
+                    android:text="@string/status"
+                    android:textColor="#4E5E90" />
 
                 <TextView
                     android:id="@+id/tv_titan_state"
@@ -108,7 +108,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/source_address" />
+                    android:text="@string/source_address"
+                    android:textColor="#4E5E90" />
 
                 <TextView
                     android:id="@+id/tv_ource_address"
@@ -116,7 +117,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:textColor="#182146" />
+                    android:textColor="@color/white" />
             </LinearLayout>
 
             <!--提币地址-->
@@ -138,7 +139,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/address" />
+                    android:text="@string/address"
+                    android:textColor="#4E5E90" />
 
                 <TextView
                     android:id="@+id/tv_titan_address"
@@ -146,7 +148,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:textColor="#182146" />
+                    android:textColor="@color/white" />
             </LinearLayout>
 
             <View
@@ -168,7 +170,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/label" />
+                    android:text="@string/label"
+                    android:textColor="#4E5E90" />
 
                 <TextView
                     android:id="@+id/tv_titan_label"
@@ -176,7 +179,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:textColor="#182146" />
+                    android:textColor="@color/white" />
             </LinearLayout>
 
 
@@ -202,8 +205,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#4E5E90"
-                    android:text="@string/deal_time" />
+                    android:text="@string/deal_time"
+                    android:textColor="#4E5E90" />
 
                 <TextView
                     android:id="@+id/tv_titan_time"
@@ -230,8 +233,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#4E5E90"
-                    android:text="@string/blockchain_trade_id" />
+                    android:text="@string/blockchain_trade_id"
+                    android:textColor="#4E5E90" />
 
                 <TextView
                     android:id="@+id/tv_titan_blockchain_id"

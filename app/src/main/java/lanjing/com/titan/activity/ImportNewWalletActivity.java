@@ -58,10 +58,10 @@ public class ImportNewWalletActivity extends MvpActivity<WalletListImportContact
     public void getImportWalletListResult(Response<ListWalletImportResponse> response) {
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
             Intent intent = new Intent(context, SetWalletActivity.class);
-            intent.putExtra("userName", response.body().getUserName());
-            intent.putExtra("address", response.body().getAddress());
-            intent.putExtra("addressLabel", response.body().getKeyes());
-            SPUtils.putString(Constant.TOKEN2, response.body().getToken(), context);
+            intent.putExtra("userName", response.body().getData().getUserName());
+            intent.putExtra("address", response.body().getData().getAddress());
+            intent.putExtra("addressLabel", response.body().getData().getKeyes());
+            SPUtils.putString(Constant.TOKEN2, response.body().getData().getToken(), context);
             startActivity(intent);
             finish();
         } else if (response.body().getCode() == -10){

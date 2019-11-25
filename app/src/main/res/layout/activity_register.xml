@@ -22,9 +22,10 @@
         android:layout_margin="@dimen/dp_20"
         android:orientation="vertical">
         <!--用户名-->
-        <com.wrapp.floatlabelededittext.FloatLabeledEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+<!--        <com.wrapp.floatlabelededittext.FloatLabeledEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            app:fletTextAppearance="@color/edittextcolor"-->
+<!--            android:layout_height="wrap_content">-->
 
             <EditText
                 android:id="@+id/ed_user_name"
@@ -40,7 +41,7 @@
                 android:textColorHint="#4E5E90"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_15" />
-        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+<!--        </com.wrapp.floatlabelededittext.FloatLabeledEditText>-->
 
         <View
             android:layout_width="match_parent"
@@ -48,10 +49,11 @@
             android:layout_centerHorizontal="true"
             android:background="#EEEEEE" />
         <!--昵称-->
-        <com.wrapp.floatlabelededittext.FloatLabeledEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_5">
+<!--        <com.wrapp.floatlabelededittext.FloatLabeledEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:fletTextAppearance="@color/edittextcolor"-->
+<!--            android:layout_marginTop="@dimen/dp_5">-->
 
             <EditText
                 android:id="@+id/ed_nick_name"
@@ -68,7 +70,7 @@
                 android:textColorHint="#4E5E90"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_15" />
-        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+<!--        </com.wrapp.floatlabelededittext.FloatLabeledEditText>-->
 
         <View
             android:layout_width="match_parent"
@@ -77,10 +79,11 @@
             android:background="#EEEEEE" />
 
         <!--登陆密码-->
-        <com.wrapp.floatlabelededittext.FloatLabeledEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_5">
+<!--        <com.wrapp.floatlabelededittext.FloatLabeledEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:fletTextAppearance="@color/edittextcolor"-->
+<!--            android:layout_marginTop="@dimen/dp_5">-->
 
             <EditText
                 android:id="@+id/ed_login_pwd"
@@ -97,7 +100,7 @@
                 android:textColorHint="#4E5E90"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_15" />
-        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+<!--        </com.wrapp.floatlabelededittext.FloatLabeledEditText>-->
 
         <View
             android:layout_width="match_parent"
@@ -106,10 +109,11 @@
             android:background="#EEEEEE" />
 
         <!--确认登陆密码-->
-        <com.wrapp.floatlabelededittext.FloatLabeledEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_5">
+<!--        <com.wrapp.floatlabelededittext.FloatLabeledEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:fletTextAppearance="@color/edittextcolor"-->
+<!--            android:layout_marginTop="@dimen/dp_5">-->
 
             <EditText
                 android:id="@+id/ed_confirm_login_pwd"
@@ -126,7 +130,7 @@
                 android:textColorHint="#4E5E90"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_15" />
-        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+<!--        </com.wrapp.floatlabelededittext.FloatLabeledEditText>-->
 
         <View
             android:layout_width="match_parent"
@@ -135,10 +139,11 @@
             android:background="#EEEEEE" />
 
         <!--交易密码-->
-        <com.wrapp.floatlabelededittext.FloatLabeledEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_5">
+<!--        <com.wrapp.floatlabelededittext.FloatLabeledEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:fletTextAppearance="@color/edittextcolor"-->
+<!--            android:layout_marginTop="@dimen/dp_5">-->
 
             <EditText
                 android:id="@+id/ed_deal_pwd"
@@ -157,7 +162,7 @@
                 android:textColorHint="#4E5E90"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_15" />
-        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+<!--        </com.wrapp.floatlabelededittext.FloatLabeledEditText>-->
 
         <View
             android:layout_width="match_parent"
@@ -165,10 +170,11 @@
             android:layout_centerHorizontal="true"
             android:background="#EEEEEE" />
         <!--确认交易密码-->
-        <com.wrapp.floatlabelededittext.FloatLabeledEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_5">
+<!--        <com.wrapp.floatlabelededittext.FloatLabeledEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:fletTextAppearance="@color/edittextcolor"-->
+<!--            android:layout_marginTop="@dimen/dp_5">-->
 
             <EditText
                 android:id="@+id/ed_confirm_deal_pwd"
@@ -186,7 +192,7 @@
                 android:textColorHint="#4E5E90"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_15" />
-        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+<!--        </com.wrapp.floatlabelededittext.FloatLabeledEditText>-->
 
         <View
             android:layout_width="match_parent"
@@ -194,12 +200,7 @@
             android:layout_centerHorizontal="true"
             android:background="#EEEEEE" />
 
-        <!--邀请码-->
-        <com.wrapp.floatlabelededittext.FloatLabeledEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_5">
-
+            <!--邀请码-->
             <EditText
                 android:id="@+id/ed_invite_code"
                 android:layout_width="match_parent"
@@ -208,13 +209,12 @@
                 android:background="@null"
                 android:hint="@string/invite_code"
                 android:inputType="number"
-                android:maxLength="7"
+                android:maxLength="8"
                 android:singleLine="true"
                 android:textColor="@color/white"
                 android:textColorHint="#4E5E90"
                 android:textCursorDrawable="@drawable/cursor_style"
                 android:textSize="@dimen/sp_15" />
-        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
         <View
             android:layout_width="match_parent"

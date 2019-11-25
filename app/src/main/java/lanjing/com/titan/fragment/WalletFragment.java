@@ -41,7 +41,6 @@ import lanjing.com.titan.R;
 import lanjing.com.titan.activity.AssetTITANActivity;
 import lanjing.com.titan.activity.AssetUSDActivity;
 import lanjing.com.titan.activity.FeedbackListActivity;
-import lanjing.com.titan.activity.MainActivity;
 import lanjing.com.titan.activity.NoticeActivity;
 import lanjing.com.titan.activity.PaymentCodeActivity;
 import lanjing.com.titan.activity.TItancWaitGetActivity;
@@ -121,9 +120,9 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
     int page = 1;
     int pageSize = 10;
 
-    String titanId;//TITAN页面钱包id查询数据
+    String titanId;//TRH页面钱包id查询数据
     String usdId;//USD页面钱包id查询数据
-    String titancId;//TITANC页面钱包id查询数据
+    String titancId;//TRHC页面钱包id查询数据
     String usd2Id;//USD2页面钱包id查询数据
     String walletAddress;//钱包地址
     String labelAddress;//标签地址
@@ -164,7 +163,7 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
                 .setWidthAndHeight(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)//设置弹窗宽高
                 .setText(R.id.tv_title, getResources().getString(R.string.update_yes) + VersionName + getResources().getString(R.string.update_version))
                 .setText(R.id.tv_update_info, VersionInfo)
-                .setOnClickListener(R.id.btn_ok, v -> {//设置点击事件  打开网页
+                .setOnClickListener(R.id.btn_ok, v -> {//设置点击事件 打开网页
                     Intent intent = new Intent(Intent.ACTION_VIEW,
                             (Uri.parse(downloadUrl))
                     ).addCategory(Intent.CATEGORY_BROWSABLE)
@@ -175,17 +174,6 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
         UpdateDialog = builder.create();
         UpdateDialog.show();
 
-    }
-
-    private void initUpdate() {
-        //版本更新
-        new RxPermissions(getActivity()).request(Manifest.permission.WRITE_EXTERNAL_STORAGE).subscribe(aBoolean -> {
-            if (aBoolean) {
-                new UpdateHelper(getActivity(), true).update();
-            } else {
-                ToastUtils.showShortToast(getActivity(), getResources().getString(R.string.permission_not_open));
-            }
-        });
     }
 
     @Override
@@ -213,7 +201,6 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
         TvBarnum.setText("****");
 
     }
-
 
     @Override
     public int getLayoutId() {
@@ -247,8 +234,8 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
             case R.id.titan_lay://进入  TITAN 的资产页面
                 Intent titan = new Intent(context, AssetTITANActivity.class);
                 titan.putExtra("walletId", titanId);
-                titan.putExtra("coin", "1");
-                titan.putExtra("type", "TITAN");
+                titan.putExtra("coin", "6");
+                titan.putExtra("type", "TRH");
                 titan.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
                 startActivity(titan);
                 break;
@@ -270,7 +257,7 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
             case R.id.titanc_lay://进入    TITANC的待领取
                 Intent titanc = new Intent(context, TItancWaitGetActivity.class);
                 titanc.putExtra("walletId", titancId);
-                titanc.putExtra("coin", "2");
+                titanc.putExtra("coin", "7");
                 titanc.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
                 startActivity(titanc);
                 break;
@@ -317,6 +304,7 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
 //                mPresent.TodayFreeActiveTimes(context);//获取激活信息
                 mPresent.SeckillCdkeyConfig(context);
                 break;
+
         }
     }
 
@@ -330,7 +318,7 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
 
     //扫码权限获取
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
             case 1:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -375,15 +363,20 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
     public void getWalletDataResult(Response<WalletDataResponse> response) {
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
             mList = response.body().getData().wellets;
+            if (response.body().getData().getWait_view_feedback_count().equals("1")) {
+                LlRedDot.setVisibility(View.VISIBLE);//显示小红点
+            } else {
+                LlRedDot.setVisibility(View.GONE);//隐藏小红点
+            }
             tvAmount.setText("$" + MoneyUtil.formatFour(response.body().getData().getTotal_asset_usd()));
             tvWalletId.setText("ID：" + response.body().getData().getUser_tag());
             walletAddress = response.body().getData().getUser_address();
             labelAddress = response.body().getData().getUser_tag();
             for (int i = 0; i < mList.size(); i++) {
-                if (mList.get(i).getCoin().equals("1")) {
+                if (mList.get(i).getCoin().equals("6")) {
                     titanNum.setText(MoneyUtil.formatFour(mList.get(i).getCoin_num()));
                     titanPrice.setText("$" + MoneyUtil.formatFour(mList.get(i).getCoin_usd_worth()));
-                } else if (mList.get(i).getCoin().equals("2")) {
+                } else if (mList.get(i).getCoin().equals("7")) {
                     titancNum.setText(MoneyUtil.formatFour(mList.get(i).getCoin_num()));
                 } else if (mList.get(i).getCoin().equals("3")) {
                     usdNum.setText(MoneyUtil.formatFour(mList.get(i).getCoin_num()));
@@ -393,6 +386,8 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
                 } else if (mList.get(i).getCoin().equals("5")) {
                     TvBar.setText(MoneyUtil.formatFour(mList.get(i).getCoin_num()));
                     TvBarnum.setText("$" + MoneyUtil.formatFour(mList.get(i).getCoin_usd_worth()));
+                } else {
+                    Log.e("TAG", "返回的币种类型错误");
                 }
             }
 
@@ -443,7 +438,7 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
             SPUtils.putString(Constant.PHONE, response.body().getData().getPhone(), context);
             SPUtils.putString(Constant.WALLET_NAME, response.body().getData().getUsername(), context);
-            SPUtils.putString(Constant.PORTRAIT, response.body().getData().getPicture(), context);
+            SPUtils.putString(Constant.PORTRAIT, response.body().getData().getPicture(), context);//保存头像
             String walletName = response.body().getData().getWelletname();
             SPUtils.putString(Constant.NODE, String.valueOf(response.body().getData().getIsnode()), context);
             SPUtils.putString(Constant.ISVIP, String.valueOf(response.body().getData().getIsvip()), context);
@@ -451,7 +446,7 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
             SPUtils.putInt(Constant.LEVEL, response.body().getData().getGrade(), context);
             SPUtils.putInt(Constant.ISAUTO, response.body().getData().getIsauto(), context);
 
-            if (!ObjectUtils.isEmpty(walletName) && walletName.toString().trim() != "") {
+            if (!ObjectUtils.isEmpty(walletName) && walletName.trim() != "") {
                 tvWalletName.setText(walletName);
             } else {
                 tvWalletName.setText(response.body().getData().getUsername());
@@ -580,7 +575,8 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
             //激活成功，输出内容
             ToastUtils.showLongToast(context, response.body().getMsg());
-            ll_activation.setVisibility(View.GONE);
+//            ll_activation.setVisibility(View.GONE);//成功后不需要隐藏按钮
+            tv_activation.setText(getResources().getString(R.string.yijihuo));//将文字改为已激活
         } else if (response.body().getCode() == -10) {
             //异地登录提示
             ToastUtils.showLongToast(context, getResources().getString(R.string.not_login));
@@ -602,18 +598,6 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
         }
     }
 
-
-    /**
-     * int state;    //激活状态 0为未激活用户，1为已激活用户
-     * showactionDialog();  //未激活用户在活动未开始时点击进入的界面（输入激活码界面）
-     * FreeDialogDialog(sun);  //抢到激活名额界面
-     * SurplusDialogDig();   //未激活用户抢到激活名额
-     * StaterDialogDig(sun);  //活动开始界面
-     * endDialogDig();  //名额已经抢完了
-     *
-     * <p>
-     * sStart //是否开始 0为未开始 1为开始
-     */
     //获取激活配置
     @Override
     public void getSeckillCdkeyConfig(Response<SeckillCdkeyResponse> response) {
@@ -644,6 +628,7 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
 //                    已激活用户在活动开始状态下点击激活按钮
                     if (response.body().getData().getFreeTimes() == 0) {//判断是否还有名额
                         endDialogDig();
+
                     } else {
                         if (response.body().getData().getIsSuccessSeckill() == 0) {//判断今天抢过没有
                             StaterDialogDig(sun);
@@ -696,8 +681,8 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
 
             int systemCode = Integer.parseInt(response.body().getData().getVersioncode());
-            Log.e("版本号1：", systemCode+"");
-            Log.e("版本号1：", versionCode+"");
+            Log.e("版本号1：", systemCode + "");
+            Log.e("版本号1：", versionCode + "");
             if (systemCode > versionCode) {
                 showUpdateDialog(response.body().getData().getVersionname(), response.body().getData().getRemarks(), response.body().getData().getUrl());
             }

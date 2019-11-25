@@ -33,7 +33,7 @@
                     android:id="@+id/tv_jiaoyi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TITAN/USD"
+                    android:text="TRH/USD"
                     android:textColor="#E1E1E1"
                     android:textSize="@dimen/sp_25" />
 
@@ -265,7 +265,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/dp_5"
-                            android:text="TITAN"
+                            android:text="TRH"
                             android:textColor="#E1E1E1" />
                     </LinearLayout>
 
@@ -1181,13 +1181,14 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="68dp"
-                            android:layout_height="52dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:background="@mipmap/icon_normal" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:text="@string/normal_data"
                             android:textColor="@color/white"
                             android:textSize="@dimen/sp_12" />

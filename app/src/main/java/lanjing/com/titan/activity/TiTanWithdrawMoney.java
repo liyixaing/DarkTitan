@@ -104,7 +104,7 @@ public class TiTanWithdrawMoney extends MvpActivity<getTransferContact.getTransf
     public void getDealPwdResult(Response<ResultDTO> response) {
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
             showLoadingDialog();
-            mPresent.walletWithdraw(context, "1", TvAddress.getText().toString(), TvLabel.getText().toString(), EtTibusun.getText().toString());
+            mPresent.walletWithdraw(context, "6", TvAddress.getText().toString(), TvLabel.getText().toString(), EtTibusun.getText().toString());
         } else if (response.body().getCode() == -10) {
             ToastUtils.showShortToast(context, getResources().getString(R.string.not_login));
         } else if (response.body().getCode() == 201) {

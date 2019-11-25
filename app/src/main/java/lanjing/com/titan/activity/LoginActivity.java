@@ -48,6 +48,7 @@ public class LoginActivity extends MvpActivity<LoginContact.LoginPresent> implem
     EditText edLoginPwd;
     String adminNo;
 
+
     @Override
     public void initData(Bundle savedInstanceState) {
         sb.setOnSeekBarChangeListener(this);

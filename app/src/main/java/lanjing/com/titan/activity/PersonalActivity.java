@@ -207,7 +207,6 @@ public class PersonalActivity extends MvpActivity<PersonDataChangeContact.Person
             case TAKE_PHOTO:
                 if (resultCode == RESULT_OK) {
                     displayImage(outputImagepath.getAbsolutePath(), headPic);
-
                     RequestOptions mRequestOptions = RequestOptions.circleCropTransform()
                             .diskCacheStrategy(DiskCacheStrategy.NONE)//不做磁盘缓存
                             .skipMemoryCache(true);//不做内存缓存

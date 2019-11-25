@@ -332,7 +332,7 @@
                     android:layout_weight="1"
                     android:gravity="right"
                     android:text="≈0TITAN"
-                    android:textColor="@color/common_black"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_17sp"
                     android:textStyle="bold"
                     android:visibility="gone" />
@@ -379,7 +379,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" TITAN"
+                    android:text=" TRH"
                     android:textColor="#8D9BC5"
                     android:textSize="@dimen/sp_13" />
 

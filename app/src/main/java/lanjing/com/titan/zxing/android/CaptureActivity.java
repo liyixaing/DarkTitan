@@ -219,7 +219,7 @@ public final class CaptureActivity extends XActivity implements SurfaceHolder.Ca
             //这里的异常抛出是因为识别到没有二维码的图片是会返回null
             try {
                 //识别图片二维码成功做判断处理
-                if (result.contains("TITAN")) {//判断字符串内容方法 兼容5.0以上
+                if (result.contains("TRH")) {//判断字符串内容方法 兼容5.0以上
                     //存在titan字符则跳转到支付界面
                     Intent payment = new Intent(this, PaymentActivity.class);
                     payment.putExtra("rawResult", result);
@@ -330,7 +330,7 @@ public final class CaptureActivity extends XActivity implements SurfaceHolder.Ca
         boolean fromLiveScan = barcode != null;
         //这里处理解码完成后的结果，此处将参数回传到Activity处理
         if (fromLiveScan) {
-            if (rawResult.getText().contains("TITAN")) {//判断字符串内容方法 兼容5.0以上
+            if (rawResult.getText().contains("TRH")) {//判断字符串内容方法 兼容5.0以上
                 beepManager.playBeepSoundAndVibrate();
                 Intent intent = getIntent();
                 intent.putExtra("codedContent", rawResult.getText());//输入文字内容

@@ -66,7 +66,7 @@ public class DetailsOfBillsActivity extends MvpActivity<BillDetailContact.BillDe
 //            tv_ource_address.setText(MoneyUtil.formatFour(String.valueOf(response.body().getData().getBarPrice())) + "\rUSD");//成交时BAR单价
             tv_titan_address.setText(MoneyUtil.formatFour(String.valueOf(response.body().getData().getGainCoin2Amount())) + "\rUSD");//获得BAR数量
             tv_deal_one.setText(MoneyUtil.formatFour(String.valueOf(response.body().getData().getCoin1Price())) + "\rUSD");//成交时TITAN单价
-            tv_gettitansun.setText(MoneyUtil.formatFour(String.valueOf(response.body().getData().getGainCoin1Amount())) + "\rTITAN");//获得TITAN数量
+            tv_gettitansun.setText(MoneyUtil.formatFour(String.valueOf(response.body().getData().getGainCoin1Amount())) + "\rTRH");//获得TITAN数量
             tv_titan_time.setText(DateUtils.timedate(response.body().getData().getCreateTime()));//时间
         } else {
             ToastUtils.showShortToast(context, response.body().getMsg());

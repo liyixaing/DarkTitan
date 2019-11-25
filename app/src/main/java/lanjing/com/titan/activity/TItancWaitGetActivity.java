@@ -1,6 +1,5 @@
 package lanjing.com.titan.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,10 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import lanjing.com.titan.R;
-import lanjing.com.titan.adapter.CoinTitanAdapter;
 import lanjing.com.titan.adapter.CoinTitancAdapter;
 import lanjing.com.titan.constant.Constant;
 import lanjing.com.titan.contact.WalletDetailContact;
@@ -105,10 +102,6 @@ public class TItancWaitGetActivity extends MvpActivity<WalletDetailContact.Walle
             }
         });
 
-        //点击子方法跳转界面
-//        Intent intent = new Intent(context,AssetTitanDetailActivity.class);
-//        intent.putExtra("id",mList.get(position).getId());
-//        startActivity(intent);
 
         refresh.setOnRefreshListener(refreshLayout -> {
             page = 1;
@@ -228,7 +221,6 @@ public class TItancWaitGetActivity extends MvpActivity<WalletDetailContact.Walle
         return new WalletDetailContact.WalletDetailPresent();
     }
 
-//    List<WalletDetailResponse.History2Bean> data;
 
     @Override
     public void getWalletDeatilResult(Response<WalletDetailResponse> response) {
@@ -236,7 +228,7 @@ public class TItancWaitGetActivity extends MvpActivity<WalletDetailContact.Walle
         refresh.finishLoadMore();
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
             sun = MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum());
-            tvTitancWaitGet.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum()) + "TITANC");//可用余额
+            tvTitancWaitGet.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum()) + "TRHC");//可用余额
         }
     }
 

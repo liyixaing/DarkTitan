@@ -151,6 +151,11 @@
         <item name="android:windowExitAnimation">@android:style/Animation.Translucent</item>
     </style>
 
+    <style name="floatlabelededittext">
+        <item name="android:textColor">#FF0000</item>
+    </style>
+
+
     <!--复选框样式，未勾选时为灰色，勾选好为蓝色-->
     <style name="MyCheckBox" parent="Theme.AppCompat.Light">
         <item name="colorControlNormal">@color/white</item>

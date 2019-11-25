@@ -165,7 +165,7 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
     //    private Timer timer;
     String keyong;
     int typeDatae = 1;
-    String coin = "1";
+    String coin = "6";
 
 
     @Override
@@ -177,7 +177,6 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
             public boolean onEditorAction(final TextView v, final int actionId, final KeyEvent event) {
                 checkTwo();
                 // 可捕捉右下角的Return按钮
-
                 //添加抛出收起事件代码
                 return false;
             }
@@ -253,8 +252,8 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
         buyBtn.setChecked(true);
         btnSell.setVisibility(View.GONE);
         btnBuy.setVisibility(View.VISIBLE);
-        if (coin.equals("1")) {
-            tvCoinType.setText("TITAN");
+        if (coin.equals("6")) {
+            tvCoinType.setText("TRH");
         } else if (coin.equals("5")) {
             tvCoinType.setText("BAR");
         }
@@ -325,8 +324,8 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
                 tvNum.setText(titan);
                 btnBuy.setVisibility(View.VISIBLE);
                 btnSell.setVisibility(View.GONE);
-                if (coin.equals("1")) {
-                    tvCoinType.setText("TITAN");
+                if (coin.equals("6")) {
+                    tvCoinType.setText("TRH");
                 } else {
                     tvCoinType.setText("BAR");
                 }
@@ -344,7 +343,7 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
                 ll_credit.setVisibility(View.VISIBLE);
                 btnSell.setVisibility(View.VISIBLE);
                 tvCoinType.setText("USD");
-                tvCoinType2.setText("TITAN");
+                tvCoinType2.setText("TRH");
 
                 break;
             case R.id.ed_number:
@@ -431,14 +430,14 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
                 .fromTop(true)
                 .setContentView(R.layout.dialog_choice)//载入布局文件
                 .setWidthAndHeight(SizeUtils.dp2px(context, 400), ViewGroup.LayoutParams.WRAP_CONTENT)//设置弹窗宽高
-                .setOnClickListener(R.id.ll_titan, v -> {//  titan
-                    coin = "1";
+                .setOnClickListener(R.id.ll_titan, v -> {//  TRH
+                    coin = "6";
                     mPresent.walletDataTitan(context);
                     mPresent.entrustList(context, String.valueOf(page), String.valueOf(size), "1");
                     refreshTwo.autoRefresh();//自动刷新
-                    TvJiaoyi.setText("TITAN/USD");
+                    TvJiaoyi.setText("TRH/USD");
                     if (type == 0) {
-                        tvCoinType.setText("TITAN");
+                        tvCoinType.setText("TRH");
                     } else if (type == 1) {
                         tvCoinType.setText("USD");
                     }
@@ -805,7 +804,7 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
                         String price = tvUsdPrice.getText().toString();
                         keyongDouble = MoneyUtil.stringToDouble(keyong);
                         totalAmount = BigDecimal.valueOf(keyongDouble);//获取币的数量
-                        Log.e("TITAN", totalAmount + "");
+                        Log.e("TRH", totalAmount + "");
                         //不允许超出最大值
                         if (result.compareTo(totalAmount) == 1) {
                             ToastUitls2.showShortToast(context, getResources().getString(R.string.current_maximum_input) + totalAmount);
@@ -903,9 +902,9 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
     public void getWalletDataTitanResult(Response<WalletDataResponse> response) {
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
             mLists = response.body().getData().wellets;
-            if (coin.equals("1")) {
+            if (coin.equals("6")) {
                 for (int ii = 0; ii < mLists.size(); ii++) {
-                    if (mLists.get(ii).getCoin().equals("1")) {
+                    if (mLists.get(ii).getCoin().equals("6")) {
                         tvNum.setText(MoneyUtil.formatFour(mLists.get(ii).getCoin_num()));
                         usd = MoneyUtil.formatFour(mLists.get(ii).getCoin_num());
                         titan = MoneyUtil.formatFour(mLists.get(ii).getCoin_num());
@@ -961,7 +960,7 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
     public void getDealSixResult(Response<SixTradeResponse> response) {
         refreshTwo.finishRefresh();
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
-            if (coin.equals("1")) {
+            if (coin.equals("6")) {
                 tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getTt_price_usd()));
                 tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getTt_price_usd()));
             } else {
@@ -991,7 +990,7 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
     @Override
     public void getDealSixOneResult(Response<SixTradeResponse> response) {
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
-            if (coin.equals("1")) {
+            if (coin.equals("6")) {
                 tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getTt_price_usd()));
                 tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getTt_price_usd()));
             } else {
@@ -1023,7 +1022,7 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
     @Override
     public void getDealSixZeroResult(Response<SixTradeResponse> response) {
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
-            if (coin.equals("1")) {
+            if (coin.equals("6")) {
                 tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getTt_price_usd()));
                 tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getTt_price_usd()));
             } else {

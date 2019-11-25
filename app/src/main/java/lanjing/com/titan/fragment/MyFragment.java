@@ -167,7 +167,6 @@ public class MyFragment extends MvpFragment<PersonContact.PersonPresent> impleme
                 .diskCacheStrategy(DiskCacheStrategy.NONE)//不做磁盘缓存
                 .skipMemoryCache(true);//不做内存缓存
         Glide.with(context).load(portrait).apply(mRequestOptions).into(ivUserHeadPic);
-
         mPresent.person(context);
     }
 
@@ -208,8 +207,7 @@ public class MyFragment extends MvpFragment<PersonContact.PersonPresent> impleme
     // 判断是否是第一次启动程序 利用 SharedPreferences 将数据保存在本地
     private boolean isFristRun() {
         //实例化SharedPreferences对象（第一步）
-        SharedPreferences sharedPreferences = context.getSharedPreferences(
-                "share", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = context.getSharedPreferences("share", MODE_PRIVATE);
         //实例化SharedPreferences.Editor对象（第二步）
         boolean isFirstRun = sharedPreferences.getBoolean("isFirstRun", true);
         SharedPreferences.Editor editor = sharedPreferences.edit();

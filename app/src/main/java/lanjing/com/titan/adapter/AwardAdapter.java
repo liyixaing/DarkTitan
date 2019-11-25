@@ -8,6 +8,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.List;
 
 import lanjing.com.titan.R;
+import lanjing.com.titan.fragment.CashValueFragment;
 import lanjing.com.titan.response.AwardResponse;
 import lanjing.com.titan.response.CoinDealResponse;
 import lanjing.com.titan.response.CoinLogListResponse;
@@ -47,6 +48,11 @@ public class AwardAdapter extends BaseQuickAdapter<CoinLogListResponse.Data, Bas
             case 5:
                 helper.setText(R.id.tv_bi_type, "BAR");
                 break;
+            case 6:
+                helper.setText(R.id.tv_bi_type, "TRH");
+                break;
+            case 7:
+                helper.setText(R.id.tv_bi_type, "TRHC");
         }
         String time = DateUtils.timedate(item.getChangeTime());
         helper

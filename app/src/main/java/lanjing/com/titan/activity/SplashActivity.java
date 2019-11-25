@@ -49,8 +49,6 @@ public class SplashActivity extends MvpActivity<LoginContact.LoginPresent> imple
     TextView tvStart;
     @BindView(R.id.welcome_bg)
     RelativeLayout welcomeBg;
-
-    boolean isFirstIn = false;
     String adminNo;
     @BindView(R.id.videoview)
     CustomVideoView videoview;
@@ -58,8 +56,8 @@ public class SplashActivity extends MvpActivity<LoginContact.LoginPresent> imple
     TextView btnSkip;
     @BindView(R.id.guide_lay)
     RelativeLayout guideLay;
-
     int versionCode;
+    boolean isFirstIn = false;
 
     @SuppressLint("StringFormatInvalid")
     @Override
@@ -97,7 +95,6 @@ public class SplashActivity extends MvpActivity<LoginContact.LoginPresent> imple
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {//适配华为虚拟下面导航栏
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
-
         return R.layout.activity_splash;
     }
 
@@ -113,7 +110,6 @@ public class SplashActivity extends MvpActivity<LoginContact.LoginPresent> imple
                 showTypeDialog();  //弹出框
                 break;
             case R.id.tv_start:
-
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -166,7 +162,6 @@ public class SplashActivity extends MvpActivity<LoginContact.LoginPresent> imple
         typeDialog = builder.create();
         typeDialog.show();
     }
-
 
     @Override
     protected void onRestart() {
@@ -251,7 +246,6 @@ public class SplashActivity extends MvpActivity<LoginContact.LoginPresent> imple
                 });
         UpdateDialog = builder.create();
         UpdateDialog.show();
-
     }
 
     @Override
@@ -259,8 +253,8 @@ public class SplashActivity extends MvpActivity<LoginContact.LoginPresent> imple
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
 
             int systemCode = Integer.parseInt(response.body().getData().getVersioncode());
-            Log.e("版本号1：", systemCode+"");
-            Log.e("版本号1：", versionCode+"");
+            Log.e("版本号1：", systemCode + "");
+            Log.e("版本号1：", versionCode + "");
             if (systemCode > versionCode) {
                 showUpdateDialog(response.body().getData().getVersionname(), response.body().getData().getRemarks(), response.body().getData().getUrl());
             }

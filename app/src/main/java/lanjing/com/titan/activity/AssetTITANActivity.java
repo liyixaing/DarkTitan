@@ -70,17 +70,12 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
     TextView TvCash;
     @BindView(R.id.tv_zhican)
     TextView TvZhican;
-
     String walletId;//钱包ID
-
-
     CoinTitanAdapter mAdapter;
     List<HistoryListResponse.mData> historylist;
-
     int page = 1;
     int pageSize = 20;
     String type;//0，手续费 1，交易释放 2，充币 3，提币 4，买入 5，卖出 6，系统 7，其他 （不填写为全部）
-
     String types;//接收上个界面传来的类型（用来判断是哪一个界面跳转过来的）
     String suntaitan;
     String coin;//接收类型 1为泰坦  5为BAR
@@ -90,7 +85,7 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
         walletId = getIntent().getStringExtra("walletId");
         types = getIntent().getStringExtra("type");
         coin = getIntent().getStringExtra("coin");
-        if (coin.equals("1")) {
+        if (coin.equals("6")) {
             LlExchange.setVisibility(View.GONE);
         } else if (coin.equals("5")) {
             LlExchange.setVisibility(View.GONE);
@@ -101,7 +96,7 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
         TitleLay.setTitleText(types);
 
         //判断来源
-        if (types.equals("TITAN")) {//从泰坦资产跳转过来
+        if (types.equals("TRH")) {//从泰坦资产跳转过来
 
         } else {//从bra界面跳转过来
             withdrawCBtn.setVisibility(View.GONE);
@@ -117,7 +112,7 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
 
-                //判断是否要进入详情页  1 充币  2 提币  21 titan兑换  22 bar兑换
+                //判断是否要进入详情页  1 充币  2 提币  21 titan兑换  22 bar兑换  修改后
                 if (historylist.get(position).getChangeType().equals("1") || historylist.get(position).getChangeType().equals("2")) {
                     Intent intent = new Intent(context, AssetTitanDetailActivity.class);
                     intent.putExtra("id", String.valueOf(historylist.get(position).getId()));
@@ -134,13 +129,11 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
         refresh.setOnRefreshListener(refreshLayout -> {
             page = 1;
             mPresent.historylist(context, coin, type, String.valueOf(page), String.valueOf(pageSize));
-
         });
         refresh.setOnLoadMoreListener(refreshLayout -> {
             page++;
             mPresent.historylist(context, coin, type, String.valueOf(page), String.valueOf(pageSize));
         });
-
     }
 
     @Override
@@ -157,12 +150,11 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_titan_screen://筛选 弹框选择
-                if (coin.equals("1")) {
+                if (coin.equals("6")) {
                     showScreenDialog();//泰坦筛选弹出选择
                 } else if (coin.equals("5")) {
                     showBARDialog();//BAR赛选弹出选择
                 }
-
                 break;
             case R.id.top_up_c_btn://充币
                 Intent topUp = new Intent(context, TItanTopUpActivity.class);
@@ -188,7 +180,6 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
                 break;
         }
     }
-
 
     AlertDialog BARDialog = null;
 
@@ -330,7 +321,7 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
             suntaitan = MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum());
             tvAssetBalance.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum()));
-            if (coin.equals("1")) {
+            if (coin.equals("6")) {
                 tvTixianBalance.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum()));//提现余额
             } else if (coin.equals("5")) {
                 tvTixianBalance.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getFrozennum()));//提现余额

@@ -57,7 +57,7 @@ public class PaymentActivity extends MvpActivity<PaymentContact.PaymentPresent> 
 
     int i;
     String num;
-    int coin = 1;
+    int coin = 6;
     int type = 0;//0为cny 1为usd
 
     String price_usd;//USD汇率
@@ -129,10 +129,10 @@ public class PaymentActivity extends MvpActivity<PaymentContact.PaymentPresent> 
             usd = Double.parseDouble(price_usd);
             if (type == 0) {//0为cny
                 sun = Divisor / cny;
-                tv_result.setText("≈" + MoneyUtil.formatFouras(sun + "") + "TITAN");
+                tv_result.setText("≈" + MoneyUtil.formatFouras(sun + "") + "TRH");
             } else {
                 sun = Divisor / usd;
-                tv_result.setText("≈" + MoneyUtil.formatFouras(sun + "") + "TITAN");
+                tv_result.setText("≈" + MoneyUtil.formatFouras(sun + "") + "TRH");
             }
         }
     }
@@ -234,7 +234,7 @@ public class PaymentActivity extends MvpActivity<PaymentContact.PaymentPresent> 
     public void getDealPwdResult(Response<ResultDTO> response) {
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
             //密码正确
-            mPresent.walletWithdraw(context, "1", tv_address.getText().toString(),
+            mPresent.walletWithdraw(context, "6", tv_address.getText().toString(),
                     tv_label.getText().toString(), MoneyUtil.formatFouras(sun + ""));
         } else {
             ToastUtils.showLongToast(context, response.body().getMsg());

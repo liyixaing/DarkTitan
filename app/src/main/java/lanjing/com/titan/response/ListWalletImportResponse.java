@@ -16,11 +16,8 @@ public class ListWalletImportResponse {
      */
 
     private String msg;
-    private String address;
     private int code;
-    private String userName;
-    private String keyes;
-    private String token;
+    public Data data;
 
     public String getMsg() {
         return msg;
@@ -28,14 +25,6 @@ public class ListWalletImportResponse {
 
     public void setMsg(String msg) {
         this.msg = msg;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public int getCode() {
@@ -46,27 +35,87 @@ public class ListWalletImportResponse {
         this.code = code;
     }
 
-    public String getUserName() {
-        return userName;
+    public Data getData() {
+        return data;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setData(Data data) {
+        this.data = data;
     }
 
-    public String getKeyes() {
-        return keyes;
+    public static class Data {
+        private String msg;
+        private String address;
+        private String code;
+        private String phone;
+        private String inviter;
+        private String userName;
+        private String keyes;
+        private String token;
+
+        public String getMsg() {
+            return msg;
+        }
+
+        public void setMsg(String msg) {
+            this.msg = msg;
+        }
+
+        public String getAddress() {
+            return address;
+        }
+
+        public void setAddress(String address) {
+            this.address = address;
+        }
+
+        public String getCode() {
+            return code;
+        }
+
+        public void setCode(String code) {
+            this.code = code;
+        }
+
+        public String getPhone() {
+            return phone;
+        }
+
+        public void setPhone(String phone) {
+            this.phone = phone;
+        }
+
+        public String getInviter() {
+            return inviter;
+        }
+
+        public void setInviter(String inviter) {
+            this.inviter = inviter;
+        }
+
+        public String getUserName() {
+            return userName;
+        }
+
+        public void setUserName(String userName) {
+            this.userName = userName;
+        }
+
+        public String getKeyes() {
+            return keyes;
+        }
+
+        public void setKeyes(String keyes) {
+            this.keyes = keyes;
+        }
+
+        public String getToken() {
+            return token;
+        }
+
+        public void setToken(String token) {
+            this.token = token;
+        }
     }
 
-    public void setKeyes(String keyes) {
-        this.keyes = keyes;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
 }

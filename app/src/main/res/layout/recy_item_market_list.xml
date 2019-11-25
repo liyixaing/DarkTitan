@@ -37,7 +37,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left|center"
-                        android:text="TITAN"
+                        android:text="TRH"
                         android:textColor="@color/white"
                         android:textSize="15sp"
                         android:textStyle="bold" />

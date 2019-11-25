@@ -10,15 +10,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:visibility="invisible"
-        android:src="@mipmap/ic_titan_icon" />
+        android:src="@mipmap/ic_titan_icon"
+        android:visibility="invisible" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:visibility="invisible"
-        android:src="@mipmap/icon_titan_one" />
+        android:src="@mipmap/icon_titan_one"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/tv_number"

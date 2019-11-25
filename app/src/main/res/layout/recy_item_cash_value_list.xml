@@ -23,7 +23,7 @@
                 android:layout_width="@dimen/dp_30"
                 android:layout_height="@dimen/dp_30"
                 android:layout_gravity="center_vertical"
-                android:background="@mipmap/icon_titan" />
+                android:background="@mipmap/ic_title_rhea" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -43,7 +43,7 @@
                         android:maxEms="16"
                         android:maxLength="24"
                         android:maxLines="1"
-                        android:text="TITAN"
+                        android:text="TRH"
                         android:textColor="#E1E1E1"
                         android:textSize="13sp" />
 
@@ -100,7 +100,7 @@
                         android:id="@+id/tv_typemonet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=" TITAN"
+                        android:text=" TRH"
                         android:textColor="#E1E1E1"
                         android:textSize="@dimen/sp_13" />
                 </LinearLayout>

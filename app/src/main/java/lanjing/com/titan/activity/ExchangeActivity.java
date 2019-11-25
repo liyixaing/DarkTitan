@@ -37,8 +37,8 @@ public class ExchangeActivity extends MvpActivity<ExchangeContact.ExchangePresen
     TextView TvRate;
     String num;
     int i;
-    int sourceCoin = 1;//原币种
-    int targetCoin = 2;//兑换币种
+    int sourceCoin = 6;//原币种
+    int targetCoin = 7;//兑换币种
 
     @Override
     protected ExchangeContact.ExchangePresent createPresent() {
@@ -137,8 +137,7 @@ public class ExchangeActivity extends MvpActivity<ExchangeContact.ExchangePresen
             initInput();
             i = num.indexOf(".");
             TvRate.setText(Reference + "1"
-                    + "TITAN ≈ " + MoneyUtil.formatFour(response.body().getData().getConvert_rate()) + "TITANC");
-
+                    + "TRH ≈ " + MoneyUtil.formatFour(response.body().getData().getConvert_rate()) + "TRHC");
         } else if (response.body().getCode() == -10) {
             ToastUtils.showShortToast(context, getResources().getString(R.string.not_login));
         } else {
@@ -161,7 +160,7 @@ public class ExchangeActivity extends MvpActivity<ExchangeContact.ExchangePresen
     @Override
     public void getDealPwdResult(Response<ResultDTO> response) {
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
-            mPresent.convertCoin(context, "1", EtExchangeNum.getText().toString(), "2");
+            mPresent.convertCoin(context, "6", EtExchangeNum.getText().toString(), "7");
         } else if (response.body().getCode() == 201) {
             ToastUtils.showLongToast(context, getResources().getString(R.string.password_error));
         } else {

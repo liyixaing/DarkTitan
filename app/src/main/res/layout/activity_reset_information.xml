@@ -25,6 +25,7 @@
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:fletTextAppearance="@color/edittextcolor"
             android:layout_marginTop="@dimen/dp_5">
 
             <EditText
@@ -53,6 +54,7 @@
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:fletTextAppearance="@color/edittextcolor"
             android:layout_marginTop="@dimen/dp_5">
 
             <EditText
@@ -81,6 +83,7 @@
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:fletTextAppearance="@color/edittextcolor"
             android:layout_marginTop="@dimen/dp_5">
 
             <EditText
@@ -111,6 +114,7 @@
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:fletTextAppearance="@color/edittextcolor"
             android:layout_marginTop="@dimen/dp_5">
 
             <EditText
