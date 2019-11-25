@@ -194,6 +194,7 @@ public class PersonalActivity extends MvpActivity<PersonDataChangeContact.Person
             Glide.with(context).load(base64Pic).apply(mRequestOptions).into(headPic);
             CameraUtils.ImgUpdateDirection(imagePath, orc_bitmap, iv);//显示图片,并且判断图片显示的方向,如果不正就放正
             mPresent.modifyHead(context, base64Pic, "1");
+            showLoadingDialog();//弹出等待窗口
         } else {
             ToastUtils.showLongToast(this, getResources().getString(R.string.image_acquisition_failed));
         }
@@ -250,11 +251,14 @@ public class PersonalActivity extends MvpActivity<PersonDataChangeContact.Person
             SPUtils.putString(Constant.PORTRAIT, response.body().getData().getUrl(), context);
             BusFactory.getBus().post(new EventImpl.UpdatePortraitEvent());
             mPresent.UserAvatarupdate(context, response.body().getData().getUrl());
+            dismissLoadingDialog();//关闭等待窗口
             finish();
         } else if (response.body().getCode() == -10) {
             ToastUtils.showShortToast(context, getResources().getString(R.string.not_login));
+            dismissLoadingDialog();//关闭等待窗口
         } else {
             ToastUtils.showShortToast(context, response.body().getMsg());
+            dismissLoadingDialog();//关闭等待窗口
         }
     }
 
@@ -262,8 +266,10 @@ public class PersonalActivity extends MvpActivity<PersonDataChangeContact.Person
     public void getUserAvatar(Response<ResultDTO> response) {
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
             ToastUtils.showShortToast(context, response.body().getMsg());
+            dismissLoadingDialog();//关闭等待窗口
         } else if (response.body().getCode() == -10) {
         } else {
+            dismissLoadingDialog();//关闭等待窗口
             ToastUtils.showShortToast(context, response.body().getMsg());
         }
     }
