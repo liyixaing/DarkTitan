@@ -12,6 +12,7 @@ import com.lxh.baselibray.dialog.AlertDialog;
 import com.lxh.baselibray.mvp.MvpActivity;
 import com.lxh.baselibray.util.SizeUtils;
 import com.lxh.baselibray.util.ToastUtils;
+import com.lxh.baselibray.view.TitleView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -43,16 +44,25 @@ public class TurnOutActivity extends MvpActivity<TurnOutContact.ETurnOutPresent>
     TextView tv_exchange;//转出按钮
     @BindView(R.id.tv_allsun)
     TextView tv_allsun;//全部转出
+    @BindView(R.id.title_lay)
+    TitleView title_lay;
+    @BindView(R.id.tv_yue)
+    TextView tv_yue;
 
 
     String coin;
     String sun;
+    String title;
     int i;
 
     @Override
     public void initData(Bundle savedInstanceState) {
         coin = getIntent().getStringExtra("coin");
         sun = getIntent().getStringExtra("sun");
+        title = getIntent().getStringExtra("title");
+        title = getIntent().getStringExtra("title");
+        title_lay.setTitleText("转出" + title);
+        tv_yue.setText(title + "余额:");
         tv_num.setText(sun);
         i = sun.indexOf(".");
         initInput();

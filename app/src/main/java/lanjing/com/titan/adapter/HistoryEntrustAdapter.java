@@ -35,10 +35,14 @@ public class HistoryEntrustAdapter extends BaseQuickAdapter<EntrustListResponse.
             case 1:
                 helper.setText(R.id.tv_type, R.string.buy);//买卖类型
                 helper.setTextColor(R.id.tv_type, Color.GREEN);
-                if (item.getSourceCoin() == 6) {//单位为TITAN
+                if (item.getSourceCoin() == 6) {//单位为TRH
                     helper.setText(R.id.tv_entrust_price, MoneyUtil.priceFormatDouble(item.getSourceAmount()) + "\rTRH");
                 } else if (item.getSourceCoin() == 5) {//单位为USD
                     helper.setText(R.id.tv_entrust_price, MoneyUtil.priceFormatDouble(item.getSourceAmount()) + "\rBAR");
+                } else if (item.getSourceCoin() == 8) {//单位为ATN
+                    helper.setText(R.id.tv_entrust_price, MoneyUtil.priceFormatDouble(item.getSourceAmount()) + "\rATN");
+                } else if (item.getSourceCoin() == 9) {//单位为DMT
+                    helper.setText(R.id.tv_entrust_price, MoneyUtil.priceFormatDouble(item.getSourceAmount()) + "\rDMT");
                 }
                 switch (state) {
                     case 2:
@@ -77,6 +81,10 @@ public class HistoryEntrustAdapter extends BaseQuickAdapter<EntrustListResponse.
             helper.setText(R.id.tv_num_type, R.string.buy_usd_num_a);//获得TITAN数量
         } else if (item.getSourceCoin() == 5) {
             helper.setText(R.id.tv_num_type, R.string.sell_titan_num_a);//获得USD数量
+        } else if (item.getSourceCoin() == 8) {
+            helper.setText(R.id.tv_num_type, R.string.atn_danjia);
+        } else if (item.getSourceCoin() == 9) {
+            helper.setText(R.id.tv_num_type, R.string.dmt_danjia);
         }
 
         helper.setText(R.id.tv_entrust_num, MoneyUtil.priceFormatDoubleFour(item.getPrice()))

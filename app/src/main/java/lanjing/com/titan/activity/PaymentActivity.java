@@ -22,7 +22,6 @@ import butterknife.OnClick;
 import lanjing.com.titan.R;
 import lanjing.com.titan.constant.Constant;
 import lanjing.com.titan.contact.PaymentContact;
-import lanjing.com.titan.response.AgreementResponse;
 import lanjing.com.titan.response.ConvertConfigResponse;
 import lanjing.com.titan.response.ResultDTO;
 import lanjing.com.titan.response.WithdrawRateResponse;
@@ -73,7 +72,7 @@ public class PaymentActivity extends MvpActivity<PaymentContact.PaymentPresent> 
 
     @Override
     public void initData(Bundle savedInstanceState) {
-        mPresent.Convert(context, 1, 2);//获取titan余额显示
+        mPresent.Convert(context, 6, 7);//获取titan余额显示
         mPresent.WithdrawRate(context, coin);
         String rawResult = getIntent().getStringExtra("rawResult");//接收扫描结果
         String[] all = rawResult.split(",");
@@ -153,15 +152,16 @@ public class PaymentActivity extends MvpActivity<PaymentContact.PaymentPresent> 
                     tv_result.setVisibility(View.GONE);
                 } else {
                     tv_result.setVisibility(View.VISIBLE);
-                    int zhuanhuan = Integer.parseInt(num.substring(0, i));//总数
-                    double text = Double.valueOf(et_tibusun.getText().toString());//输入数量
-                    if (text > zhuanhuan) {
-                        et_tibusun.setText(num.substring(0, i));
-                        et_tibusun.setSelection(et_tibusun.length());//将光标移至文字末尾
-                    } else {
-                        //输入数字比总数小
-                        initCoin();
-                    }
+                    initCoin();
+//                    int zhuanhuan = Integer.parseInt(num.substring(0, i));//总数
+//                    double text = Double.valueOf(et_tibusun.getText().toString());//输入数量
+//                    if (text > zhuanhuan) {
+//                        et_tibusun.setText(num.substring(0, i));
+//                        et_tibusun.setSelection(et_tibusun.length());//将光标移至文字末尾
+//                    } else {
+//                        //输入数字比总数小
+//                        initCoin();
+//                    }
 
 
                 }
@@ -207,7 +207,7 @@ public class PaymentActivity extends MvpActivity<PaymentContact.PaymentPresent> 
             num = MoneyUtil.formatFour(response.body().getData().getUser_titan_amount());
             tv_balance.setText(MoneyUtil.formatFour(response.body().getData().getUser_titan_amount()));
             i = num.indexOf(".");
-            initInput();
+            initInput();//判断输入框
         } else {
             ToastUtils.showLongToast(context, response.body().getMsg());
         }

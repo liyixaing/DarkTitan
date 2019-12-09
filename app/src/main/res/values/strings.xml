@@ -570,5 +570,7 @@
     <string name="Implementation_Point">应用积分</string>
     <string name="Burning_Point">燃烧积分</string>
     <string name="yunyingxiaoxi">泰坦计划运营团队</string>
+    <string name="atn_danjia">ATN单价</string>
+    <string name="dmt_danjia">DMT单价</string>
 </resources>
 

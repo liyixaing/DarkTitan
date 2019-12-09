@@ -85,8 +85,8 @@
                     android:gravity="center_vertical"
                     android:hint="@string/input_the_payment_address"
                     android:paddingLeft="@dimen/dp_20"
-                    android:textColorHint="@color/white"
                     android:textColor="@color/white"
+                    android:textColorHint="@color/white"
                     android:textSize="@dimen/sp_13" />
 
             </LinearLayout>
@@ -145,9 +145,9 @@
                     android:drawablePadding="@dimen/dp_10"
                     android:gravity="center_vertical"
                     android:hint="@string/please_Label"
-                    android:textColorHint="@color/white"
                     android:paddingLeft="@dimen/dp_20"
                     android:textColor="@color/white"
+                    android:textColorHint="@color/white"
                     android:textSize="@dimen/sp_13" />
 
             </LinearLayout>
@@ -263,10 +263,10 @@
                             android:layout_marginRight="@dimen/dp_5"
                             android:buttonTint="#8D9BC5"
                             android:checked="true"
-                            android:textColor="#8D9BC5"
                             android:gravity="center"
                             android:padding="@dimen/dp_4"
                             android:text="CNY"
+                            android:textColor="#8D9BC5"
                             android:textSize="@dimen/sp_15" />
 
                         <RadioButton
@@ -318,9 +318,10 @@
                     android:digits="0123456789"
                     android:hint="@string/payment_amoun"
                     android:inputType="phone"
-                    android:textColorHint="@color/white"
-                    android:textColor="@color/white"
+                    android:maxLength="9"
                     android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
                     android:textSize="@dimen/sp_13" />
 
                 <TextView
@@ -448,9 +449,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="25dp"
-                android:textColor="@color/white"
                 android:layout_marginRight="30dp"
                 android:text="@string/werm_tip"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_12sp" />
 
             <TextView

@@ -571,4 +571,6 @@
     <string name="Implementation_Point">Implementation Point</string>
     <string name="Burning_Point">Burning Point</string>
     <string name="yunyingxiaoxi">Titan plan operation team</string>
+    <string name="atn_danjia">ATN Price</string>
+    <string name="dmt_danjia">DMT Price</string>
 </resources>

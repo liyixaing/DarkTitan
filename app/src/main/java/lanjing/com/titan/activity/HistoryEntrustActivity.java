@@ -112,4 +112,5 @@ public class HistoryEntrustActivity extends MvpActivity<HistoryContact.HistoryPr
         ToastUtils.showShortToast(context, getResources().getString(R.string.network_error));
     }
 
+
 }

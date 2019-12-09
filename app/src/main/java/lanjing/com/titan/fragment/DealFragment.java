@@ -473,6 +473,32 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
                     iv_titan.setVisibility(View.GONE);
                     Choicecurrency.dismiss();//关闭弹窗
 
+                }).setOnClickListener(R.id.ll_atn_usd, v -> {
+                    coin = "8";
+                    mPresent.walletDataTitan(context);
+                    mPresent.entrustList(context, String.valueOf(page), String.valueOf(size), "1");
+                    refreshTwo.autoRefresh();//自动刷新
+                    TvJiaoyi.setText("ATN/USD");
+                    if (type == 0) {
+                        tvCoinType.setText("ATN");
+                    } else if (type == 1) {
+                        tvCoinType.setText("USD");
+                    }
+                    Choicecurrency.dismiss();//关闭弹窗
+
+                }).setOnClickListener(R.id.ll_dmt_usd, v -> {
+                    coin = "9";
+                    mPresent.walletDataTitan(context);
+                    mPresent.entrustList(context, String.valueOf(page), String.valueOf(size), "1");
+                    refreshTwo.autoRefresh();//自动刷新
+                    TvJiaoyi.setText("DMT/USD");
+                    if (type == 0) {
+                        tvCoinType.setText("DMT");
+                    } else if (type == 1) {
+                        tvCoinType.setText("USD");
+                    }
+                    Choicecurrency.dismiss();//关闭当前弹窗
+
                 });
         Choicecurrency = builder.create();
         Choicecurrency.show();
@@ -960,13 +986,31 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
     public void getDealSixResult(Response<SixTradeResponse> response) {
         refreshTwo.finishRefresh();
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
-            if (coin.equals("6")) {
-                tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getTt_price_usd()));
-                tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getTt_price_usd()));
+            if (coin.equals("3")) {
+                tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getUSD()));
+                tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getUSD()));
+            } else if (coin.equals("5")) {
+                tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getBAR()));
+                tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getBAR()));
+
+            } else if (coin.equals("6")) {
+                tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getTRH()));
+                tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getTRH()));
+
+            } else if (coin.equals("8")) {
+                tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getATN()));
+                tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getATN()));
+
+            } else if (coin.equals("9")) {
+                tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getDMT()));
+                tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getDMT()));
+
             } else {
-                tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getBar_price_usd()));
-                tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getBar_price_usd()));
+                tvUsdPrice.setText("0.0000");
+                tvPrice.setText("0.0000");
             }
+
+
             sellData = response.body().getData().getSelldata();
             if (!ObjectUtils.isEmpty(sellData)) {
                 mListSell.clear();
@@ -990,13 +1034,31 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
     @Override
     public void getDealSixOneResult(Response<SixTradeResponse> response) {
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
-            if (coin.equals("6")) {
-                tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getTt_price_usd()));
-                tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getTt_price_usd()));
+            if (coin.equals("3")) {
+                tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getUSD()));
+                tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getUSD()));
+            } else if (coin.equals("5")) {
+                tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getBAR()));
+                tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getBAR()));
+
+            } else if (coin.equals("6")) {
+                tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getTRH()));
+                tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getTRH()));
+
+            } else if (coin.equals("8")) {
+                tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getATN()));
+                tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getATN()));
+
+            } else if (coin.equals("9")) {
+                tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getDMT()));
+                tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getCoin_usd_price().getDMT()));
+
             } else {
-                tvUsdPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getBar_price_usd()));
-                tvPrice.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getBar_price_usd()));
+                tvUsdPrice.setText("0.0000");
+                tvPrice.setText("0.0000");
             }
+
+
             sellData = response.body().getData().getSelldata();
             if (!ObjectUtils.isEmpty(sellData)) {
                 mListSell.clear();

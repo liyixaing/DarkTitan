@@ -140,6 +140,7 @@ public class TItancWaitGetActivity extends MvpActivity<WalletDetailContact.Walle
                 Intent exchanget = new Intent(context, TurnOutActivity.class);
                 exchanget.putExtra("coin", coin);
                 exchanget.putExtra("sun", sun);
+                exchanget.putExtra("title", "TRHC");
                 startActivity(exchanget);
                 break;
         }

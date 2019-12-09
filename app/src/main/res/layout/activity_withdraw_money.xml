@@ -30,6 +30,7 @@
                     android:src="@mipmap/icon_page_return_white" />
 
                 <TextView
+                    android:id="@+id/tv_title"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginRight="50dp"
@@ -354,6 +355,7 @@
                     android:textColor="#E1E1E1" />
 
                 <TextView
+                    android:id="@+id/tv_service_charge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" TRH"

@@ -44,6 +44,120 @@ public class SixTradeResponse {
         private double bar_price_cny;
         private List<BuydataBean> buydata;
         private List<SelldataBean> selldata;
+        public CoinUsdPrice coin_usd_price;
+        public CoinCnyPrice coin_cny_price;
+
+        public CoinUsdPrice getCoin_usd_price() {
+            return coin_usd_price;
+        }
+
+        public void setCoin_usd_price(CoinUsdPrice coin_usd_price) {
+            this.coin_usd_price = coin_usd_price;
+        }
+
+        public CoinCnyPrice getCoin_cny_price() {
+            return coin_cny_price;
+        }
+
+        public void setCoin_cny_price(CoinCnyPrice coin_cny_price) {
+            this.coin_cny_price = coin_cny_price;
+        }
+
+        public static class CoinCnyPrice {
+            private double BAR;
+            private double USD;
+            private double DMT;
+            private double ATN;
+            private double TRH;
+
+            public double getBAR() {
+                return BAR;
+            }
+
+            public void setBAR(double BAR) {
+                this.BAR = BAR;
+            }
+
+            public double getUSD() {
+                return USD;
+            }
+
+            public void setUSD(double USD) {
+                this.USD = USD;
+            }
+
+            public double getDMT() {
+                return DMT;
+            }
+
+            public void setDMT(double DMT) {
+                this.DMT = DMT;
+            }
+
+            public double getATN() {
+                return ATN;
+            }
+
+            public void setATN(double ATN) {
+                this.ATN = ATN;
+            }
+
+            public double getTRH() {
+                return TRH;
+            }
+
+            public void setTRH(double TRH) {
+                this.TRH = TRH;
+            }
+        }
+
+        public static class CoinUsdPrice {
+            private double BAR;
+            private double USD;
+            private double DMT;
+            private double ATN;
+            private double TRH;
+
+            public double getBAR() {
+                return BAR;
+            }
+
+            public void setBAR(double BAR) {
+                this.BAR = BAR;
+            }
+
+            public double getUSD() {
+                return USD;
+            }
+
+            public void setUSD(double USD) {
+                this.USD = USD;
+            }
+
+            public double getDMT() {
+                return DMT;
+            }
+
+            public void setDMT(double DMT) {
+                this.DMT = DMT;
+            }
+
+            public double getATN() {
+                return ATN;
+            }
+
+            public void setATN(double ATN) {
+                this.ATN = ATN;
+            }
+
+            public double getTRH() {
+                return TRH;
+            }
+
+            public void setTRH(double TRH) {
+                this.TRH = TRH;
+            }
+        }
 
         public double getTt_price_usd() {
             return tt_price_usd;

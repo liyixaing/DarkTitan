@@ -90,10 +90,10 @@
                     android:id="@+id/ll_red_dot"
                     android:layout_width="8dp"
                     android:layout_height="8dp"
-                    android:visibility="gone"
                     android:layout_alignParentRight="true"
                     android:background="@drawable/fillet_circular"
-                    android:orientation="vertical"/>
+                    android:orientation="vertical"
+                    android:visibility="gone" />
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -314,7 +314,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:background="@drawable/shape_gray_bg"
                     android:orientation="vertical">
 
@@ -370,7 +369,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:background="@drawable/shape_gray_bg"
                     android:orientation="vertical">
 
@@ -422,7 +420,126 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!--                </LinearLayout>-->
+                <!--新增钱包 ATN-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_gray_bg"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_atn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:foreground="@drawable/bg_white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/dp_10">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_30"
+                            android:layout_height="@dimen/dp_30"
+                            android:background="@mipmap/ic_atm" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_20"
+                            android:layout_weight="1"
+                            android:text="ATN"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_17" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_atn_sun"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_13" />
+
+                            <TextView
+                                android:id="@+id/tv_atn_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--新增钱包 DMT钱包-->
+                <LinearLayout
+                    android:id="@+id/ll_dmt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_gray_bg"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:foreground="@drawable/bg_white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/dp_10">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_30"
+                            android:layout_height="@dimen/dp_30"
+                            android:background="@mipmap/ic_dmt" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_20"
+                            android:layout_weight="1"
+                            android:text="DMT"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_17" />
+
+                        <TextView
+                            android:id="@+id/tv_mining_can_be_done"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="asdas"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_13" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_dmt_sun"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_13" />
+
+                            <TextView
+                                android:id="@+id/tv_dmt_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--</LinearLayout>-->
 
                 <LinearLayout
                     android:layout_width="match_parent"

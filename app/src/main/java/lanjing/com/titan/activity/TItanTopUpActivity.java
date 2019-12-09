@@ -42,14 +42,14 @@ public class TItanTopUpActivity extends MvpActivity<WalletChargeContact.WalletCh
     @Override
     public void initData(Bundle savedInstanceState) {
         coin = getIntent().getStringExtra("coin");
-        if (coin.equals("1")) {
+        if (coin.equals("6")) {
             title_lay.setTitleText(getResources().getString(R.string.titan_top_up));
-        } else if (coin.equals("2")) {
+        } else if (coin.equals("7")) {
             title_lay.setTitleText(getResources().getString(R.string.titanc_top_up));
+        } else if (coin.equals("9")) {
+            title_lay.setTitleText("DMT充币");
         } else {
             title_lay.setTitleText(getResources().getString(R.string.bar_top_up));
-
-
         }
         mPresent.walletCharge(context);
     }

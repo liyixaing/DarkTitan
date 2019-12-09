@@ -40,6 +40,8 @@ import butterknife.OnClick;
 import lanjing.com.titan.R;
 import lanjing.com.titan.activity.AssetTITANActivity;
 import lanjing.com.titan.activity.AssetUSDActivity;
+import lanjing.com.titan.activity.AtnActivity;
+import lanjing.com.titan.activity.DmtActivity;
 import lanjing.com.titan.activity.FeedbackListActivity;
 import lanjing.com.titan.activity.NoticeActivity;
 import lanjing.com.titan.activity.PaymentCodeActivity;
@@ -116,7 +118,20 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
 
     @BindView(R.id.rl_sweep_code)
     RelativeLayout rl_sweep_code;//扫码
-
+    @BindView(R.id.ll_atn)
+    LinearLayout ll_atn;//ANT钱包
+    @BindView(R.id.ll_dmt)
+    LinearLayout ll_dmt;//DMT钱包
+    @BindView(R.id.tv_dmt_sun)
+    TextView tv_dmt_sun;
+    @BindView(R.id.tv_dmt_num)
+    TextView tv_dmt_num;
+    @BindView(R.id.tv_atn_sun)
+    TextView tv_atn_sun;
+    @BindView(R.id.tv_atn_num)
+    TextView tv_atn_num;
+    @BindView(R.id.tv_mining_can_be_done)
+    TextView tv_mining_can_be_done;
     int page = 1;
     int pageSize = 10;
 
@@ -199,6 +214,11 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
         usd2Num.setText("****");
         TvBar.setText("****");
         TvBarnum.setText("****");
+        tv_mining_can_be_done.setText("****");
+        tv_atn_sun.setText("****");
+        tv_atn_num.setText("****");
+        tv_dmt_sun.setText("****");
+        tv_dmt_num.setText("****");
 
     }
 
@@ -209,14 +229,14 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
 
     @OnClick({R.id.checkbox_private_mode, R.id.tv_wallet_name, R.id.manage_wallet, R.id.titan_lay,
             R.id.usd_lay, R.id.titanc_lay, R.id.usd2_lay, R.id.rl_home_notice, R.id.ll_bar, R.id.ll_activation,
-            R.id.iv_tow_code, R.id.rl_sweep_code})
+            R.id.iv_tow_code, R.id.rl_sweep_code, R.id.ll_atn, R.id.ll_dmt})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.checkbox_private_mode:
                 if (checkboxPrivateMode.isChecked()) {
-                    initHide();
+                    initHide();//隐藏余额文本
                 } else {
-                    initShow();
+                    initShow();//显示余额文本
                 }
                 break;
             case R.id.tv_wallet_name://进入  钱包列表  可以进行钱包的命名和切换  以及导入钱包  和  删除钱包
@@ -268,6 +288,20 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
                 usd2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
                 startActivity(usd2);
                 break;
+            case R.id.ll_atn: //进入atn钱包
+                Intent atn = new Intent(context, AssetTITANActivity.class);//AtnActivity
+                atn.putExtra("coin", "8");
+                atn.putExtra("type", "ATN");
+                startActivity(atn);
+
+                break;
+            case R.id.ll_dmt://进入dmt钱包
+                Intent dmt = new Intent(context, AssetTITANActivity.class);//DmtActivity
+                dmt.putExtra("coin", "9");
+                dmt.putExtra("type", "DMT");
+                startActivity(dmt);
+                break;
+
             case R.id.rl_home_notice://小铃铛
                 //跳转到反馈列表界面
                 Intent lingdang = new Intent(context, FeedbackListActivity.class);
@@ -282,29 +316,31 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
                 }
                 break;
             case R.id.iv_tow_code://跳转到二维吗界面
-
-                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                        != PackageManager.PERMISSION_GRANTED) {
-                    //用户已经拒绝过一次，再次弹出权限申请对话框需要给用户一个解释
-                    if (ActivityCompat.shouldShowRequestPermissionRationale(context, Manifest.permission
-                            .WRITE_EXTERNAL_STORAGE)) {
-                        ToastUtils.showLongToast(context, getResources().getString(R.string.Please_open_relevan));
-                    }
-                    //申请权限
-                    ActivityCompat.requestPermissions(context, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-                } else {
-                    Intent TowCode = new Intent(context, PaymentCodeActivity.class);
-                    TowCode.putExtra("walletAddress", walletAddress);
-                    TowCode.putExtra("labelAddress", labelAddress);
-                    startActivity(TowCode);
-                }
-
+                initcode();//跳转
                 break;
             case R.id.ll_activation://点击激活按钮
-//                mPresent.TodayFreeActiveTimes(context);//获取激活信息
                 mPresent.SeckillCdkeyConfig(context);
                 break;
 
+        }
+    }
+
+    //跳转到二维码界面
+    public void initcode() {
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            //用户已经拒绝过一次，再次弹出权限申请对话框需要给用户一个解释
+            if (ActivityCompat.shouldShowRequestPermissionRationale(context, Manifest.permission
+                    .WRITE_EXTERNAL_STORAGE)) {
+                ToastUtils.showLongToast(context, getResources().getString(R.string.Please_open_relevan));
+            }
+            //申请权限
+            ActivityCompat.requestPermissions(context, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+        } else {
+            Intent TowCode = new Intent(context, PaymentCodeActivity.class);
+            TowCode.putExtra("walletAddress", walletAddress);
+            TowCode.putExtra("labelAddress", labelAddress);
+            startActivity(TowCode);
         }
     }
 
@@ -343,8 +379,7 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
                 String content = data.getStringExtra(DECODED_CONTENT_KEY);//文本内容显示
                 //返回的BitMap图像
                 Bitmap bitmap = data.getParcelableExtra(DECODED_BITMAP_KEY);//图像内容返回显示
-
-                Log.e("扫描内容", content);
+                Log.e("二维码内容", content);
             }
         }
     }
@@ -368,6 +403,8 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
             } else {
                 LlRedDot.setVisibility(View.GONE);//隐藏小红点
             }
+            tv_mining_can_be_done.setText(response.body().getData().getMining_quota_amount() + " "
+                    + response.body().getData().getMining_quota_unit());
             tvAmount.setText("$" + MoneyUtil.formatFour(response.body().getData().getTotal_asset_usd()));
             tvWalletId.setText("ID：" + response.body().getData().getUser_tag());
             walletAddress = response.body().getData().getUser_address();
@@ -386,8 +423,16 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
                 } else if (mList.get(i).getCoin().equals("5")) {
                     TvBar.setText(MoneyUtil.formatFour(mList.get(i).getCoin_num()));
                     TvBarnum.setText("$" + MoneyUtil.formatFour(mList.get(i).getCoin_usd_worth()));
+                } else if (mList.get(i).getCoin().equals("8")) {
+                    tv_atn_sun.setText(MoneyUtil.formatFour(mList.get(i).getCoin_num()));
+                    tv_atn_num.setText("$" + MoneyUtil.formatFour(mList.get(i).getCoin_usd_worth()));
+                } else if (mList.get(i).getCoin().equals("9")) {
+                    tv_dmt_sun.setText(MoneyUtil.formatFour(mList.get(i).getCoin_num()));
+                    tv_dmt_num.setText("$" + MoneyUtil.formatFour(mList.get(i).getCoin_usd_worth()));
+
                 } else {
                     Log.e("TAG", "返回的币种类型错误");
+                    Log.e("TAG", mList.get(i).getCoin());
                 }
             }
 
@@ -564,7 +609,6 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
         endDialog.show();
     }
 
-
     /**
      * 激活返回执行
      *
@@ -628,7 +672,6 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
 //                    已激活用户在活动开始状态下点击激活按钮
                     if (response.body().getData().getFreeTimes() == 0) {//判断是否还有名额
                         endDialogDig();
-
                     } else {
                         if (response.body().getData().getIsSuccessSeckill() == 0) {//判断今天抢过没有
                             StaterDialogDig(sun);
@@ -684,20 +727,23 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
             Log.e("版本号1：", systemCode + "");
             Log.e("版本号1：", versionCode + "");
             if (systemCode > versionCode) {
-                showUpdateDialog(response.body().getData().getVersionname(), response.body().getData().getRemarks(), response.body().getData().getUrl());
+                showUpdateDialog(response.body().getData().getVersionname(),
+                        response.body().getData().getRemarks(), response.body().getData().getUrl());
             }
 
             //参数正确不做处理
         } else if (response.body().getCode() == 201) {
             int systemCode = Integer.parseInt(response.body().getData().getVersioncode());
             if (systemCode > versionCode) {
-                showUpdateDialog(response.body().getData().getVersionname(), response.body().getData().getRemarks(), response.body().getData().getUrl());
+                showUpdateDialog(response.body().getData().getVersionname(),
+                        response.body().getData().getRemarks(), response.body().getData().getUrl());
             }
         } else if (response.body().getCode() == 202) {
             int systemCode = Integer.parseInt(response.body().getData().getVersioncode());
             Log.e("对比版本", String.valueOf(systemCode));
             if (systemCode > versionCode) {
-                showUpdateDialog(response.body().getData().getVersionname(), response.body().getData().getRemarks(), response.body().getData().getUrl());
+                showUpdateDialog(response.body().getData().getVersionname(),
+                        response.body().getData().getRemarks(), response.body().getData().getUrl());
             }
         } else if (response.body().getCode() == -10) {
             ToastUtils.showShortToast(context, getResources().getString(R.string.not_login));
@@ -705,5 +751,6 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
             ToastUtils.showShortToast(context, response.body().getMsg());
         }
     }
-
 }
+
+

@@ -46,18 +46,36 @@ public class TiTanWithdrawMoney extends MvpActivity<getTransferContact.getTransf
     TextView TvBalance;//余额
     @BindView(R.id.et_tibusun)
     EditText EtTibusun;//数量输入框
+
+    @BindView(R.id.tv_title)
+    TextView tv_title;
+    @BindView(R.id.tv_service_charge)
+    TextView tv_service_charge;
+    @BindView(R.id.tc_extract_all)
+    TextView tc_extract_all;
+
     private String id;
     String taitanSum;
     Double asd = 0.0;
+
+    String title = "0";
+    String bz = "";
     int i;
 
     @Override
     public void initData(Bundle savedInstanceState) {
         id = getIntent().getStringExtra("id");
         taitanSum = getIntent().getStringExtra("taitanSum");
+        title = getIntent().getStringExtra("title");//币种标题
+        bz = getIntent().getStringExtra("coin");
+
         i = taitanSum.indexOf(".");
 //        asd = Double.valueOf(taitanSum);
+
+        tv_title.setText(title + "提币");
+        tv_service_charge.setText(title);
         TvBalance.setText(taitanSum);
+
         if (id.equals("0")) {
             //参数为0 不做处理
         } else {
@@ -104,7 +122,7 @@ public class TiTanWithdrawMoney extends MvpActivity<getTransferContact.getTransf
     public void getDealPwdResult(Response<ResultDTO> response) {
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
             showLoadingDialog();
-            mPresent.walletWithdraw(context, "6", TvAddress.getText().toString(), TvLabel.getText().toString(), EtTibusun.getText().toString());
+            mPresent.walletWithdraw(context, bz, TvAddress.getText().toString(), TvLabel.getText().toString(), EtTibusun.getText().toString());
         } else if (response.body().getCode() == -10) {
             ToastUtils.showShortToast(context, getResources().getString(R.string.not_login));
         } else if (response.body().getCode() == 201) {
@@ -131,6 +149,8 @@ public class TiTanWithdrawMoney extends MvpActivity<getTransferContact.getTransf
             case R.id.tv_select_address:
                 Intent Select = new Intent(context, ActivitySelectAddress.class);
                 Select.putExtra("taitanSum", taitanSum);
+                Select.putExtra("title", title);
+                Select.putExtra("bz", bz);
                 startActivity(Select);
                 finish();
                 break;
@@ -145,9 +165,15 @@ public class TiTanWithdrawMoney extends MvpActivity<getTransferContact.getTransf
                 }
                 break;
             case R.id.tc_extract_all:
-                int anInt = Integer.parseInt(taitanSum.substring(0, i));
-                EtTibusun.setText(String.valueOf(anInt - 3));
-                EtTibusun.setSelection(EtTibusun.length());//将光标移至文字末尾
+                double balinck = Double.parseDouble(TvBalance.getText().toString());
+                if (balinck <= 3) {
+
+                } else {
+                    int anInt = Integer.parseInt(taitanSum.substring(0, i));
+                    EtTibusun.setText(String.valueOf(anInt - 3));
+                    EtTibusun.setSelection(EtTibusun.length());//将光标移至文字末尾
+                }
+
                 break;
         }
 
@@ -182,18 +208,36 @@ public class TiTanWithdrawMoney extends MvpActivity<getTransferContact.getTransf
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (EtTibusun.getText().toString().equals("")) {
-                    //还没有输入数据不做处理
-                } else if (EtTibusun.getText().toString().length() > 8) {//为了防止用户输入数字超出int值
-                    EtTibusun.setText("10000000");
-                } else {
-                    int zhuanhuan = Integer.parseInt(taitanSum.substring(0, i));
-                    int text = Integer.parseInt(EtTibusun.getText().toString());
-                    if (text > zhuanhuan) {
-                        EtTibusun.setText(taitanSum.substring(0, i));
-                        EtTibusun.setSelection(EtTibusun.length());//将光标移至文字末尾
+                double balinck = Double.parseDouble(TvBalance.getText().toString());
+                if (balinck <= 3) {//判断可用余额是不是够用
+                    if (EtTibusun.getText().toString().equals("")) {
+                        //还没有输入数据不做处理
+                    } else if (EtTibusun.getText().toString().length() > 8) {//为了防止用户输入数字超出int值
+                        EtTibusun.setText("99999999");
                     } else {
-                        //不变
+                        int zhuanhuan = Integer.parseInt(taitanSum.substring(0, i));
+                        int text = Integer.parseInt(EtTibusun.getText().toString());
+                        if (text > zhuanhuan) {
+                            EtTibusun.setText(taitanSum.substring(0, i));
+                            EtTibusun.setSelection(EtTibusun.length());//将光标移至文字末尾
+                        } else {
+                            //不变
+                        }
+                    }
+                } else {
+                    if (EtTibusun.getText().toString().equals("")) {
+                        //还没有输入数据不做处理
+                    } else if (EtTibusun.getText().toString().length() > 8) {//为了防止用户输入数字超出int值
+                        EtTibusun.setText("99999999");
+                    } else {
+                        int zhuanhuan = Integer.parseInt(taitanSum.substring(0, i));
+                        int text = Integer.parseInt(EtTibusun.getText().toString());
+                        if (text > zhuanhuan) {
+                            EtTibusun.setText(taitanSum.substring(0, i));
+                            EtTibusun.setSelection(EtTibusun.length());//将光标移至文字末尾
+                        } else {
+                            //不变
+                        }
                     }
                 }
 

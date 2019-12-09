@@ -16,6 +16,12 @@ import com.lxh.baselibray.R;
 import com.lxh.baselibray.util.SizeUtils;
 
 
+/**
+ * 勉强看一下吧  毕竟我也是二次接手的
+ * 这是一个自定义的顶部返回按钮图标和标题的view
+ * 已经实现自动finish了所以不需要自己在写finish了  应该大部分都使用到这个自定义view了
+ * 可能有部分漏掉的，自己检查一下吧
+ */
 public class TitleView extends LinearLayout {
 
     private TextView mTvTitle;
@@ -23,31 +29,31 @@ public class TitleView extends LinearLayout {
     private TextView mTvRight;
 
     public TitleView(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public TitleView(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public TitleView(final Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TitleView);
-        boolean   ivBackIsVisiable=typedArray.getBoolean(R.styleable.TitleView_ivLeftVisiable,true);
-        String  titleText=typedArray.getString(R.styleable.TitleView_tvTitleText);
-        int color=typedArray.getColor(R.styleable.TitleView_titleTextColor, Color.parseColor("#2B2B2B"));
-        int rightColor=typedArray.getColor(R.styleable.TitleView_rightTextColor, Color.parseColor("#2B2B2B"));
+        boolean ivBackIsVisiable = typedArray.getBoolean(R.styleable.TitleView_ivLeftVisiable, true);
+        String titleText = typedArray.getString(R.styleable.TitleView_tvTitleText);
+        int color = typedArray.getColor(R.styleable.TitleView_titleTextColor, Color.parseColor("#2B2B2B"));
+        int rightColor = typedArray.getColor(R.styleable.TitleView_rightTextColor, Color.parseColor("#2B2B2B"));
         int resourceId = typedArray.getResourceId(R.styleable.TitleView_ivLeftPic, R.drawable.icon_back);
         String rightText = typedArray.getString(R.styleable.TitleView_rightText);
         typedArray.recycle();
 
         View viewRoot = LayoutInflater.from(context).inflate(R.layout.view_titile, this);
-        mIvBack=viewRoot.findViewById(R.id.iv_back);
-        mTvTitle=viewRoot.findViewById(R.id.tv_title);
-        mTvRight=viewRoot.findViewById(R.id.tv_right);
+        mIvBack = viewRoot.findViewById(R.id.iv_back);
+        mTvTitle = viewRoot.findViewById(R.id.tv_title);
+        mTvRight = viewRoot.findViewById(R.id.tv_right);
 
-        mIvBack.setVisibility(ivBackIsVisiable==true?VISIBLE:GONE);
+        mIvBack.setVisibility(ivBackIsVisiable == true ? VISIBLE : GONE);
         mIvBack.setImageResource(resourceId);
         mTvTitle.setText(titleText);
         mTvTitle.setTextColor(color);
@@ -57,11 +63,12 @@ public class TitleView extends LinearLayout {
         mTvRight.setText(rightText);
         mTvRight.setTextColor(rightColor);
     }
-    public void setTitleText(String s){
+
+    public void setTitleText(String s) {
         mTvTitle.setText(s);
     }
 
-    public void setRightOnclickListener(OnClickListener onclickListener){
+    public void setRightOnclickListener(OnClickListener onclickListener) {
         mTvRight.setOnClickListener(onclickListener);
     }
 

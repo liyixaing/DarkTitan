@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_white_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/all"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+
+    <TextView
+        android:id="@+id/tv_buy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/buy"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+
+    <TextView
+        android:id="@+id/tv_sell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/sell"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+
+
+    <TextView
+        android:id="@+id/tv_withdraw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/withdraw_c"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+    <TextView
+        android:id="@+id/tv_turn_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/turn_out"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+    <TextView
+        android:id="@+id/tv_turn_put"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/turn_put"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+    <TextView
+        android:id="@+id/tv_service_fee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/service_fee"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+
+</LinearLayout>

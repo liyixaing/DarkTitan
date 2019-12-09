@@ -46,6 +46,33 @@ public class WalletDataResponse {
         private String wait_view_feedback_count;
         private String user_address;
         private String total_asset_cny;
+        private String mining_quota_unit;
+        private double mining_quota_amount;
+        private double sell_release_rate;
+
+        public double getSell_release_rate() {
+            return sell_release_rate;
+        }
+
+        public void setSell_release_rate(double sell_release_rate) {
+            this.sell_release_rate = sell_release_rate;
+        }
+
+        public double getMining_quota_amount() {
+            return mining_quota_amount;
+        }
+
+        public void setMining_quota_amount(double mining_quota_amount) {
+            this.mining_quota_amount = mining_quota_amount;
+        }
+
+        public String getMining_quota_unit() {
+            return mining_quota_unit;
+        }
+
+        public void setMining_quota_unit(String mining_quota_unit) {
+            this.mining_quota_unit = mining_quota_unit;
+        }
 
         public String getTotal_asset_usd() {
             return total_asset_usd;

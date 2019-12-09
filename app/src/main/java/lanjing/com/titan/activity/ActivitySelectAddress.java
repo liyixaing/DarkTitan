@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -52,10 +53,11 @@ public class ActivitySelectAddress extends MvpActivity<SelectAddressContact.Sele
     //添加适配器
     SelectAddressAdapter selecAdapter;
     String taitanSum;
-
     int page = 1;
     int pageSize = 20;
     List<AddressListResponse.Data> mList;
+    String title;
+    String bz;
 
     @Override
     protected SelectAddressContact.SelectAddressPresent createPresent() {
@@ -66,6 +68,8 @@ public class ActivitySelectAddress extends MvpActivity<SelectAddressContact.Sele
 
     @Override
     public void initData(Bundle savedInstanceState) {
+        title = getIntent().getStringExtra("title");
+        bz = getIntent().getStringExtra("bz");
         taitanSum = getIntent().getStringExtra("taitanSum");
         mPresent.walletList(context, String.valueOf(page), String.valueOf(pageSize));
         mList = new ArrayList<>();
@@ -111,6 +115,8 @@ public class ActivitySelectAddress extends MvpActivity<SelectAddressContact.Sele
                 } else if (view.getId() == R.id.ll_item) {
                     Intent intent = new Intent(context, TiTanWithdrawMoney.class);
                     intent.putExtra("id", mList.get(position).getId());
+                    intent.putExtra("title", title);
+                    intent.putExtra("coin", bz);
                     intent.putExtra("taitanSum", taitanSum);
                     startActivity(intent);
                     finish();
@@ -148,6 +154,8 @@ public class ActivitySelectAddress extends MvpActivity<SelectAddressContact.Sele
             case R.id.iv_backretun:
                 Intent back = new Intent(context, TiTanWithdrawMoney.class);
                 back.putExtra("id", "0");
+                back.putExtra("coin", bz);
+                back.putExtra("title", title);
                 back.putExtra("taitanSum", taitanSum);
                 startActivity(back);
                 finish();
