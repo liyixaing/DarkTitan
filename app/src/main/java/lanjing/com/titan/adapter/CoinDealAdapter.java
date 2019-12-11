@@ -35,8 +35,14 @@ public class CoinDealAdapter extends BaseQuickAdapter<CoinDealResponse.DataBean,
         String types = "";
         if (coin.equals("5")) {
             types = "BAR";
-        } else {
+        } else if (coin.equals("6")) {
             types = "TRH";
+        } else if (coin.equals("8")) {
+            types = "ATN";
+        } else if (coin.equals("9")) {
+            types = "DMT";
+        } else {
+            types = "BAR";
         }
 
         switch (type) {

@@ -229,10 +229,9 @@ public class TItancWaitGetActivity extends MvpActivity<WalletDetailContact.Walle
         refresh.finishLoadMore();
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
             sun = MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum());
-            tvTitancWaitGet.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum()) + "TRHC");//可用余额
+            tvTitancWaitGet.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum()) + " TRHC");//可用余额
         }
     }
-
 
     List<HistoryListResponse.mData> data;
 

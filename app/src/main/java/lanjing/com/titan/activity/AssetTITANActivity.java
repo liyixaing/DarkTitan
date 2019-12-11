@@ -331,12 +331,16 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
                     tvTitanScreen.setText(getResources().getString(R.string.all));
                     mPresent.historylist(context, coin, type, String.valueOf(page), String.valueOf(pageSize));
                     AlertDMTDialog.dismiss();
-                }).setOnClickListener(R.id.tv_buy, v -> {//买入
-                    type = "13";
+                }).setOnClickListener(R.id.tv_buy, v -> {//充币
+                    type = "1";
                     mPresent.historylist(context, coin, type, String.valueOf(page), String.valueOf(pageSize));
                     AlertDMTDialog.dismiss();
                 }).setOnClickListener(R.id.tv_sell, v -> {//卖出
                     type = "11";
+                    mPresent.historylist(context, coin, type, String.valueOf(page), String.valueOf(pageSize));
+                    AlertDMTDialog.dismiss();
+                }).setOnClickListener(R.id.tv_sx, v -> {
+                    type = "12";
                     mPresent.historylist(context, coin, type, String.valueOf(page), String.valueOf(pageSize));
                     AlertDMTDialog.dismiss();
                 });
@@ -439,7 +443,7 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
 
             sun = MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum());
             suntaitan = MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum());
-            tvAssetBalance.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum()));
+            tvAssetBalance.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum()) + " " + getIntent().getStringExtra("type"));
             if (coin.equals("6")) {
                 tvTixianBalance.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum()));//提现余额
             } else if (coin.equals("5")) {

@@ -24,7 +24,7 @@
         android:foreground="@drawable/bg_white"
         android:gravity="center"
         android:padding="@dimen/dp_10"
-        android:text="@string/buy"
+        android:text="@string/top_up_c"
         android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 
@@ -35,6 +35,15 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="@string/sell"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+    <TextView
+        android:id="@+id/tv_sx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/service_fee"
         android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
 </LinearLayout>

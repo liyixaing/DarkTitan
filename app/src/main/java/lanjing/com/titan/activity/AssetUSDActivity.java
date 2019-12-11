@@ -121,7 +121,7 @@ public class AssetUSDActivity extends MvpActivity<WalletDetailContact.WalletDeta
         refresh.finishRefresh();
         refresh.finishLoadMore();
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
-            tvUsdBalance.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum()) + "USD");//USD资产余额
+            tvUsdBalance.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getCoinnum()) + " USD");//USD资产余额
             tvUsdFrozen.setText(MoneyUtil.priceFormatDoubleFour(response.body().getData().getWellet().getFrozennum()));//获取usd的冻结资产
 
         } else if (response.body().getCode() == -10) {

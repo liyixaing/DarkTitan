@@ -251,7 +251,7 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
                 startActivity(intent);
                 break;
-            case R.id.titan_lay://进入  TITAN 的资产页面
+            case R.id.titan_lay://进入  TRH 的资产页面
                 Intent titan = new Intent(context, AssetTITANActivity.class);
                 titan.putExtra("walletId", titanId);
                 titan.putExtra("coin", "6");
@@ -274,7 +274,7 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
                 usd.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
                 startActivity(usd);
                 break;
-            case R.id.titanc_lay://进入    TITANC的待领取
+            case R.id.titanc_lay://进入    TRHC的待领取
                 Intent titanc = new Intent(context, TItancWaitGetActivity.class);
                 titanc.putExtra("walletId", titancId);
                 titanc.putExtra("coin", "7");
@@ -403,7 +403,7 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
             } else {
                 LlRedDot.setVisibility(View.GONE);//隐藏小红点
             }
-            tv_mining_can_be_done.setText(response.body().getData().getMining_quota_amount() + " "
+            tv_mining_can_be_done.setText(MoneyUtil.formatFour(response.body().getData().getMining_quota_amount() + "") + " "
                     + response.body().getData().getMining_quota_unit());
             tvAmount.setText("$" + MoneyUtil.formatFour(response.body().getData().getTotal_asset_usd()));
             tvWalletId.setText("ID：" + response.body().getData().getUser_tag());

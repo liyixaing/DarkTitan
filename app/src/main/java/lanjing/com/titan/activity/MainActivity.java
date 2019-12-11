@@ -3,12 +3,9 @@ package lanjing.com.titan.activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
-import com.google.gson.annotations.SerializedName;
 import com.lxh.baselibray.BaseApplication;
 import com.lxh.baselibray.base.XActivity;
 import com.lxh.baselibray.util.ToastUtils;

@@ -166,6 +166,7 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
     String keyong;
     int typeDatae = 1;
     String coin = "6";
+    double sell_release_rate, mining_quota_amount;
 
 
     @Override
@@ -256,6 +257,10 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
             tvCoinType.setText("TRH");
         } else if (coin.equals("5")) {
             tvCoinType.setText("BAR");
+        } else if (coin.equals("8")) {
+            tvCoinType.setText("ATN");
+        } else if (coin.equals("9")) {
+            tvCoinType.setText("DMT");
         }
         LlJiaoyuie.setVisibility(View.VISIBLE);
         ll_credit.setVisibility(View.GONE);
@@ -403,10 +408,7 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
                     edNumber.setText("");
                     return;
                 }
-
-                mPresent.person(context);
-
-
+                initjuder();
                 break;
             case R.id.tv_history_entrust://历史委托
                 Intent intent = new Intent(context, HistoryEntrustActivity.class);
@@ -420,6 +422,22 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
         }
     }
 
+    //判断内容收益额度不足的提示
+    public void initjuder() {
+        double num = Double.parseDouble(edNumber.getText().toString().trim());
+        Log.e("sell_release_rate", sell_release_rate + "");
+        Log.e(",mining_quota_amount", mining_quota_amount + "");
+        Log.e("number", edNumber.getText().toString().trim());
+        if (num * sell_release_rate > mining_quota_amount) {
+            showBindingPhoneDialog();//弹出提示框
+        } else {
+            mPresent.person(context);//弹出卖出密码输入框
+        }
+
+
+    }
+
+
     //弹出选择币种列表
     AlertDialog Choicecurrency = null;
 
@@ -430,7 +448,7 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
                 .fromTop(true)
                 .setContentView(R.layout.dialog_choice)//载入布局文件
                 .setWidthAndHeight(SizeUtils.dp2px(context, 400), ViewGroup.LayoutParams.WRAP_CONTENT)//设置弹窗宽高
-                .setOnClickListener(R.id.ll_titan, v -> {//  TRH
+                .setOnClickListener(R.id.ll_titan, v -> {//TRH
                     coin = "6";
                     mPresent.walletDataTitan(context);
                     mPresent.entrustList(context, String.valueOf(page), String.valueOf(size), "1");
@@ -539,7 +557,6 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
                     EditText dealPwd = pwdSellDialog.getView(R.id.ed_deal_pwd);
                     String pwd = dealPwd.getText().toString();
 //                    pwd = Md5Utils.MD5(pwd).toUpperCase();
-
                     mPresent.dealPwdSell(context, pwd, Constant.Buying_transaction);
                     pwdSellDialog.dismiss();
                 }).setOnClickListener(R.id.tx_cancel, v -> pwdSellDialog.dismiss());
@@ -576,13 +593,12 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
                 .addDefaultAnimation()//默认弹窗动画
                 .setCancelable(true)
                 .setContentView(R.layout.dialog_binging_phone)//载入布局文件
+                .setText(R.id.tv_select_pic, getResources().getString(R.string.insufficient))
                 .setWidthAndHeight(SizeUtils.dp2px(context, 250), ViewGroup.LayoutParams.WRAP_CONTENT)//设置弹窗宽高
-                .setOnClickListener(R.id.tx_cancel, v -> {//取消绑定手机号
-                    checkboxInter.setChecked(false);
+                .setOnClickListener(R.id.tx_cancel, v -> {//取消
                     bindingPhoneDialog.dismiss();
-                }).setOnClickListener(R.id.tx_sure, v -> {//确定绑定手机号
-                    Intent intent = new Intent(context, BindingPhoneActivity.class);
-                    startActivity(intent);
+                }).setOnClickListener(R.id.tx_sure, v -> {//确定
+                    mPresent.person(context);//弹出卖出密码输入框
                     bindingPhoneDialog.dismiss();
                 });
         bindingPhoneDialog = builder.create();
@@ -900,7 +916,6 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
         }
     };
 
-
     @Override
     protected DealContact.DealPresent createPresent() {
         return new DealContact.DealPresent();
@@ -924,13 +939,33 @@ public class DealFragment extends MvpFragment<DealContact.DealPresent> implement
     //获取TITAn的可用余额
     List<WalletDataResponse.DataBean.Wellets> mLists;
 
+
     @Override
     public void getWalletDataTitanResult(Response<WalletDataResponse> response) {
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
+            sell_release_rate = response.body().getData().getSell_release_rate();
+            mining_quota_amount = response.body().getData().getMining_quota_amount();
+
             mLists = response.body().getData().wellets;
             if (coin.equals("6")) {
                 for (int ii = 0; ii < mLists.size(); ii++) {
                     if (mLists.get(ii).getCoin().equals("6")) {
+                        tvNum.setText(MoneyUtil.formatFour(mLists.get(ii).getCoin_num()));
+                        usd = MoneyUtil.formatFour(mLists.get(ii).getCoin_num());
+                        titan = MoneyUtil.formatFour(mLists.get(ii).getCoin_num());
+                    }
+                }
+            } else if (coin.equals("8")) {
+                for (int ii = 0; ii < mLists.size(); ii++) {
+                    if (mLists.get(ii).getCoin().equals("8")) {
+                        tvNum.setText(MoneyUtil.formatFour(mLists.get(ii).getCoin_num()));
+                        usd = MoneyUtil.formatFour(mLists.get(ii).getCoin_num());
+                        titan = MoneyUtil.formatFour(mLists.get(ii).getCoin_num());
+                    }
+                }
+            } else if (coin.equals("9")) {
+                for (int ii = 0; ii < mLists.size(); ii++) {
+                    if (mLists.get(ii).getCoin().equals("9")) {
                         tvNum.setText(MoneyUtil.formatFour(mLists.get(ii).getCoin_num()));
                         usd = MoneyUtil.formatFour(mLists.get(ii).getCoin_num());
                         titan = MoneyUtil.formatFour(mLists.get(ii).getCoin_num());

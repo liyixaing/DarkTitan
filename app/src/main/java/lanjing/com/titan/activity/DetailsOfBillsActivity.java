@@ -33,6 +33,10 @@ public class DetailsOfBillsActivity extends MvpActivity<BillDetailContact.BillDe
     TextView tv_gettitansun;//获得TITAN数量
     @BindView(R.id.tv_titan_time)
     TextView tv_titan_time;//时间
+    @BindView(R.id.tv_company)
+    TextView tv_company;//文字提示
+    @BindView(R.id.tv_price)
+    TextView tv_price;
 
     String id;
 
@@ -61,12 +65,20 @@ public class DetailsOfBillsActivity extends MvpActivity<BillDetailContact.BillDe
     @Override
     public void getSellOrderDetail(Response<SellOrderDetailResponse> response) {
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
-            tv_titan_type.setText(MoneyUtil.formatFour(String.valueOf(response.body().getData().getTradeAmount() + response.body().getData().getTradeFee())) + "\rUSD");//花费数量
-            tv_titan_state.setText(MoneyUtil.formatFour(String.valueOf(response.body().getData().getTradeFee())) + "\rUSD");//手续费
-//            tv_ource_address.setText(MoneyUtil.formatFour(String.valueOf(response.body().getData().getBarPrice())) + "\rUSD");//成交时BAR单价
-            tv_titan_address.setText(MoneyUtil.formatFour(String.valueOf(response.body().getData().getGainCoin2Amount())) + "\rUSD");//获得BAR数量
-            tv_deal_one.setText(MoneyUtil.formatFour(String.valueOf(response.body().getData().getCoin1Price())) + "\rUSD");//成交时TITAN单价
-            tv_gettitansun.setText(MoneyUtil.formatFour(String.valueOf(response.body().getData().getGainCoin1Amount())) + "\rTRH");//获得TITAN数量
+            String price = "成交时" + response.body().getData().getCoin1Name() + getResources().getString(R.string.prices);
+            tv_price.setText(price);//成交时单价
+            String company = getResources().getString(R.string.get) + response.body().getData().getCoin1Name() + getResources().getString(R.string.Qty);
+            tv_company.setText(company);//获得币种数量
+            String titan_type = MoneyUtil.formatFour(String.valueOf(response.body().getData().getTradeAmount() + response.body().getData().getTradeFee())) + "\rUSD";
+            tv_titan_type.setText(titan_type);//花费数量
+            String titan_state = MoneyUtil.formatFour(String.valueOf(response.body().getData().getTradeFee())) + "\rUSD";
+            tv_titan_state.setText(titan_state);//手续费
+            String titan_address = MoneyUtil.formatFour(String.valueOf(response.body().getData().getGainCoin2Amount())) + "\rUSD";
+            tv_titan_address.setText(titan_address);//获得BAR数量
+            String deal_one = MoneyUtil.formatFour(String.valueOf(response.body().getData().getCoin1Price())) + "\rUSD";
+            tv_deal_one.setText(deal_one);//成交时TITAN单价
+            String gettitansun = MoneyUtil.formatFour(String.valueOf(response.body().getData().getGainCoin1Amount())) + "\r" + response.body().getData().getCoin1Name();
+            tv_gettitansun.setText(gettitansun);//获得TITAN数量
             tv_titan_time.setText(DateUtils.timedate(response.body().getData().getCreateTime()));//时间
         } else {
             ToastUtils.showShortToast(context, response.body().getMsg());

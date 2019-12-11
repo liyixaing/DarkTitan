@@ -413,8 +413,8 @@
     <string name="inter_tip4">②如果用户的TRHC*20大于转入TRH的剩余量，则为用户的转入TRH剩余量。</string>
     <string name="node_tip">今日节点配比USD额度</string>
     <string name="please_login_again">账号异常或用户信息过期，请重新登录!</string>
-    <string name="buy_tip">请输入TRH数量</string>
-    <string name="sell_tip">请输入USD数量</string>
+    <string name="buy_tip">请输入数量</string>
+    <string name="sell_tip">请输入数量</string>
     <string name="num_tip">请输入有效数字</string>
     <string name="success">发布成功！</string>
     <string name="bing_tip">您还未绑定手机号，现在去绑定？</string>
@@ -521,7 +521,7 @@
     <string name="turn_put">转入</string>
     <string name="flash_exchange">闪兑</string>
     <string name="Turn_outtitianc">转出TRHC</string>
-    <string name="titanc_zhuanchu">温馨提示：TRHC只能转出至同矿层和矿区用户</string>
+    <string name="titanc_zhuanchu">温馨提示：只能转出至同矿层和矿区用户</string>
     <string name="yijihuo">已激活</string>
     <string name="record">激活码获取记录</string>
     <string name="not_yer">功能暂未开放</string>
@@ -572,5 +572,7 @@
     <string name="yunyingxiaoxi">泰坦计划运营团队</string>
     <string name="atn_danjia">ATN单价</string>
     <string name="dmt_danjia">DMT单价</string>
+    <string name="insufficient">可挖矿收益额度不足，是否确认卖出? </string>
+    <string name="get">获得</string>
 </resources>
 

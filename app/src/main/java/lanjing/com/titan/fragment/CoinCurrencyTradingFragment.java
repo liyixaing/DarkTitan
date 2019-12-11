@@ -136,4 +136,6 @@ public class CoinCurrencyTradingFragment extends MvpFragment<CoinDealContact.Coi
         ToastUtils.showShortToast(context, getResources().getString(R.string.network_error));
     }
 
+
+//
 }

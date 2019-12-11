@@ -414,8 +414,8 @@
     <string name="inter_tip4">②If The User TRHC*20 Is Larger Than The Rolled TRH Surplus, The User Rolled TRH Surplus.</string>
     <string name="node_tip">Today Node Is Matched With USD Quota</string>
     <string name="please_login_again">Account Abnormal Or User Information Expired, Please Login Again!</string>
-    <string name="buy_tip">Please Enter The Number Of TRH</string>
-    <string name="sell_tip">Please Enter The USD Quantity</string>
+    <string name="buy_tip">Please Enter The Number</string>
+    <string name="sell_tip">Please Enter The Number</string>
     <string name="num_tip">Please Enter A Valid Number</string>
     <string name="success">Release Success!</string>
     <string name="bing_tip">You Have Not Bound The Mobile Phone Number, Now To Bind?</string>
@@ -520,9 +520,9 @@
     <string name="viewfinderview_status_text1">Put the QR code in the box to scan</string>
     <string name="turn_out">Transfer</string>
     <string name="turn_put">Turn In</string>
-    <string name="flash_exchange">exchange</string>
+    <string name="flash_exchange">Exchange</string>
     <string name="Turn_outtitianc">Transfer TRHC</string>
-    <string name="titanc_zhuanchu">Warm reminder: TRHC can only be transferred to the same mining and mining users.</string>
+    <string name="titanc_zhuanchu">Warm reminder: Can Only Be Transferred To The Same Mining And Mining Users.</string>
     <string name="yijihuo">Activated</string>
     <string name="record">Activation Code Acquisition Record</string>
     <string name="not_yer">Not open</string>
@@ -573,4 +573,6 @@
     <string name="yunyingxiaoxi">Titan plan operation team</string>
     <string name="atn_danjia">ATN Price</string>
     <string name="dmt_danjia">DMT Price</string>
+    <string name="insufficient">Insufficient mining balance detected, proceed to Sell Out? </string>
+    <string name="get">get </string>
 </resources>
