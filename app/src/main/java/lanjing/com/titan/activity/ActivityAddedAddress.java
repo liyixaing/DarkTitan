@@ -13,6 +13,8 @@ import com.lxh.baselibray.util.CountDownTimerUtils;
 import com.lxh.baselibray.util.SPUtils;
 import com.lxh.baselibray.util.ToastUtils;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -50,7 +52,8 @@ public class ActivityAddedAddress extends MvpActivity<SaveOrUpdateContact.saveOr
     public void initData(Bundle savedInstanceState) {
         setEditTextInhibitInputSpeChat(EtCurrency);
         Phone = SPUtils.getString(Constant.PHONE, null, context);
-        TvHome.setText(getResources().getString(R.string.phone) + "\u3000" + Phone);
+        String home = getResources().getString(R.string.phone) + "\u3000" + Phone;
+        TvHome.setText(home);
     }
 
     @Override

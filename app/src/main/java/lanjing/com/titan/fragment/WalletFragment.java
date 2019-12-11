@@ -31,6 +31,7 @@ import com.lxh.baselibray.util.SizeUtils;
 import com.lxh.baselibray.util.ToastUtils;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
+import java.lang.invoke.LambdaConversionException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -158,15 +159,27 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
         mPresent.person(context);
         tvWalletName.setText(SPUtils.getString(Constant.WALLET_NAME, null, context));
 
-        listNoticeContent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, NoticeActivity.class);
-                intent.putExtra("type", "1");
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-                startActivity(intent);
-            }
+        //按钮点击事件绑定老写法
+//        listNoticeContent.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(context, NoticeActivity.class);
+//                intent.putExtra("type", "1");
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+//                startActivity(intent);
+//            }
+//        });
+
+        //设置点击事件新方法
+        listNoticeContent.setOnClickListener(view -> {
+            Log.e("小强", "xiaoqiang");
+            System.out.println("TAG");
+            Intent intent = new Intent(context, NoticeActivity.class);
+            intent.putExtra("type", "1");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+            startActivity(intent);
         });
+
     }
 
     AlertDialog UpdateDialog = null;
@@ -360,7 +373,6 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     goScan();
                 } else {
-                    //You refused the camera permission and may not be able to open the camera scanner.
                     ToastUtils.showLongToast(context, getResources().getString(R.string.rejected_the_permission));
                 }
                 break;
@@ -403,32 +415,40 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
             } else {
                 LlRedDot.setVisibility(View.GONE);//隐藏小红点
             }
-            tv_mining_can_be_done.setText(MoneyUtil.formatFour(response.body().getData().getMining_quota_amount() + "") + " "
-                    + response.body().getData().getMining_quota_unit());
-            tvAmount.setText("$" + MoneyUtil.formatFour(response.body().getData().getTotal_asset_usd()));
-            tvWalletId.setText("ID：" + response.body().getData().getUser_tag());
+            String canbedone = MoneyUtil.formatFour(response.body().getData().getMining_quota_amount() + "") + " "
+                    + response.body().getData().getMining_quota_unit();
+            tv_mining_can_be_done.setText(canbedone);
+            String amount = "$" + MoneyUtil.formatFour(response.body().getData().getTotal_asset_usd());
+            tvAmount.setText(amount);
+            String walletid = "ID：" + response.body().getData().getUser_tag();
+            tvWalletId.setText(walletid);
             walletAddress = response.body().getData().getUser_address();
             labelAddress = response.body().getData().getUser_tag();
             for (int i = 0; i < mList.size(); i++) {
                 if (mList.get(i).getCoin().equals("6")) {
                     titanNum.setText(MoneyUtil.formatFour(mList.get(i).getCoin_num()));
-                    titanPrice.setText("$" + MoneyUtil.formatFour(mList.get(i).getCoin_usd_worth()));
+                    String price = "$" + MoneyUtil.formatFour(mList.get(i).getCoin_usd_worth());
+                    titanPrice.setText(price);
                 } else if (mList.get(i).getCoin().equals("7")) {
                     titancNum.setText(MoneyUtil.formatFour(mList.get(i).getCoin_num()));
                 } else if (mList.get(i).getCoin().equals("3")) {
                     usdNum.setText(MoneyUtil.formatFour(mList.get(i).getCoin_num()));
-                    usdPrice.setText("¥" + MoneyUtil.formatFour(mList.get(i).getCoin_cny_worth()));
+                    String usdprice = "¥" + MoneyUtil.formatFour(mList.get(i).getCoin_cny_worth());
+                    usdPrice.setText(usdprice);
                 } else if (mList.get(i).getCoin().equals("4")) {
                     usd2Num.setText(MoneyUtil.formatFour(mList.get(i).getCoin_num()));
                 } else if (mList.get(i).getCoin().equals("5")) {
                     TvBar.setText(MoneyUtil.formatFour(mList.get(i).getCoin_num()));
-                    TvBarnum.setText("$" + MoneyUtil.formatFour(mList.get(i).getCoin_usd_worth()));
+                    String Barnum = "$" + MoneyUtil.formatFour(mList.get(i).getCoin_usd_worth());
+                    TvBarnum.setText(Barnum);
                 } else if (mList.get(i).getCoin().equals("8")) {
                     tv_atn_sun.setText(MoneyUtil.formatFour(mList.get(i).getCoin_num()));
-                    tv_atn_num.setText("$" + MoneyUtil.formatFour(mList.get(i).getCoin_usd_worth()));
+                    String antNum = "$" + MoneyUtil.formatFour(mList.get(i).getCoin_usd_worth());
+                    tv_atn_num.setText(antNum);
                 } else if (mList.get(i).getCoin().equals("9")) {
                     tv_dmt_sun.setText(MoneyUtil.formatFour(mList.get(i).getCoin_num()));
-                    tv_dmt_num.setText("$" + MoneyUtil.formatFour(mList.get(i).getCoin_usd_worth()));
+                    String DmtNum = "$" + MoneyUtil.formatFour(mList.get(i).getCoin_usd_worth());
+                    tv_dmt_num.setText(DmtNum);
 
                 } else {
                     Log.e("TAG", "返回的币种类型错误");
@@ -705,7 +725,7 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
                 FreeDialogDialog(sun);
             }
         } else {
-            ToastUtils.showLongToast(context, response.body().getMsg());//未知错误类型直接输出massger
+            ToastUtils.showLongToast(context, response.body().getMsg());
         }
 
     }

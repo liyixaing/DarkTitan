@@ -90,7 +90,7 @@ public class PaymentCodeActivity extends MvpActivity<PaymentCode.FriendListPrese
         switch (view.getId()) {
             case R.id.ll_save_album://保存图片
                 initSaveAlbum();//截屏保存
-//                createViewBitmap(ll_imageView);//单个布局保存
+//                createViewBitmap(ll_imageView);//保存部分布局界面
                 break;
             case R.id.ll_copy_address://复制地址
                 ClipboardManager address = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
