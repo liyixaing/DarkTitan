@@ -574,5 +574,7 @@
     <string name="dmt_danjia">DMT单价</string>
     <string name="insufficient">可挖矿收益额度不足，是否确认卖出? </string>
     <string name="get">获得</string>
+    <string name="sunment">余额</string>
+    <string name="closing_time">成交时</string>
 </resources>
 

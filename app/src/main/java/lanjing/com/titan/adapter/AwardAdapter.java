@@ -34,25 +34,32 @@ public class AwardAdapter extends BaseQuickAdapter<CoinLogListResponse.Data, Bas
         int changeCoin = Integer.parseInt(item.getChangeCoin());
         switch (changeCoin) {
             case 1:
-                helper.setText(R.id.tv_bi_type, "TITAN");
+                helper.setText(R.id.tv_bi_type, " TITAN");
                 break;
             case 2:
-                helper.setText(R.id.tv_bi_type, "TITANC");
+                helper.setText(R.id.tv_bi_type, " TITANC");
                 break;
             case 3:
-                helper.setText(R.id.tv_bi_type, "USD");
+                helper.setText(R.id.tv_bi_type, " USD");
                 break;
             case 4:
-                helper.setText(R.id.tv_bi_type, "USD");
+                helper.setText(R.id.tv_bi_type, " USD");
                 break;
             case 5:
-                helper.setText(R.id.tv_bi_type, "BAR");
+                helper.setText(R.id.tv_bi_type, " BAR");
                 break;
             case 6:
-                helper.setText(R.id.tv_bi_type, "TRH");
+                helper.setText(R.id.tv_bi_type, " TRH");
                 break;
             case 7:
-                helper.setText(R.id.tv_bi_type, "TRHC");
+                helper.setText(R.id.tv_bi_type, " TRHC");
+                break;
+            case 8:
+                helper.setText(R.id.tv_bi_type, " ATN");
+                break;
+            case 9:
+                helper.setText(R.id.tv_bi_type, " DMT");
+                break;
         }
         String time = DateUtils.timedate(item.getChangeTime());
         helper

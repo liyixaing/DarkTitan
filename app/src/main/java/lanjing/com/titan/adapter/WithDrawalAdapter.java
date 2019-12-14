@@ -29,24 +29,32 @@ public class WithDrawalAdapter extends BaseQuickAdapter<CoinLogListResponse.Data
         int type = Integer.parseInt(item.getChangeType());
         switch (typeMoney) {
             case 1:
-                helper.setText(R.id.tv_currency, "TITAN");
-                helper.setText(R.id.tv_typemonet, "TITAN");
+                helper.setText(R.id.tv_currency, " TITAN");
+                helper.setText(R.id.tv_typemonet, " TITAN");
                 break;
             case 2:
-                helper.setText(R.id.tv_currency, "TITANC");
-                helper.setText(R.id.tv_typemonet, "TITANC");
+                helper.setText(R.id.tv_currency, " TITANC");
+                helper.setText(R.id.tv_typemonet, " TITANC");
                 break;
             case 5:
-                helper.setText(R.id.tv_currency, "BAR");
-                helper.setText(R.id.tv_typemonet, "BAR");
+                helper.setText(R.id.tv_currency, " BAR");
+                helper.setText(R.id.tv_typemonet, " BAR");
                 break;
             case 6:
-                helper.setText(R.id.tv_currency, "TRH");
-                helper.setText(R.id.tv_typemonet, "TRH");
+                helper.setText(R.id.tv_currency, " TRH");
+                helper.setText(R.id.tv_typemonet, " TRH");
                 break;
             case 7:
-                helper.setText(R.id.tv_currency, "TRHC");
-                helper.setText(R.id.tv_typemonet, "TRHC");
+                helper.setText(R.id.tv_currency, " TRHC");
+                helper.setText(R.id.tv_typemonet, " TRHC");
+                break;
+            case 8:
+                helper.setText(R.id.tv_currency, " ATN");
+                helper.setText(R.id.tv_typemonet, " ATN");
+                break;
+            case 9:
+                helper.setText(R.id.tv_currency, " DMT");
+                helper.setText(R.id.tv_typemonet, " DMT");
                 break;
         }
         helper.setText(R.id.tv_deposit_type, item.getChangeDesc());

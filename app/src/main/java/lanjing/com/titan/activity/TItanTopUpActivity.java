@@ -47,7 +47,7 @@ public class TItanTopUpActivity extends MvpActivity<WalletChargeContact.WalletCh
         } else if (coin.equals("7")) {
             title_lay.setTitleText(getResources().getString(R.string.titanc_top_up));
         } else if (coin.equals("9")) {
-            title_lay.setTitleText("DMT充币");
+            title_lay.setTitleText("DMT"+ getResources().getString(R.string.titan_top_up));
         } else {
             title_lay.setTitleText(getResources().getString(R.string.bar_top_up));
         }

@@ -65,7 +65,7 @@ public class DetailsOfBillsActivity extends MvpActivity<BillDetailContact.BillDe
     @Override
     public void getSellOrderDetail(Response<SellOrderDetailResponse> response) {
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
-            String price = "成交时" + response.body().getData().getCoin1Name() + getResources().getString(R.string.prices);
+            String price = getResources().getString(R.string.closing_time) + response.body().getData().getCoin1Name() + getResources().getString(R.string.prices);
             tv_price.setText(price);//成交时单价
             String company = getResources().getString(R.string.get) + response.body().getData().getCoin1Name() + getResources().getString(R.string.Qty);
             tv_company.setText(company);//获得币种数量

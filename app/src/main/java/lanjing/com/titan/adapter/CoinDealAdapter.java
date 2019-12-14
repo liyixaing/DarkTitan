@@ -34,29 +34,29 @@ public class CoinDealAdapter extends BaseQuickAdapter<CoinDealResponse.DataBean,
         String coin = item.getCoin1();
         String types = "";
         if (coin.equals("5")) {
-            types = "BAR";
+            types = " BAR";
         } else if (coin.equals("6")) {
-            types = "TRH";
+            types = " TRH";
         } else if (coin.equals("8")) {
-            types = "ATN";
+            types = " ATN";
         } else if (coin.equals("9")) {
-            types = "DMT";
+            types = " DMT";
         } else {
-            types = "BAR";
+            types = " BAR";
         }
 
         switch (type) {
             case 1://买入
                 helper.setText(R.id.deal_type, R.string.buy);
                 helper.setText(R.id.tv_cost_num, MoneyUtil.formatFour(item.getCoinnum1()) + types);//卖出TITAN
-                helper.setText(R.id.tv_get_num, MoneyUtil.formatFour(item.getCoinmun2()) + "USD");//得到USD
+                helper.setText(R.id.tv_get_num, MoneyUtil.formatFour(item.getCoinmun2()) + " USD");//得到USD
                 helper.setText(R.id.tv_fee, MoneyUtil.formatFour(item.getFee()) + types);//扣除TITAN的手续费
                 break;
             case 2://卖出
                 helper.setText(R.id.deal_type, R.string.sell);
-                helper.setText(R.id.tv_cost_num, MoneyUtil.formatFour(item.getCoinnum1()) + "USD");//卖出USD
-                helper.setText(R.id.tv_get_num, item.getCoinmun2() + "TRH");//得到TITAN
-                helper.setText(R.id.tv_fee, MoneyUtil.formatFour(item.getFee()) + "USD");//扣除USD的手续费
+                helper.setText(R.id.tv_cost_num, MoneyUtil.formatFour(item.getCoinnum1()) + " USD");//卖出USD
+                helper.setText(R.id.tv_get_num, item.getCoinmun2() + " TRH");//得到TITAN
+                helper.setText(R.id.tv_fee, MoneyUtil.formatFour(item.getFee()) + " USD");//扣除USD的手续费
                 ll_num.setVisibility(View.GONE);
                 break;
         }

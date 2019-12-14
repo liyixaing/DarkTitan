@@ -159,17 +159,6 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
         mPresent.person(context);
         tvWalletName.setText(SPUtils.getString(Constant.WALLET_NAME, null, context));
 
-        //按钮点击事件绑定老写法
-//        listNoticeContent.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(context, NoticeActivity.class);
-//                intent.putExtra("type", "1");
-//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-//                startActivity(intent);
-//            }
-//        });
-
         //设置点击事件新方法
         listNoticeContent.setOnClickListener(view -> {
             Log.e("小强", "xiaoqiang");
@@ -451,7 +440,6 @@ public class WalletFragment extends MvpFragment<WalletDataContact.WalletDataPres
                     tv_dmt_num.setText(DmtNum);
 
                 } else {
-                    Log.e("TAG", "返回的币种类型错误");
                     Log.e("TAG", mList.get(i).getCoin());
                 }
             }

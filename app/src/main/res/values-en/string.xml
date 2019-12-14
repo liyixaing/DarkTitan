@@ -92,9 +92,9 @@
     <string name="exchange_titanc">Exchange TRHC</string>
     <string name="cash_withdraw_balance">Cash Withdraw Balance</string>
     <string name="exchange_transfer">Exchange Transfer In (Unexchanged)</string>
-    <string name="titan_top_up">TITAN Top Up</string>
+    <string name="titan_top_up">TRH Top Up</string>
     <string name="bar_top_up">BAR Top Up</string>
-    <string name="titanc_top_up">TITANC Top Up</string>
+    <string name="titanc_top_up">TRHC Top Up</string>
     <string name="titan_withdraw">TITAN Withdraw</string>
     <string name="titan_trading_particulars">TRH Trading Particulars</string>
     <string name="pls_one">Pls Input Withdraw Address</string>
@@ -575,4 +575,6 @@
     <string name="dmt_danjia">DMT Price</string>
     <string name="insufficient">Insufficient mining balance detected, proceed to Sell Out? </string>
     <string name="get">get </string>
+    <string name="sunment">balance</string>
+    <string name="closing_time">Closing Time</string>
 </resources>

@@ -217,7 +217,7 @@
             android:background="@drawable/btn_radius_blue"
             android:foreground="@drawable/bg_white"
             android:gravity="center"
-            android:text="提币"
+            android:text="@string/withdraw_c"
             android:textColor="@color/white"
             android:textSize="@dimen/sp_15" />
 

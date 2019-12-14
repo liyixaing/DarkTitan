@@ -119,6 +119,7 @@ public class RewardDropFragment extends MvpFragment<AwardContact.AwardPresent> i
                 rv.setVisibility(View.GONE);
             }
         } else {
+
             ToastUtils.showShortToast(context, response.body().getMsg());
         }
     }

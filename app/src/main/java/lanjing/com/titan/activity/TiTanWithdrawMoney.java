@@ -72,7 +72,7 @@ public class TiTanWithdrawMoney extends MvpActivity<getTransferContact.getTransf
         i = taitanSum.indexOf(".");
 //        asd = Double.valueOf(taitanSum);
 
-        tv_title.setText(title + "提币");
+        tv_title.setText(title + getResources().getString(R.string.withdraw_c));
         tv_service_charge.setText(title);
         TvBalance.setText(taitanSum);
 

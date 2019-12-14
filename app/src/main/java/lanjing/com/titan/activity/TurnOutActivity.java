@@ -61,8 +61,8 @@ public class TurnOutActivity extends MvpActivity<TurnOutContact.ETurnOutPresent>
         sun = getIntent().getStringExtra("sun");
         title = getIntent().getStringExtra("title");
         title = getIntent().getStringExtra("title");
-        title_lay.setTitleText("转出" + title);
-        tv_yue.setText(title + "余额:");
+        title_lay.setTitleText(getResources().getString(R.string.turn_out) + title);
+        tv_yue.setText(title + getResources().getString(R.string.sunment)+":");
         tv_num.setText(sun);
         i = sun.indexOf(".");
         initInput();
