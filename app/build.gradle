@@ -6,8 +6,8 @@ android {
         applicationId "lanjing.com.darktitan"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 200
-        versionName "2.0.0"//更包的时候记得改版本号和app名称
+        versionCode 201
+        versionName "2.0.1"//更包的时候记得改版本号和app名称
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
@@ -33,12 +33,12 @@ android {
                 output ->
                     def outputFile = output.outputFile
                     if (outputFile != null && outputFile.name.contains('release')) {
-                        def fileName = "T_Rhea_2.0.0_Build191123.apk"
+                        def fileName = "T_Rhea_${variant.versionName}_Build191214.apk"
 //                        def fileName = "TITAN_1.4.5_Test.apk"
 
                         outputFileName = fileName;
                     } else if (outputFile != null && outputFile.name.contains('debug')) {
-                        def fileName = "TITAN${variant.versionName}.apk"
+                        def fileName = "T_Rhea_${variant.versionName}_debug.apk"
                         outputFileName = fileName;
                     }
             }

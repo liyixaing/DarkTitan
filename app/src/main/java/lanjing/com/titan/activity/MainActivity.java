@@ -84,7 +84,6 @@ public class MainActivity extends XActivity implements RadioGroup.OnCheckedChang
         } else if (id == 4) {
             viewPager.setCurrentItem(2);
         }
-
     }
 
     @Override
