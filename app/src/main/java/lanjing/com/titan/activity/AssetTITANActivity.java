@@ -79,7 +79,7 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
     String type;//0，手续费 1，交易释放 2，充币 3，提币 4，买入 5，卖出 6，系统 7，其他 （不填写为全部）
     String types;//接收上个界面传来的类型（用来判断是哪一个界面跳转过来的）
     String suntaitan;
-    String coin;//接收类型 1为泰坦  5为BAR
+    String coin;//接收类型
 
     String sun = "0";
 
@@ -102,7 +102,9 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
             LlExchange.setVisibility(View.GONE);
         } else if (coin.equals("9")) {
             LlExchange.setVisibility(View.GONE);
-            withdrawCBtn.setVisibility(View.GONE);
+//            withdrawCBtn.setVisibility(View.GONE);//取消隐藏提币
+            withdrawCBtn.setText(getResources().getString(R.string.flash_exchange));//闪兑标题
+
         }
         TitleLay.setTitleText(types);
 
@@ -204,7 +206,14 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
                     TTmoney2.putExtra("taitanSum", suntaitan);
                     TTmoney2.putExtra("title", "BAR");
                     startActivity(TTmoney2);
-                } else {
+                }else if (coin.equals("9")){//币种为9 表示为dmt币种  dmt币种是没有提币的所以这显示闪兑
+                    Intent exchange = new Intent(context, ExchangeActivity.class);
+                    exchange.putExtra("num", "DMT");
+                    exchange.putExtra("coin", coin);
+                    startActivity(exchange);
+
+                }
+                else {
                     Intent TTmoney3 = new Intent(context, TiTanWithdrawMoney.class);
                     TTmoney3.putExtra("id", "0");
                     TTmoney3.putExtra("coin", coin);
@@ -309,6 +318,19 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
                     AlertATNDialog.dismiss();
                 }).setOnClickListener(R.id.tv_service_fee, v -> {//手续费
                     type = "12";
+                    mPresent.historylist(context, coin, type, String.valueOf(page), String.valueOf(pageSize));
+                    AlertATNDialog.dismiss();
+                }).setOnClickListener(R.id.tv_deal_get, v -> {//交易获得
+                    type = "201";
+                    mPresent.historylist(context, coin, type, String.valueOf(page), String.valueOf(pageSize));
+                    AlertATNDialog.dismiss();
+
+                }).setOnClickListener(R.id.tv_service_get, v -> {//矿层交易获得
+                    type = "202";
+                    mPresent.historylist(context, coin, type, String.valueOf(page), String.valueOf(pageSize));
+                    AlertATNDialog.dismiss();
+                }).setOnClickListener(R.id.tv_pool_get, v -> {//矿池交易获得
+                    type = "203";
                     mPresent.historylist(context, coin, type, String.valueOf(page), String.valueOf(pageSize));
                     AlertATNDialog.dismiss();
                 });

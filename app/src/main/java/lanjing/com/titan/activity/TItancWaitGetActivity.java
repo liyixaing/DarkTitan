@@ -133,7 +133,8 @@ public class TItancWaitGetActivity extends MvpActivity<WalletDetailContact.Walle
                 break;
             case R.id.withdraw_c_btn://闪兑
                 Intent exchange = new Intent(context, ExchangeActivity.class);
-                exchange.putExtra("num", "0");
+                exchange.putExtra("num", "TRHC");
+                exchange.putExtra("coin", coin);
                 startActivity(exchange);
                 break;
             case R.id.exchange_btn://转出

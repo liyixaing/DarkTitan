@@ -49,6 +49,7 @@
         android:text="@string/withdraw_c"
         android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
+
     <TextView
         android:id="@+id/tv_turn_out"
         android:layout_width="match_parent"
@@ -59,6 +60,7 @@
         android:text="@string/turn_out"
         android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
+
     <TextView
         android:id="@+id/tv_turn_put"
         android:layout_width="match_parent"
@@ -69,6 +71,7 @@
         android:text="@string/turn_put"
         android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
+
     <TextView
         android:id="@+id/tv_service_fee"
         android:layout_width="match_parent"
@@ -79,5 +82,39 @@
         android:text="@string/service_fee"
         android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
+
+    <TextView
+        android:id="@+id/tv_deal_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/trade_get"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+
+    <TextView
+        android:id="@+id/tv_service_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/direct_push_trade_gains"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+
+    <TextView
+        android:id="@+id/tv_pool_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/rank_trading_weight"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+
 
 </LinearLayout>

@@ -495,7 +495,7 @@
     <string name="balance_all">Exchange All</string>
     <string name="exchange_rate">Exchange Rate</string>
     <string name="details">Details</string>
-    <string name="balance_log">Warm reminder: Flash confirmation will be flashed to TRHC at the actual price.</string>
+    <string name="balance_log">Warm reminder: Flash confirmation will be flashed to at the actual price.</string>
     <string name="Transaction_Price_titan">AT Completion TRH U/P</string>
     <string name="getbar">Get BAR Qty</string>
     <string name="Transaction_Price_bar">AT Completion BAR U/P </string>

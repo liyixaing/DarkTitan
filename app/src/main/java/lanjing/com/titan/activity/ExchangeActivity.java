@@ -1,18 +1,21 @@
 package lanjing.com.titan.activity;
 
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lxh.baselibray.dialog.AlertDialog;
 import com.lxh.baselibray.mvp.MvpActivity;
 import com.lxh.baselibray.util.SizeUtils;
 import com.lxh.baselibray.util.ToastUtils;
+import com.lxh.baselibray.view.TitleView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -35,10 +38,17 @@ public class ExchangeActivity extends MvpActivity<ExchangeContact.ExchangePresen
     TextView TvNum;
     @BindView(R.id.tv_rate)
     TextView TvRate;
+    @BindView(R.id.tv_yuancoin)
+    TextView tv_yuancoin;
+    @BindView(R.id.im_iconimageView)
+    ImageView im_iconimageView;
+    @BindView(R.id.title_lay)
+    TitleView title_lay;
     String num;
     int i;
     int sourceCoin = 6;//原币种
-    int targetCoin = 7;//兑换币种
+    String targetCoin;//兑换币种
+    String name;
 
     @Override
     protected ExchangeContact.ExchangePresent createPresent() {
@@ -47,7 +57,19 @@ public class ExchangeActivity extends MvpActivity<ExchangeContact.ExchangePresen
 
     @Override
     public void initData(Bundle savedInstanceState) {
-        mPresent.Convert(context, sourceCoin, targetCoin);
+        name = getIntent().getStringExtra("num");
+        Log.e("name", name);
+        targetCoin = getIntent().getStringExtra("coin");
+        Log.e("coin", targetCoin);
+        title_lay.setTitleText(getResources().getString(R.string.flash_exchange) + name);//修改标题文本
+        if (targetCoin.equals("9")) {//判断币种
+            //修改币种图标
+            im_iconimageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.mipmap.ic_dmt));
+        } else {
+            im_iconimageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.mipmap.ic_title_rhea));
+        }
+        tv_yuancoin.setText(name);
+        mPresent.Convert(context, sourceCoin, Integer.parseInt(targetCoin));
 
     }
 
@@ -137,7 +159,7 @@ public class ExchangeActivity extends MvpActivity<ExchangeContact.ExchangePresen
             initInput();
             i = num.indexOf(".");
             TvRate.setText(Reference + "1"
-                    + "TRH ≈ " + MoneyUtil.formatFour(response.body().getData().getConvert_rate()) + "TRHC");
+                    + "TRH ≈ " + MoneyUtil.formatFour(response.body().getData().getConvert_rate()) + name);
         } else if (response.body().getCode() == -10) {
             ToastUtils.showShortToast(context, getResources().getString(R.string.not_login));
         } else {
@@ -160,7 +182,7 @@ public class ExchangeActivity extends MvpActivity<ExchangeContact.ExchangePresen
     @Override
     public void getDealPwdResult(Response<ResultDTO> response) {
         if (response.body().getCode() == Constant.SUCCESS_CODE) {
-            mPresent.convertCoin(context, "6", EtExchangeNum.getText().toString(), "7");
+            mPresent.convertCoin(context, "6", EtExchangeNum.getText().toString(), targetCoin);
         } else if (response.body().getCode() == 201) {
             ToastUtils.showLongToast(context, getResources().getString(R.string.password_error));
         } else {

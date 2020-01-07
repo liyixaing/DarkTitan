@@ -494,7 +494,7 @@
     <string name="balance_all">全部闪兑</string>
     <string name="exchange_rate">汇率</string>
     <string name="details">详情</string>
-    <string name="balance_log">温馨提示：闪兑确认后将以实际价格进行闪兑TRHC数量</string>
+    <string name="balance_log">温馨提示：闪兑确认后将以实际价格进行闪兑数量</string>
     <string name="Transaction_Price_titan">成交时TRH单价</string>
     <string name="getbar">获得BAR数量</string>
     <string name="Transaction_Price_bar">成交时BAR单价</string>
