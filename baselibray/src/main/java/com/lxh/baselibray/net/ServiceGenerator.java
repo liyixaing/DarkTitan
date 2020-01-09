@@ -1,5 +1,7 @@
 package com.lxh.baselibray.net;
 
+import android.util.Log;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -11,8 +13,8 @@ public class ServiceGenerator {
     /**
      * 正式上线  泰瑞亚  记得修改版本号和服务器地址
      */
-//    public static final String BASE_URL = "http://app.trh.bar:80";//正式服
-    public static final String BASE_URL = "http://120.79.169.58:8881";//阿里测试服
+    public static final String BASE_URL = "http://app.trh.bar:80";//正式服
+//    public static final String BASE_URL = "http://120.79.169.58:8881";//阿里测试服
 //    public static final String BASE_URL = "http://192.168.31.136:9999";//本地测试服
 
     public static <T> T createService(Class<T> serviceClass) {

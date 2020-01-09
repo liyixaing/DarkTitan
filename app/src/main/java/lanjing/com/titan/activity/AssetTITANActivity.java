@@ -175,7 +175,7 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
                 } else if (coin.equals("9")) {//当参数为9时 筛选按钮为dmt钱包
                     DMTshowDialog();//筛选dmt弹出框
                 } else {
-                    ToastUtils.showLongToast(context, "asdahsdjkhasjkd");
+                    ToastUtils.showLongToast(context, "错误信息");
                 }
                 break;
             case R.id.top_up_c_btn://当币种为9时跳转到转出其他的跳转到充币
@@ -206,14 +206,13 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
                     TTmoney2.putExtra("taitanSum", suntaitan);
                     TTmoney2.putExtra("title", "BAR");
                     startActivity(TTmoney2);
-                }else if (coin.equals("9")){//币种为9 表示为dmt币种  dmt币种是没有提币的所以这显示闪兑
+                } else if (coin.equals("9")) {//币种为9 表示为dmt币种  dmt币种是没有提币的所以这显示闪兑
                     Intent exchange = new Intent(context, ExchangeActivity.class);
                     exchange.putExtra("num", "DMT");
                     exchange.putExtra("coin", coin);
                     startActivity(exchange);
 
-                }
-                else {
+                } else {
                     Intent TTmoney3 = new Intent(context, TiTanWithdrawMoney.class);
                     TTmoney3.putExtra("id", "0");
                     TTmoney3.putExtra("coin", coin);
@@ -363,6 +362,10 @@ public class AssetTITANActivity extends MvpActivity<WalletDetailContact.WalletDe
                     AlertDMTDialog.dismiss();
                 }).setOnClickListener(R.id.tv_sx, v -> {
                     type = "12";
+                    mPresent.historylist(context, coin, type, String.valueOf(page), String.valueOf(pageSize));
+                    AlertDMTDialog.dismiss();
+                }).setOnClickListener(R.id.tv_sd, v -> {
+                    type = "21";
                     mPresent.historylist(context, coin, type, String.valueOf(page), String.valueOf(pageSize));
                     AlertDMTDialog.dismiss();
                 });

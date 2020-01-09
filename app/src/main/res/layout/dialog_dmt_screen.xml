@@ -46,4 +46,13 @@
         android:text="@string/service_fee"
         android:textColor="@color/white"
         android:textSize="@dimen/sp_15" />
+    <TextView
+        android:id="@+id/tv_sd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/flash_exchange"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
 </LinearLayout>
